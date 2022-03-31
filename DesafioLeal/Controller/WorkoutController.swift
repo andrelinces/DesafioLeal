@@ -10,7 +10,7 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class TrainingController: UIViewController {
+class WorkoutController: UIViewController {
     
     //var auth = Auth.auth().currentUser?.uid
     

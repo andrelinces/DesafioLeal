@@ -10,7 +10,7 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class ExerciciesController: UIViewController {
+class ExercisesController: UIViewController {
     
     var auth = Auth.auth().currentUser?.uid
     
@@ -21,9 +21,9 @@ class ExerciciesController: UIViewController {
         
         //print("test auth...\(auth)")
         singIn()
-        newTraining()
+        newWorkout()
     }
-    func newTraining () {
+    func newWorkout () {
         
         let user = Auth.auth().currentUser
         

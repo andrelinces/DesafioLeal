@@ -18,8 +18,8 @@
 		D3777EBF27EBE0580027BC34 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D3777EBE27EBE0580027BC34 /* FirebaseStorage */; };
 		D3777EC127ECA2D30027BC34 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EC027ECA2D30027BC34 /* HomeController.swift */; };
 		D3777EC427EDEF270027BC34 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EC327EDEF270027BC34 /* AccountController.swift */; };
-		D3777EC627F481400027BC34 /* ExerciciesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EC527F481400027BC34 /* ExerciciesController.swift */; };
-		D3777EC827F5E8CF0027BC34 /* TrainingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EC727F5E8CF0027BC34 /* TrainingController.swift */; };
+		D3777EC627F481400027BC34 /* ExercisesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EC527F481400027BC34 /* ExercisesController.swift */; };
+		D3777EC827F5E8CF0027BC34 /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EC727F5E8CF0027BC34 /* WorkoutController.swift */; };
 		D3777ECA27F5EBA30027BC34 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EC927F5EBA30027BC34 /* DataSource.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,8 +34,8 @@
 		D3777EB727EBDBAB0027BC34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3777EC027ECA2D30027BC34 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		D3777EC327EDEF270027BC34 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
-		D3777EC527F481400027BC34 /* ExerciciesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciciesController.swift; sourceTree = "<group>"; };
-		D3777EC727F5E8CF0027BC34 /* TrainingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingController.swift; sourceTree = "<group>"; };
+		D3777EC527F481400027BC34 /* ExercisesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesController.swift; sourceTree = "<group>"; };
+		D3777EC727F5E8CF0027BC34 /* WorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
 		D3777EC927F5EBA30027BC34 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,8 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				D3777EC327EDEF270027BC34 /* AccountController.swift */,
-				D3777EC527F481400027BC34 /* ExerciciesController.swift */,
-				D3777EC727F5E8CF0027BC34 /* TrainingController.swift */,
+				D3777EC527F481400027BC34 /* ExercisesController.swift */,
+				D3777EC727F5E8CF0027BC34 /* WorkoutController.swift */,
 				D3777EC027ECA2D30027BC34 /* HomeController.swift */,
 				D3777EC927F5EBA30027BC34 /* DataSource.swift */,
 			);
@@ -180,9 +180,9 @@
 				D3777EA427EBD9CA0027BC34 /* AppDelegate.swift in Sources */,
 				D3777EA627EBD9CA0027BC34 /* SceneDelegate.swift in Sources */,
 				D3777EC127ECA2D30027BC34 /* HomeController.swift in Sources */,
-				D3777EC827F5E8CF0027BC34 /* TrainingController.swift in Sources */,
+				D3777EC827F5E8CF0027BC34 /* WorkoutController.swift in Sources */,
 				D3777EC427EDEF270027BC34 /* AccountController.swift in Sources */,
-				D3777EC627F481400027BC34 /* ExerciciesController.swift in Sources */,
+				D3777EC627F481400027BC34 /* ExercisesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

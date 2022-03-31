@@ -103,7 +103,7 @@
         <!--Exercicies-->
         <scene sceneID="7pI-zl-bCZ">
             <objects>
-                <viewController id="QHO-0f-aSD" userLabel="Exercicies" customClass="ExerciciesController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QHO-0f-aSD" userLabel="Exercicies" customClass="ExercisesController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0G4-Yr-Fre">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
