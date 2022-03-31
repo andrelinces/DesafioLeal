@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>55226794651-59j9onfe7t8aa7c9h2m3dt8g1cnf466q.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.55226794651-59j9onfe7t8aa7c9h2m3dt8g1cnf466q</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDN4SgoLCV5ObqH4mPPScQKTC5BWWHgL-Q</string>
+	<key>GCM_SENDER_ID</key>
+	<string>55226794651</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>br.com.lincesapp.DesafioLeal</string>
+	<key>PROJECT_ID</key>
+	<string>desafioleal</string>
+	<key>STORAGE_BUCKET</key>
+	<string>desafioleal.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:55226794651:ios:895d6e7032cca4ae6cbc3e</string>
+</dict>
+</plist>
