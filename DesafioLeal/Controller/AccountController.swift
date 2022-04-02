@@ -108,11 +108,11 @@ class AccountController: UIViewController {
             // [START set_document]
             // Add a new document in collection "cities"
         db.collection("Users").document().setData([
-                "user": "",
+                "user": "Andre",
                 "name": "TestID",
                 "email": "annatest@gmail.com",
                 "passaword": "1234"
-            ]) { err in
+        ]) { err in
                 if let err = err {
                     print("Error writing document: \(err)")
                 } else {
@@ -127,6 +127,11 @@ class AccountController: UIViewController {
 //                // [END subcollection_reference]
 //                print(messageRef)
         }
+    
+    func deleteCollection () {
+        
+        
+    }
     
     private func userCreate() {
         

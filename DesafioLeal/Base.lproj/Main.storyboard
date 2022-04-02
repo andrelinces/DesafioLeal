@@ -68,6 +68,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="I9I-W2-A6z"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vn6-f2-9A3">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -75,44 +76,57 @@
                         <segue destination="bcf-ve-ksW" kind="relationship" relationship="viewControllers" id="1ns-p8-NeW"/>
                         <segue destination="jOx-Bn-bfF" kind="relationship" relationship="viewControllers" id="BVH-3T-7Tf"/>
                         <segue destination="y35-aE-S0v" kind="relationship" relationship="viewControllers" id="WHU-g0-RY0"/>
-                        <segue destination="QHO-0f-aSD" kind="relationship" relationship="viewControllers" id="TcF-Se-GYe"/>
-                        <segue destination="BuQ-lC-eVO" kind="relationship" relationship="viewControllers" id="5GR-CV-ZV3"/>
+                        <segue destination="QHO-0f-aSD" kind="relationship" relationship="viewControllers" id="sHK-YV-8Ok"/>
+                        <segue destination="BuQ-lC-eVO" kind="relationship" relationship="viewControllers" id="Mt7-Up-4QW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obA-tV-ZRu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2252" y="-577"/>
         </scene>
-        <!--Training-->
+        <!--Workout-->
         <scene sceneID="cu2-u5-QAM">
             <objects>
-                <viewController id="jOx-Bn-bfF" userLabel="Training" sceneMemberID="viewController">
+                <viewController id="jOx-Bn-bfF" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AUD-Bc-VUk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="N5f-sP-PkV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Training" image="list.dash" catalog="system" id="7Yg-eG-YtS" userLabel="Training"/>
+                    <tabBarItem key="tabBarItem" title="Workout" image="list.dash" catalog="system" id="7Yg-eG-YtS" userLabel="Training"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgd-hZ-vCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2571" y="156"/>
         </scene>
-        <!--Exercicies-->
+        <!--Exercises-->
         <scene sceneID="7pI-zl-bCZ">
             <objects>
-                <viewController id="QHO-0f-aSD" userLabel="Exercicies" customClass="ExercisesController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="QHO-0f-aSD" customClass="ExercisesController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0G4-Yr-Fre">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="W4O-No-aVW">
+                                <rect key="frame" x="0.0" y="-88" width="414" height="984"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="pvE-zF-yng"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="W4O-No-aVW" secondAttribute="bottom" id="CgN-cl-25T"/>
+                            <constraint firstItem="W4O-No-aVW" firstAttribute="leading" secondItem="pvE-zF-yng" secondAttribute="leading" id="MHi-Du-agd"/>
+                            <constraint firstItem="pvE-zF-yng" firstAttribute="trailing" secondItem="W4O-No-aVW" secondAttribute="trailing" id="aCp-c4-uBf"/>
+                            <constraint firstItem="W4O-No-aVW" firstAttribute="top" secondItem="0G4-Yr-Fre" secondAttribute="top" constant="-88" id="jqe-ff-8yI"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Exercicies" image="control" catalog="system" id="x8E-Iy-MQe" userLabel="Exercicies"/>
+                    <tabBarItem key="tabBarItem" title="Exercises" image="control" catalog="system" id="x8E-Iy-MQe"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="tableViewExercises" destination="W4O-No-aVW" id="tHB-d4-DtA"/>
                         <segue destination="DPJ-8D-lV9" kind="show" id="YPh-EW-vNy"/>
                     </connections>
                 </viewController>

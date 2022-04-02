@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BE556522C7B1058C1D9E522 /* Pods_DesafioLeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA32300FB6B16252EA2109E8 /* Pods_DesafioLeal.framework */; };
 		D3777EA427EBD9CA0027BC34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EA327EBD9CA0027BC34 /* AppDelegate.swift */; };
 		D3777EA627EBD9CA0027BC34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EA527EBD9CA0027BC34 /* SceneDelegate.swift */; };
 		D3777EAB27EBD9CA0027BC34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3777EA927EBD9CA0027BC34 /* Main.storyboard */; };
@@ -21,9 +22,17 @@
 		D3777EC627F481400027BC34 /* ExercisesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EC527F481400027BC34 /* ExercisesController.swift */; };
 		D3777EC827F5E8CF0027BC34 /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EC727F5E8CF0027BC34 /* WorkoutController.swift */; };
 		D3777ECA27F5EBA30027BC34 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EC927F5EBA30027BC34 /* DataSource.swift */; };
+		D3777ED227F735D70027BC34 /* ModelExercisesPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777ED127F735D70027BC34 /* ModelExercisesPoster.swift */; };
+		D3777ED527F736F40027BC34 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777ED427F736F40027BC34 /* Protocol.swift */; };
+		D3777ED927F7AB160027BC34 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777ED827F7AB160027BC34 /* Extension.swift */; };
+		D3795B0127F85E3E00B70C74 /* ModelExercisesPosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3795B0027F85E3E00B70C74 /* ModelExercisesPosterCell.swift */; };
+		D3795B0327F862A300B70C74 /* ModelExercisesPosterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3795B0227F862A300B70C74 /* ModelExercisesPosterCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		506039A1292488AB3CB69B52 /* Pods-DesafioLeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioLeal.release.xcconfig"; path = "Target Support Files/Pods-DesafioLeal/Pods-DesafioLeal.release.xcconfig"; sourceTree = "<group>"; };
+		A664EE01F4BD3AABB902CBE2 /* Pods-DesafioLeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioLeal.debug.xcconfig"; path = "Target Support Files/Pods-DesafioLeal/Pods-DesafioLeal.debug.xcconfig"; sourceTree = "<group>"; };
+		CA32300FB6B16252EA2109E8 /* Pods_DesafioLeal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioLeal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3777EA027EBD9CA0027BC34 /* DesafioLeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioLeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3777EA327EBD9CA0027BC34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3777EA527EBD9CA0027BC34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +46,11 @@
 		D3777EC527F481400027BC34 /* ExercisesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesController.swift; sourceTree = "<group>"; };
 		D3777EC727F5E8CF0027BC34 /* WorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
 		D3777EC927F5EBA30027BC34 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		D3777ED127F735D70027BC34 /* ModelExercisesPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelExercisesPoster.swift; sourceTree = "<group>"; };
+		D3777ED427F736F40027BC34 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		D3777ED827F7AB160027BC34 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		D3795B0027F85E3E00B70C74 /* ModelExercisesPosterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelExercisesPosterCell.swift; sourceTree = "<group>"; };
+		D3795B0227F862A300B70C74 /* ModelExercisesPosterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModelExercisesPosterCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +61,28 @@
 				D3777EBB27EBE0580027BC34 /* FirebaseAuth in Frameworks */,
 				D3777EBD27EBE0580027BC34 /* FirebaseFirestore in Frameworks */,
 				D3777EBF27EBE0580027BC34 /* FirebaseStorage in Frameworks */,
+				4BE556522C7B1058C1D9E522 /* Pods_DesafioLeal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9DB1E141A7B922F690BEEAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA32300FB6B16252EA2109E8 /* Pods_DesafioLeal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D3777E9727EBD9CA0027BC34 = {
 			isa = PBXGroup;
 			children = (
 				D3777EA227EBD9CA0027BC34 /* DesafioLeal */,
 				D3777EA127EBD9CA0027BC34 /* Products */,
+				D85B0C67B31A4A4E03C87D6B /* Pods */,
+				A9DB1E141A7B922F690BEEAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +97,8 @@
 		D3777EA227EBD9CA0027BC34 /* DesafioLeal */ = {
 			isa = PBXGroup;
 			children = (
+				D3777ED327F736E30027BC34 /* Global Helpers */,
+				D3777ECB27F72D0E0027BC34 /* Model */,
 				D3777EC227ED38260027BC34 /* Controller */,
 				D3777EA327EBD9CA0027BC34 /* AppDelegate.swift */,
 				D3777EA527EBD9CA0027BC34 /* SceneDelegate.swift */,
@@ -96,6 +123,51 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		D3777ECB27F72D0E0027BC34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D3795B0227F862A300B70C74 /* ModelExercisesPosterCell.xib */,
+				D3795B0027F85E3E00B70C74 /* ModelExercisesPosterCell.swift */,
+				D3777ED127F735D70027BC34 /* ModelExercisesPoster.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D3777ED327F736E30027BC34 /* Global Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D3777ED727F7AAEC0027BC34 /* Global Extension */,
+				D3777ED627F7AAC90027BC34 /* Global Protocol */,
+			);
+			path = "Global Helpers";
+			sourceTree = "<group>";
+		};
+		D3777ED627F7AAC90027BC34 /* Global Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D3777ED427F736F40027BC34 /* Protocol.swift */,
+			);
+			path = "Global Protocol";
+			sourceTree = "<group>";
+		};
+		D3777ED727F7AAEC0027BC34 /* Global Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D3777ED827F7AB160027BC34 /* Extension.swift */,
+			);
+			path = "Global Extension";
+			sourceTree = "<group>";
+		};
+		D85B0C67B31A4A4E03C87D6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A664EE01F4BD3AABB902CBE2 /* Pods-DesafioLeal.debug.xcconfig */,
+				506039A1292488AB3CB69B52 /* Pods-DesafioLeal.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3777EB427EBD9CC0027BC34 /* Build configuration list for PBXNativeTarget "DesafioLeal" */;
 			buildPhases = (
+				0F24147E4A03A199EC592BA9 /* [CP] Check Pods Manifest.lock */,
 				D3777E9C27EBD9CA0027BC34 /* Sources */,
 				D3777E9D27EBD9CA0027BC34 /* Frameworks */,
 				D3777E9E27EBD9CA0027BC34 /* Resources */,
+				F13CF6CE995346302D7FA121 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,24 +239,71 @@
 				D3777EB027EBD9CC0027BC34 /* LaunchScreen.storyboard in Resources */,
 				D3777EB827EBDBAB0027BC34 /* GoogleService-Info.plist in Resources */,
 				D3777EAD27EBD9CC0027BC34 /* Assets.xcassets in Resources */,
+				D3795B0327F862A300B70C74 /* ModelExercisesPosterCell.xib in Resources */,
 				D3777EAB27EBD9CA0027BC34 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F24147E4A03A199EC592BA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesafioLeal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F13CF6CE995346302D7FA121 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioLeal/Pods-DesafioLeal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DesafioLeal/Pods-DesafioLeal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DesafioLeal/Pods-DesafioLeal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D3777E9C27EBD9CA0027BC34 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3777ED227F735D70027BC34 /* ModelExercisesPoster.swift in Sources */,
 				D3777ECA27F5EBA30027BC34 /* DataSource.swift in Sources */,
 				D3777EA427EBD9CA0027BC34 /* AppDelegate.swift in Sources */,
 				D3777EA627EBD9CA0027BC34 /* SceneDelegate.swift in Sources */,
+				D3777ED927F7AB160027BC34 /* Extension.swift in Sources */,
 				D3777EC127ECA2D30027BC34 /* HomeController.swift in Sources */,
 				D3777EC827F5E8CF0027BC34 /* WorkoutController.swift in Sources */,
 				D3777EC427EDEF270027BC34 /* AccountController.swift in Sources */,
+				D3795B0127F85E3E00B70C74 /* ModelExercisesPosterCell.swift in Sources */,
 				D3777EC627F481400027BC34 /* ExercisesController.swift in Sources */,
+				D3777ED527F736F40027BC34 /* Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +447,7 @@
 		};
 		D3777EB527EBD9CC0027BC34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A664EE01F4BD3AABB902CBE2 /* Pods-DesafioLeal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -354,6 +476,7 @@
 		};
 		D3777EB627EBD9CC0027BC34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 506039A1292488AB3CB69B52 /* Pods-DesafioLeal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
