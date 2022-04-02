@@ -1,44 +1,44 @@
 //
-//  ModelExercisesIPoster.swift
+//  ModelExercisesTitle.swift
 //  DesafioLeal
 //
-//  Created by Andre Linces on 01/04/22.
+//  Created by Andre Linces on 02/04/22.
 //
 
 import UIKit
 
-protocol ModelExercisesPosterCallBack: class {
+protocol ModelExercisesTitleCellCallBack: class {
     
    // func actionReturn ()
     
 }
-class ModelExercisesPoster: tableViewCompatible {
-    internal init (delegate: ModelExercisesPosterCallBack?, navigationController : UINavigationController?, imageExercisesPoster: String){
+class ModelExercisesTitle: tableViewCompatible {
+    internal init (delegate: ModelExercisesTitleCellCallBack?, navigationController : UINavigationController?, exercisesTitle: String){
         self.delegate = delegate
-        self.imageExercisesPoster = imageExercisesPoster
+        self.exercisesTitle = exercisesTitle
     }
     
-    open weak var delegate:ModelExercisesPosterCallBack?
+    open weak var delegate:ModelExercisesTitleCellCallBack?
     
     var reuseIdentifier: String {
         
-        return "ModelExercisesPosterCellIdentifier"
+        return "ModelExercisesTitleCellIdentifier"
     }
     
     //Variables of the inicilizaing.
-    var imageExercisesPoster: String
+    var exercisesTitle: String
     var navigationController : UINavigationController?
     
 
-    //cell.img.sd_setImage(with: ref2)
     
     func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexpath) as? ModelExercisesPosterCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexpath) as? ModelExercisesTitleCell {
             
-            cell.setupDesign()
-            
-            cell.setupValues(imageExercisesPoster: imageExercisesPoster)
+            //cell.setupDesign()
+            //cell.setupImage(imageExercisesPoster: imageExercisesPoster)
+            cell.setupValues(exercisesTitle: "Exercises" )
+            cell.contentView.backgroundColor = .blue
             
             
             
@@ -62,4 +62,3 @@ class ModelExercisesPoster: tableViewCompatible {
 //    }
     
     }
-

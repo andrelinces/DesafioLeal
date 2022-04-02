@@ -24,6 +24,7 @@ func initializeTableView(tableView: UITableView){
     navigationController?.navigationBar.backItem?.title = "Voltar"
     
     //Registing the cells
+    tableView.register(UINib(nibName: "ModelExercisesTitleCell", bundle: Bundle.main), forCellReuseIdentifier: "ModelExercisesTitleCellIdentifier")
     tableView.register(UINib(nibName: "ModelExercisesPosterCell", bundle: Bundle.main), forCellReuseIdentifier: "ModelExercisesPosterCellIdentifier")
     
 }
@@ -36,14 +37,14 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    if let modelCardExercicesPoster = data[indexPath.row] as? ModelExercisesPoster {
+    if let modelCardExercisesPoster = data[indexPath.row] as? ModelExercisesPoster {
         
-        return modelCardExercicesPoster.cellForTableView(tableView: tableView, atIndexpath: indexPath)
+        return modelCardExercisesPoster.cellForTableView(tableView: tableView, atIndexpath: indexPath)
         
-//    }else if let modelMovieImage = data[indexPath.row] as? CardMovieImageModel{
-//
-//        return modelMovieImage.cellForTableView(tableView: tableView, atIndexpath: indexPath)
-//
+    }else if let modelCardExercisesTitle = data[indexPath.row] as? ModelExercisesTitle{
+
+        return modelCardExercisesTitle.cellForTableView(tableView: tableView, atIndexpath: indexPath)
+
 //    }else if let modelListMovie = data[indexPath.row] as? CardListMovieModel{
 //
 //        return modelListMovie.cellForTableView(tableView: tableView, atIndexpath: indexPath)

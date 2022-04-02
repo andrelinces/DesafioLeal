@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4BE556522C7B1058C1D9E522 /* Pods_DesafioLeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA32300FB6B16252EA2109E8 /* Pods_DesafioLeal.framework */; };
+		D316301727F90077006ED4D4 /* ModelExercisesTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D316301627F90077006ED4D4 /* ModelExercisesTitleCell.xib */; };
+		D316301927F900CF006ED4D4 /* ModelExercisesTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316301827F900CF006ED4D4 /* ModelExercisesTitleCell.swift */; };
+		D316301B27F90294006ED4D4 /* ModelExercisesTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316301A27F90294006ED4D4 /* ModelExercisesTitle.swift */; };
 		D3777EA427EBD9CA0027BC34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EA327EBD9CA0027BC34 /* AppDelegate.swift */; };
 		D3777EA627EBD9CA0027BC34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EA527EBD9CA0027BC34 /* SceneDelegate.swift */; };
 		D3777EAB27EBD9CA0027BC34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3777EA927EBD9CA0027BC34 /* Main.storyboard */; };
@@ -33,6 +36,9 @@
 		506039A1292488AB3CB69B52 /* Pods-DesafioLeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioLeal.release.xcconfig"; path = "Target Support Files/Pods-DesafioLeal/Pods-DesafioLeal.release.xcconfig"; sourceTree = "<group>"; };
 		A664EE01F4BD3AABB902CBE2 /* Pods-DesafioLeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioLeal.debug.xcconfig"; path = "Target Support Files/Pods-DesafioLeal/Pods-DesafioLeal.debug.xcconfig"; sourceTree = "<group>"; };
 		CA32300FB6B16252EA2109E8 /* Pods_DesafioLeal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioLeal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D316301627F90077006ED4D4 /* ModelExercisesTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModelExercisesTitleCell.xib; sourceTree = "<group>"; };
+		D316301827F900CF006ED4D4 /* ModelExercisesTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelExercisesTitleCell.swift; sourceTree = "<group>"; };
+		D316301A27F90294006ED4D4 /* ModelExercisesTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelExercisesTitle.swift; sourceTree = "<group>"; };
 		D3777EA027EBD9CA0027BC34 /* DesafioLeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioLeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3777EA327EBD9CA0027BC34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3777EA527EBD9CA0027BC34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +132,9 @@
 		D3777ECB27F72D0E0027BC34 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D316301627F90077006ED4D4 /* ModelExercisesTitleCell.xib */,
+				D316301827F900CF006ED4D4 /* ModelExercisesTitleCell.swift */,
+				D316301A27F90294006ED4D4 /* ModelExercisesTitle.swift */,
 				D3795B0227F862A300B70C74 /* ModelExercisesPosterCell.xib */,
 				D3795B0027F85E3E00B70C74 /* ModelExercisesPosterCell.swift */,
 				D3777ED127F735D70027BC34 /* ModelExercisesPoster.swift */,
@@ -164,7 +173,6 @@
 				A664EE01F4BD3AABB902CBE2 /* Pods-DesafioLeal.debug.xcconfig */,
 				506039A1292488AB3CB69B52 /* Pods-DesafioLeal.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -236,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D316301727F90077006ED4D4 /* ModelExercisesTitleCell.xib in Resources */,
 				D3777EB027EBD9CC0027BC34 /* LaunchScreen.storyboard in Resources */,
 				D3777EB827EBDBAB0027BC34 /* GoogleService-Info.plist in Resources */,
 				D3777EAD27EBD9CC0027BC34 /* Assets.xcassets in Resources */,
@@ -295,10 +304,12 @@
 			files = (
 				D3777ED227F735D70027BC34 /* ModelExercisesPoster.swift in Sources */,
 				D3777ECA27F5EBA30027BC34 /* DataSource.swift in Sources */,
+				D316301927F900CF006ED4D4 /* ModelExercisesTitleCell.swift in Sources */,
 				D3777EA427EBD9CA0027BC34 /* AppDelegate.swift in Sources */,
 				D3777EA627EBD9CA0027BC34 /* SceneDelegate.swift in Sources */,
 				D3777ED927F7AB160027BC34 /* Extension.swift in Sources */,
 				D3777EC127ECA2D30027BC34 /* HomeController.swift in Sources */,
+				D316301B27F90294006ED4D4 /* ModelExercisesTitle.swift in Sources */,
 				D3777EC827F5E8CF0027BC34 /* WorkoutController.swift in Sources */,
 				D3777EC427EDEF270027BC34 /* AccountController.swift in Sources */,
 				D3795B0127F85E3E00B70C74 /* ModelExercisesPosterCell.swift in Sources */,

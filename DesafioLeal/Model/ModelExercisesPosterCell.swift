@@ -14,12 +14,13 @@ class ModelExercisesPosterCell: UITableViewCell {
 
     @IBOutlet weak var imageViewExercises: UIImageView!
     @IBOutlet weak var labelTest: UILabel!
+    @IBOutlet weak var cardViewPoster: UIView!
 
-//func setupDesign () {
-//
-//    cornerViewButtonReturn.changeDesigneView(cornerRadius: cornerViewButtonReturn.frame.height/2, shadow: CGSize(width: 0, height: 0), shadowOpacity: 0)
-//
-//}
+func setupDesign () {
+
+    cardViewPoster.borderDesigneView(cornerRadius: 60)
+
+}
     
     // Create a reference to the file you want to download
     //let islandRef = storageRef.child("images/island.jpg")

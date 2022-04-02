@@ -12,7 +12,7 @@ import FirebaseAuth
 import Kingfisher
 
 
-class ExercisesController: UIViewController, ModelExercisesPosterCallBack {
+class ExercisesController: UIViewController, ModelExercisesPosterCallBack, ModelExercisesTitleCellCallBack {
     
 //    func actionReturn() {
 //        print("Teste voltar : \(navigationController)")
@@ -44,13 +44,7 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack {
         self.imageExercisesPoster = imageExercisesPoster
         //self.urlDetails = urlDetails
     }
-    
-    // Create a reference from a Google Cloud Storage URI
-    //let gsReference = storage.reference(forURL: "gs://<your-firebase-storage-bucket>/images/stars.jpg")
-    
-    
-    
-//gs://desafioleal.appspot.com/musculacaoPoster.jpeg
+
     
     func newWorkout () {
         
@@ -83,18 +77,13 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack {
     }
     
     func setupTableView () {
-        
-//        var urlExercisesPoster = URL(string: "https://firebasestorage.googleapis.com/v0/b/desafioleal.appspot.com/o/musculacaoPoster.jpeg?alt=media&token=f3d3e29c-f450-444a-a373-e8b8a930aa22")
-        
-//        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/desafioleal.appspot.com/o/musculacaoPoster.jpeg?alt=media&token=f3d3e29c-f450-444a-a373-e8b8a930aa22")!
-        
-//        let url = URL(string: "https://image.tmdb.org/t/p/w500/1ma5b9XLCziCHzQP0Zy1Y1PqNyM.jpg")
-//        imageViewExercises.kf.setImage(with: url)
-            
-        
+ 
         let cardExercisesPoster = ModelExercisesPoster(delegate: self, navigationController: navigationController, imageExercisesPoster: imageExercisesPoster )
        // let segundaCelulaModel = PrimeiraCelulaModel(delegate: self, tituloCard: "Segunda")
         
+        let cardExercisesTitle = ModelExercisesTitle(delegate: self, navigationController: navigationController, exercisesTitle: "Exercises")
+        
+        dataSource.data.append(cardExercisesTitle)
         
         dataSource.data.append(cardExercisesPoster)
         
