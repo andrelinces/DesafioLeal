@@ -12,7 +12,7 @@ class DataSource: NSObject {
 
 var data = [Any] ()
 var navigationController: UINavigationController?
-var titleMovie = ""
+var titleExercises = ""
 
 func initializeTableView(tableView: UITableView){
     
@@ -62,25 +62,25 @@ func scrollViewDidScroll(_ scrollView: UIScrollView) {
     //Print for tests and to display the position of the scroll, the initial position is -44
     //print("Scroll contentOffset: \(scrollView.contentOffset.y)")
     
-//    if navigationController != nil {
-//        if scrollView.contentOffset.y > 30 {//MARK: Displays navigation bar when the down scroll.
-//
-//            navigationController?.navigationBar.alpha = scrollView.contentOffset.y / 180
-//            navigationController?.navigationBar.tintColor = .darkGray
-//            navigationController?.navigationBar.backgroundColor = .red
-//        }else{
-//            navigationController?.navigationBar.alpha = 0
-//
-//        }
-//
-//        if scrollView.contentOffset.y > 304 {//MARK: When the navigation bar to hide title of the movie, It's diplay title from movie in the navigation bar.
-//            navigationController?.navigationBar.topItem?.title = titleMovie
-//        }else {
-//            navigationController?.navigationBar.topItem?.title = ""
-//        }
-//    }
-//
-//}
-//
+    if navigationController != nil {
+        if scrollView.contentOffset.y > 30 {//MARK: Displays navigation bar when the down scroll.
+
+            navigationController?.navigationBar.alpha = scrollView.contentOffset.y / 180
+            navigationController?.navigationBar.tintColor = .darkGray
+            navigationController?.navigationBar.backgroundColor = .red
+        }else{
+            navigationController?.navigationBar.alpha = 0
+
+        }
+
+        if scrollView.contentOffset.y > 304 {//MARK: When the navigation bar to hide title of the movie, It's diplay title from movie in the navigation bar.
+            navigationController?.navigationBar.topItem?.title = titleExercises
+        }else {
+            navigationController?.navigationBar.topItem?.title = "Exercises"
+        }
+    }
+
 }
+
 }
+

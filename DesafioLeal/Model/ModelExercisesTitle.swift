@@ -38,7 +38,7 @@ class ModelExercisesTitle: tableViewCompatible {
             //cell.setupDesign()
             //cell.setupImage(imageExercisesPoster: imageExercisesPoster)
             cell.setupValues(exercisesTitle: "Exercises" )
-            cell.contentView.backgroundColor = .blue
+            //cell.contentView.backgroundColor = .blue
             
             
             

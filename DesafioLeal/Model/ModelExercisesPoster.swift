@@ -13,9 +13,12 @@ protocol ModelExercisesPosterCallBack: class {
     
 }
 class ModelExercisesPoster: tableViewCompatible {
-    internal init (delegate: ModelExercisesPosterCallBack?, navigationController : UINavigationController?, imageExercisesPoster: String){
+    internal init (delegate: ModelExercisesPosterCallBack?, navigationController : UINavigationController?, imageExercisesPoster: String, exercisesTitle: String, observation: String){
         self.delegate = delegate
         self.imageExercisesPoster = imageExercisesPoster
+        self.exercisesTitle = exercisesTitle
+        self.observation = observation
+        
     }
     
     open weak var delegate:ModelExercisesPosterCallBack?
@@ -27,6 +30,8 @@ class ModelExercisesPoster: tableViewCompatible {
     
     //Variables of the inicilizaing.
     var imageExercisesPoster: String
+    var exercisesTitle: String
+    var observation: String
     var navigationController : UINavigationController?
     
 
@@ -36,10 +41,13 @@ class ModelExercisesPoster: tableViewCompatible {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexpath) as? ModelExercisesPosterCell {
             
+            cell.setupView()
+            
             cell.setupDesign()
             
-            cell.setupValues(imageExercisesPoster: imageExercisesPoster)
+            cell.setupValues(imageExercisesPoster: imageExercisesPoster, exercisesTitle: exercisesTitle, observation: observation)
             
+            cell.contentView.backgroundColor = .orange
             
             
             //MARK: Return button action on movie details screen, this method is used in main view..

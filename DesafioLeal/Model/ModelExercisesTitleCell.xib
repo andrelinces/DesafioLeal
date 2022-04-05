@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercises" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvk-Ek-Dmw">
-                                <rect key="frame" x="120" y="35" width="174" height="30"/>
+                                <rect key="frame" x="120" y="45" width="174" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -29,7 +29,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Gvk-Ek-Dmw" firstAttribute="leading" secondItem="j0B-jb-B4e" secondAttribute="leading" constant="120" id="3VK-7R-h8Q"/>
-                            <constraint firstItem="Gvk-Ek-Dmw" firstAttribute="top" secondItem="j0B-jb-B4e" secondAttribute="top" constant="35" id="Cun-Z3-kmv"/>
+                            <constraint firstItem="Gvk-Ek-Dmw" firstAttribute="top" secondItem="j0B-jb-B4e" secondAttribute="top" constant="45" id="Cun-Z3-kmv"/>
                             <constraint firstAttribute="height" constant="100" id="FzX-jb-6NH"/>
                             <constraint firstAttribute="trailing" secondItem="Gvk-Ek-Dmw" secondAttribute="trailing" constant="120" id="H5p-8P-nQw"/>
                         </constraints>

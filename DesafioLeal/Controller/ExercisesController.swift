@@ -14,10 +14,10 @@ import Kingfisher
 
 class ExercisesController: UIViewController, ModelExercisesPosterCallBack, ModelExercisesTitleCellCallBack {
     
-//    func actionReturn() {
-//        print("Teste voltar : \(navigationController)")
-//        navigationController?.popViewController(animated: true)
-//    }
+    func actionReturn() {
+        print("Teste voltar : \(navigationController)")
+        navigationController?.popViewController(animated: true)
+    }
     
     var auth = Auth.auth().currentUser?.uid
     
@@ -30,18 +30,25 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         //print("test auth...\(auth)")
         //singIn()
         //newWorkout()
+        //actionReturn()
         setupTableView()
         tableViewExercises.reloadData()
     }
     
     var imageExercisesPoster : String = ""
+    var exercisesTitle : String = ""
+    var observation : String = "" 
     //var urlDetails : String = ""
     
-    func initiate(imageExercisesPoster : String){
+    func initiate(imageExercisesPoster : String, exercisesTitle : String, observation : String){
         self.imageExercisesPoster = imageExercisesPoster
+        self.exercisesTitle = exercisesTitle
+        self.observation = observation
         //self.urlDetails = urlDetails
     }
 
@@ -78,30 +85,68 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
     
     func setupTableView () {
  
-        let cardExercisesPoster = ModelExercisesPoster(delegate: self, navigationController: navigationController, imageExercisesPoster: imageExercisesPoster )
+         //func retrieveObjetctCategories () {
+            //Exercises/eeFBb2y43ZgElUh6Powy/Legs
+            let docRef = db.collection("Exercises").document("leg")
+            
+            docRef.getDocument(as: exercisesCategories.self) { result  in
+            // The Result type encapsulates deserialization errors or
+            // successful deserialization, and can be handled as follows:
+            //
+            //      Result
+            //        /\
+            //   Error  City
+            switch result {
+            case .success(let exeCategories):
+                // A `City` value was successfully initialized from the DocumentSnapshot.
+                print("Categories: \(exeCategories)")
+                
+                let imageExercisesPoster = exeCategories.urlImage
+                let exercisesTitle = exeCategories.name
+                let observation = exeCategories.observation
+                
+                
+                let cardExercisesPoster = ModelExercisesPoster(delegate: self, navigationController: self.navigationController, imageExercisesPoster: imageExercisesPoster ?? "Url", exercisesTitle: exercisesTitle ?? "Url", observation: observation ?? "Url" )
+                
+                self.dataSource.data.append(cardExercisesPoster)
+                
+                self.tableViewExercises.reloadData()
+                
+            case .failure(let error):
+                // A `City` value could not be initialized from the DocumentSnapshot.
+                print("Error decoding city: \(error)")
+            }
+                
+        }
+        
+        
+        //let cardExercisesPoster = ModelExercisesPoster(delegate: self, navigationController: navigationController, imageExercisesPoster: imageExercisesPoster, exercisesTitle: exercisesTitle, observation: observation )
        // let segundaCelulaModel = PrimeiraCelulaModel(delegate: self, tituloCard: "Segunda")
         
         let cardExercisesTitle = ModelExercisesTitle(delegate: self, navigationController: navigationController, exercisesTitle: "Exercises")
         
-        dataSource.data.append(cardExercisesTitle)
+            dataSource.data.append(cardExercisesTitle)
         
-        dataSource.data.append(cardExercisesPoster)
-        
-        dataSource.data.append(cardExercisesPoster)
-        
-        dataSource.data.append(cardExercisesPoster)
-        
-        dataSource.data.append(cardExercisesPoster)
-        
-        dataSource.data.append(cardExercisesPoster)
-        
-        dataSource.data.append(cardExercisesPoster)
+//        dataSource.data.append(cardExercisesPoster)
+//
+//        dataSource.data.append(cardExercisesPoster)
+//
+//        dataSource.data.append(cardExercisesPoster)
+//
+//        dataSource.data.append(cardExercisesPoster)
+//
+//        dataSource.data.append(cardExercisesPoster)
+//
+//        dataSource.data.append(cardExercisesPoster)
         
         dataSource.initializeTableView(tableView: tableViewExercises)
         
         tableViewExercises.allowsSelection = false
         
         tableViewExercises.separatorStyle = UITableViewCell.SeparatorStyle.none
+        
+        
+        
         
         
     }
@@ -112,3 +157,18 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
 }
 //ExerciciesTest
 //NameChoiceUser
+public struct exercisesCategories: Codable {
+
+    let name: String
+    let urlImage: String?
+    let observation: String?
+    
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case urlImage
+        case observation
+        
+    }
+
+}

@@ -11,6 +11,7 @@
 		D316301727F90077006ED4D4 /* ModelExercisesTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D316301627F90077006ED4D4 /* ModelExercisesTitleCell.xib */; };
 		D316301927F900CF006ED4D4 /* ModelExercisesTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316301827F900CF006ED4D4 /* ModelExercisesTitleCell.swift */; };
 		D316301B27F90294006ED4D4 /* ModelExercisesTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316301A27F90294006ED4D4 /* ModelExercisesTitle.swift */; };
+		D316301D27FB9DBD006ED4D4 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = D316301C27FB9DBD006ED4D4 /* FirebaseFirestoreSwift-Beta */; };
 		D3777EA427EBD9CA0027BC34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EA327EBD9CA0027BC34 /* AppDelegate.swift */; };
 		D3777EA627EBD9CA0027BC34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EA527EBD9CA0027BC34 /* SceneDelegate.swift */; };
 		D3777EAB27EBD9CA0027BC34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3777EA927EBD9CA0027BC34 /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 			files = (
 				D3777EBB27EBE0580027BC34 /* FirebaseAuth in Frameworks */,
 				D3777EBD27EBE0580027BC34 /* FirebaseFirestore in Frameworks */,
+				D316301D27FB9DBD006ED4D4 /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				D3777EBF27EBE0580027BC34 /* FirebaseStorage in Frameworks */,
 				4BE556522C7B1058C1D9E522 /* Pods_DesafioLeal.framework in Frameworks */,
 			);
@@ -198,6 +200,7 @@
 				D3777EBA27EBE0580027BC34 /* FirebaseAuth */,
 				D3777EBC27EBE0580027BC34 /* FirebaseFirestore */,
 				D3777EBE27EBE0580027BC34 /* FirebaseStorage */,
+				D316301C27FB9DBD006ED4D4 /* FirebaseFirestoreSwift-Beta */,
 			);
 			productName = DesafioLeal;
 			productReference = D3777EA027EBD9CA0027BC34 /* DesafioLeal.app */;
@@ -549,6 +552,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D316301C27FB9DBD006ED4D4 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3777EB927EBE0580027BC34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
 		D3777EBA27EBE0580027BC34 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D3777EB927EBE0580027BC34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

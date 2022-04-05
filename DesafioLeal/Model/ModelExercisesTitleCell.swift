@@ -17,13 +17,17 @@ class ModelExercisesTitleCell: UITableViewCell {
         cardViewTitle.changeDesigneView(cornerRadius: 28, shadow: CGSize(width: 0, height: 2) , shadowOpacity: 0.3)
         //cardViewTitle.layer.backgroundColor = .init(srgbRed: 55, green: 90, blue: 30, alpha: 1)
         
-      
+        //cardViewTitle.backgroundColor = .lightGray
     }
 
     func setupValues (exercisesTitle: String) {
         
         labelExercisesTitle.text = exercisesTitle
+        labelExercisesTitle.font = .boldSystemFont(ofSize: 30)
+        labelExercisesTitle.textColor = .blue
         
+        
+        //cardViewTitle.backgroundColor = .lightGray
     }
     
     
