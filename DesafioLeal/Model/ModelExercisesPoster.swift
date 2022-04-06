@@ -9,7 +9,7 @@ import UIKit
 
 protocol ModelExercisesPosterCallBack: class {
     
-   // func actionReturn ()
+    //func actionClickCardView ()
     
 }
 class ModelExercisesPoster: tableViewCompatible {
@@ -67,6 +67,16 @@ class ModelExercisesPoster: tableViewCompatible {
 //    @objc func actionReturn(sender : UITapGestureRecognizer){
 //
 //        delegate?.actionReturn()
+//    }
+    
+//    @objc func actionClickCardView (sender: myTapCustom) {
+//        delegate?.actionClickCardView(indexPath: sender.indexPath!)
+//    }
+//    
+//    class myTapCustom: UITapGestureRecognizer {
+//        
+//        var indexPath: IndexPath?
+//        
 //    }
     
     }

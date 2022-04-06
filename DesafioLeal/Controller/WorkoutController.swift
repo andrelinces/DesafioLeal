@@ -10,11 +10,57 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class WorkoutController: UIViewController {
+class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWorkoutPosterCellCallBack {
+    
+    @IBOutlet weak var tableViewWorkout: UITableView!
     
     //var auth = Auth.auth().currentUser?.uid
     
     var db = Firestore.firestore()
+    
+    let dataSource = DataSource()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        print("test workoutcontroller...")
+        
+        
+        setupTableView()
+    }
+    
+    //Variables inicialization
+    var imagePosterWorkout : String = ""
+    var titleWorkout : String = ""
+    
+    
+    func initiate(imagePosterWorkout : String, exercisesTitle : String, observation : String){
+        self.imagePosterWorkout = imagePosterWorkout
+        
+        
+        //self.urlDetails = urlDetails
+    }
+    
+    func setupTableView () {
+        
+        //dataSource.data = [Any]()
+        
+        let cardWorkoutPoster = ModelWorkoutPoster(delegate: self, navigationController: self.navigationController, imagePosterWorkout: imagePosterWorkout, titleWorkout: "Test Workout" )
+        
+        dataSource.data.append(cardWorkoutPoster)
+        
+        dataSource.initializeTableView(tableView: tableViewWorkout)
+        
+        tableViewWorkout.allowsSelection = false
+        
+        tableViewWorkout.separatorStyle = UITableViewCell.SeparatorStyle.none
+        
+        self.tableViewWorkout.reloadData()
+        
+                
+    }
+    
     
     func newTraining () {
         
@@ -46,4 +92,5 @@ class WorkoutController: UIViewController {
         }
     }
     
+
 }

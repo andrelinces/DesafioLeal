@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ModelWorkoutPosterCellIdentifier" rowHeight="254" id="W3L-gw-Ajd" customClass="ModelWorkoutPosterCell" customModule="DesafioLeal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="541" height="254"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W3L-gw-Ajd" id="jef-GJ-axh">
+                <rect key="frame" x="0.0" y="0.0" width="541" height="254"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QkF-H9-Vcy">
+                        <rect key="frame" x="0.0" y="0.0" width="541" height="250"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9l-xF-Mn8">
+                                <rect key="frame" x="10" y="8" width="521" height="234"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="academia" translatesAutoresizingMaskIntoConstraints="NO" id="zlg-VI-Eff">
+                                        <rect key="frame" x="0.0" y="0.0" width="521" height="234"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="234" id="6Rg-YN-qrg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsG-eD-V5F">
+                                        <rect key="frame" x="220" y="30" width="81" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="GsG-eD-V5F" firstAttribute="leading" secondItem="Q9l-xF-Mn8" secondAttribute="leading" constant="220" id="2MT-yx-cQI"/>
+                                    <constraint firstAttribute="trailing" secondItem="GsG-eD-V5F" secondAttribute="trailing" constant="220" id="5kw-IX-XgO"/>
+                                    <constraint firstItem="zlg-VI-Eff" firstAttribute="leading" secondItem="Q9l-xF-Mn8" secondAttribute="leading" id="5uz-gv-Dsd"/>
+                                    <constraint firstItem="zlg-VI-Eff" firstAttribute="top" secondItem="Q9l-xF-Mn8" secondAttribute="top" id="Fro-Hl-Kjd"/>
+                                    <constraint firstAttribute="bottom" secondItem="zlg-VI-Eff" secondAttribute="bottom" id="YuM-Eg-cHV"/>
+                                    <constraint firstAttribute="trailing" secondItem="zlg-VI-Eff" secondAttribute="trailing" id="aMU-v3-oci"/>
+                                    <constraint firstItem="GsG-eD-V5F" firstAttribute="top" secondItem="Q9l-xF-Mn8" secondAttribute="top" constant="30" id="bWg-xM-224"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Q9l-xF-Mn8" firstAttribute="top" secondItem="QkF-H9-Vcy" secondAttribute="top" constant="8" id="CZk-Xn-Yrg"/>
+                            <constraint firstAttribute="trailing" secondItem="Q9l-xF-Mn8" secondAttribute="trailing" constant="10" id="IXz-UQ-IOB"/>
+                            <constraint firstAttribute="height" constant="250" id="V6t-Jb-7Ap"/>
+                            <constraint firstAttribute="bottom" secondItem="Q9l-xF-Mn8" secondAttribute="bottom" constant="8" id="c8K-iV-lAz"/>
+                            <constraint firstItem="Q9l-xF-Mn8" firstAttribute="leading" secondItem="QkF-H9-Vcy" secondAttribute="leading" constant="10" id="tEk-zM-nSu"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="QkF-H9-Vcy" secondAttribute="trailing" id="SJS-EB-MAA"/>
+                    <constraint firstItem="QkF-H9-Vcy" firstAttribute="top" secondItem="jef-GJ-axh" secondAttribute="top" id="hN5-8d-hZ9"/>
+                    <constraint firstItem="QkF-H9-Vcy" firstAttribute="leading" secondItem="jef-GJ-axh" secondAttribute="leading" id="oRo-wo-cxl"/>
+                    <constraint firstAttribute="bottom" secondItem="QkF-H9-Vcy" secondAttribute="bottom" id="upp-3A-q2N"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cardViewWorkout" destination="Q9l-xF-Mn8" id="5FA-Jx-n4P"/>
+                <outlet property="imageViewWorkout" destination="zlg-VI-Eff" id="u9x-eZ-PvX"/>
+                <outlet property="titleLabelWorkout" destination="GsG-eD-V5F" id="3uS-vg-8xr"/>
+            </connections>
+            <point key="canvasLocation" x="229.71014492753625" y="83.035714285714278"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="academia" width="1000" height="667"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

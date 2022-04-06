@@ -12,6 +12,10 @@
 		D316301927F900CF006ED4D4 /* ModelExercisesTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316301827F900CF006ED4D4 /* ModelExercisesTitleCell.swift */; };
 		D316301B27F90294006ED4D4 /* ModelExercisesTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316301A27F90294006ED4D4 /* ModelExercisesTitle.swift */; };
 		D316301D27FB9DBD006ED4D4 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = D316301C27FB9DBD006ED4D4 /* FirebaseFirestoreSwift-Beta */; };
+		D316301F27FC7681006ED4D4 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316301E27FC7681006ED4D4 /* RegisterController.swift */; };
+		D316302127FD08E4006ED4D4 /* ModelWorkoutPosterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D316302027FD08E3006ED4D4 /* ModelWorkoutPosterCell.xib */; };
+		D316302327FD08F9006ED4D4 /* ModelWorkoutPosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316302227FD08F9006ED4D4 /* ModelWorkoutPosterCell.swift */; };
+		D316302527FD0C45006ED4D4 /* ModelWorkoutPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316302427FD0C45006ED4D4 /* ModelWorkoutPoster.swift */; };
 		D3777EA427EBD9CA0027BC34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EA327EBD9CA0027BC34 /* AppDelegate.swift */; };
 		D3777EA627EBD9CA0027BC34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EA527EBD9CA0027BC34 /* SceneDelegate.swift */; };
 		D3777EAB27EBD9CA0027BC34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3777EA927EBD9CA0027BC34 /* Main.storyboard */; };
@@ -40,6 +44,10 @@
 		D316301627F90077006ED4D4 /* ModelExercisesTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModelExercisesTitleCell.xib; sourceTree = "<group>"; };
 		D316301827F900CF006ED4D4 /* ModelExercisesTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelExercisesTitleCell.swift; sourceTree = "<group>"; };
 		D316301A27F90294006ED4D4 /* ModelExercisesTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelExercisesTitle.swift; sourceTree = "<group>"; };
+		D316301E27FC7681006ED4D4 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		D316302027FD08E3006ED4D4 /* ModelWorkoutPosterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModelWorkoutPosterCell.xib; sourceTree = "<group>"; };
+		D316302227FD08F9006ED4D4 /* ModelWorkoutPosterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWorkoutPosterCell.swift; sourceTree = "<group>"; };
+		D316302427FD0C45006ED4D4 /* ModelWorkoutPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWorkoutPoster.swift; sourceTree = "<group>"; };
 		D3777EA027EBD9CA0027BC34 /* DesafioLeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioLeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3777EA327EBD9CA0027BC34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3777EA527EBD9CA0027BC34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				D3777EC327EDEF270027BC34 /* AccountController.swift */,
+				D316301E27FC7681006ED4D4 /* RegisterController.swift */,
 				D3777EC527F481400027BC34 /* ExercisesController.swift */,
 				D3777EC727F5E8CF0027BC34 /* WorkoutController.swift */,
 				D3777EC027ECA2D30027BC34 /* HomeController.swift */,
@@ -140,6 +149,9 @@
 				D3795B0227F862A300B70C74 /* ModelExercisesPosterCell.xib */,
 				D3795B0027F85E3E00B70C74 /* ModelExercisesPosterCell.swift */,
 				D3777ED127F735D70027BC34 /* ModelExercisesPoster.swift */,
+				D316302027FD08E3006ED4D4 /* ModelWorkoutPosterCell.xib */,
+				D316302227FD08F9006ED4D4 /* ModelWorkoutPosterCell.swift */,
+				D316302427FD0C45006ED4D4 /* ModelWorkoutPoster.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,6 +264,7 @@
 				D3777EB827EBDBAB0027BC34 /* GoogleService-Info.plist in Resources */,
 				D3777EAD27EBD9CC0027BC34 /* Assets.xcassets in Resources */,
 				D3795B0327F862A300B70C74 /* ModelExercisesPosterCell.xib in Resources */,
+				D316302127FD08E4006ED4D4 /* ModelWorkoutPosterCell.xib in Resources */,
 				D3777EAB27EBD9CA0027BC34 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,8 +328,11 @@
 				D316301B27F90294006ED4D4 /* ModelExercisesTitle.swift in Sources */,
 				D3777EC827F5E8CF0027BC34 /* WorkoutController.swift in Sources */,
 				D3777EC427EDEF270027BC34 /* AccountController.swift in Sources */,
+				D316301F27FC7681006ED4D4 /* RegisterController.swift in Sources */,
 				D3795B0127F85E3E00B70C74 /* ModelExercisesPosterCell.swift in Sources */,
+				D316302527FD0C45006ED4D4 /* ModelWorkoutPoster.swift in Sources */,
 				D3777EC627F481400027BC34 /* ExercisesController.swift in Sources */,
+				D316302327FD08F9006ED4D4 /* ModelWorkoutPosterCell.swift in Sources */,
 				D3777ED527F736F40027BC34 /* Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

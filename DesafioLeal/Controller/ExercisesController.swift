@@ -101,6 +101,9 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
                 // A `City` value was successfully initialized from the DocumentSnapshot.
                 print("Categories: \(exeCategories)")
                 
+                //let list = exeCategories
+                //for listExercises in exeCategories {
+                
                 let imageExercisesPoster = exeCategories.urlImage
                 let exercisesTitle = exeCategories.name
                 let observation = exeCategories.observation
@@ -111,7 +114,7 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
                 self.dataSource.data.append(cardExercisesPoster)
                 
                 self.tableViewExercises.reloadData()
-                
+                //}
             case .failure(let error):
                 // A `City` value could not be initialized from the DocumentSnapshot.
                 print("Error decoding city: \(error)")

@@ -13,6 +13,11 @@ import FirebaseFirestoreSwift
 
 class AccountController: UIViewController {
     
+    @IBOutlet weak var buttonSingIN: UIButton!
+    @IBOutlet weak var buttonRegister: UIButton!
+    
+    
+    
     var db = Firestore.firestore()
     
     var auth = Auth.auth()
@@ -26,21 +31,21 @@ class AccountController: UIViewController {
         //getMultiple()
         //setDocument()
         //setUser()
-        getCollection()
+        //getCollection()
         //listenForUsers()
         //listenForUsersFoldersIds()
         //setSubcollection()
         //setExercisesSubcollection()
         //setCategoriesSubcollection()
         //setNewCategoriesSubcollection()
-        //listCollection()
+        listCollection()
         //getUpdateCollection()
         //getUpdate2()
         //userCreate()
         //setDocument2()
         //newDocument()
         //retrieveObjetct()
-        retrieveObjetctCategories()
+        //retrieveObjetctCategories()
         //getMapDocument()
         
     }
@@ -265,12 +270,17 @@ class AccountController: UIViewController {
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
-                    
-                    let test = document.documentID
+                    let test = document.data()
+                    //let test = document.documentID
                     print (" test id exercises... \(test)")
                     
-            
-                    
+                    for listExercises in test {
+                        
+                       var resExercises = test.count
+                        print ("list exercises... \(test.keys)")
+                    }
+                    print ("list exercises... \(test.count)")
+                    print ("list exercises... \(test.description)")
                 }
             }
         }
