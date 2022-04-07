@@ -270,17 +270,30 @@ class AccountController: UIViewController {
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
-                    let test = document.data()
-                    //let test = document.documentID
-                    print (" test id exercises... \(test)")
+                    //let test = document.data(as: exercisesCategories.self)
                     
-                    for listExercises in test {
+                    var x : exercisesCategories? = nil
+                    
+                    do {
                         
-                       var resExercises = test.count
-                        print ("list exercises... \(test.keys)")
+                        x = try document.data(as: exercisesCategories.self)
+                    }catch {
+                        
+                        print("error listCollection \(error)")
                     }
-                    print ("list exercises... \(test.count)")
-                    print ("list exercises... \(test.description)")
+            
+//                    //let test = document.documentID
+//                    print (" test id exercises... \(test)")
+//
+//                    for listExercises in test {
+//
+//                       var resExercises = test.count
+//                        print ("list exercises... \(test.keys)")
+//                    }
+//                    print ("list exercises... \(test.count)")
+//                    print ("list exercises... \(test.description)")
+                    
+                    print ("Test list exercises.. \(x?.name)")
                 }
             }
         }
@@ -578,3 +591,5 @@ class AccountController: UIViewController {
     // [END codable_struct]
     
 }// [END class AccountController]
+
+

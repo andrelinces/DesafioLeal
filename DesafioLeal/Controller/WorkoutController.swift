@@ -10,7 +10,11 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWorkoutPosterCellCallBack {
+class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWorkoutPosterCellCallBack, ModelWorkoutCellCallBack {
+    func actionClickCardView(indexPath: IndexPath) {
+        print("clicou no card\(indexPath)")
+    }
+    
     
     @IBOutlet weak var tableViewWorkout: UITableView!
     
@@ -33,6 +37,8 @@ class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWo
     //Variables inicialization
     var imagePosterWorkout : String = ""
     var titleWorkout : String = ""
+    var imageWorkout : String = ""
+    var myWorkout : String = ""
     
     
     func initiate(imagePosterWorkout : String, exercisesTitle : String, observation : String){
@@ -48,7 +54,12 @@ class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWo
         
         let cardWorkoutPoster = ModelWorkoutPoster(delegate: self, navigationController: self.navigationController, imagePosterWorkout: imagePosterWorkout, titleWorkout: "Test Workout" )
         
+        let cardWorkout = ModelWorkout(delegate: self, imageWorkout: imageWorkout, myWorkout: "My Workout" )
+        
+        
         dataSource.data.append(cardWorkoutPoster)
+        
+        dataSource.data.append(cardWorkout)
         
         dataSource.initializeTableView(tableView: tableViewWorkout)
         

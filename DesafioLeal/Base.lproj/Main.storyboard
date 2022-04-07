@@ -111,11 +111,28 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableViewWorkout" destination="pjA-V6-rM4" id="MWm-0K-5xh"/>
+                        <segue destination="rvy-sV-x2g" kind="show" id="eM8-4H-Ocg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgd-hZ-vCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2297" y="395"/>
+            <point key="canvasLocation" x="2322" y="394"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qjD-8S-rY4">
+            <objects>
+                <viewController id="rvy-sV-x2g" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gi4-XI-V5c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ldy-7H-fud"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8rS-SK-lEK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KoB-tt-fHs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2322" y="1092"/>
         </scene>
         <!--Exercises-->
         <scene sceneID="7pI-zl-bCZ">

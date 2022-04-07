@@ -27,6 +27,7 @@ func initializeTableView(tableView: UITableView){
     tableView.register(UINib(nibName: "ModelExercisesTitleCell", bundle: Bundle.main), forCellReuseIdentifier: "ModelExercisesTitleCellIdentifier")
     tableView.register(UINib(nibName: "ModelExercisesPosterCell", bundle: Bundle.main), forCellReuseIdentifier: "ModelExercisesPosterCellIdentifier")
     tableView.register(UINib(nibName: "ModelWorkoutPosterCell", bundle: Bundle.main), forCellReuseIdentifier: "ModelWorkoutPosterCellIdentifier")
+    tableView.register(UINib(nibName: "ModelWorkoutCell", bundle: Bundle.main), forCellReuseIdentifier: "ModelWorkoutCellIdentifier")
     
 }
 }
@@ -49,7 +50,12 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     }else if let modeWorkoutTitle = data[indexPath.row] as? ModelWorkoutPoster{
 
         return modeWorkoutTitle.cellForTableView(tableView: tableView, atIndexpath: indexPath)
-//
+     
+    }else if let ModelWorkoutCell = data[indexPath.row] as? ModelWorkout{
+
+        return ModelWorkoutCell.cellForTableView(tableView: tableView, atIndexpath: indexPath)
+        
+
     }else{
         
         

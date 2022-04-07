@@ -9,7 +9,7 @@ import UIKit
 
 protocol ModelExercisesPosterCallBack: class {
     
-    //func actionClickCardView ()
+    func actionClickCardView (indexPath: IndexPath)
     
 }
 class ModelExercisesPoster: tableViewCompatible {
@@ -50,8 +50,11 @@ class ModelExercisesPoster: tableViewCompatible {
             cell.contentView.backgroundColor = .orange
             
             
-            //MARK: Return button action on movie details screen, this method is used in main view..
-//            cell.buttonReturn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(actionReturn)))
+            //Adding clicks in card from tableview
+            let gestureClickCard = myTapCustom(target: self, action: #selector(actionClickCardView))
+            gestureClickCard.indexPath = indexpath
+            
+            cell.cardViewPoster.addGestureRecognizer(gestureClickCard)
             
             
             return cell
@@ -69,15 +72,15 @@ class ModelExercisesPoster: tableViewCompatible {
 //        delegate?.actionReturn()
 //    }
     
-//    @objc func actionClickCardView (sender: myTapCustom) {
-//        delegate?.actionClickCardView(indexPath: sender.indexPath!)
-//    }
-//    
-//    class myTapCustom: UITapGestureRecognizer {
-//        
-//        var indexPath: IndexPath?
-//        
-//    }
+    @objc func actionClickCardView (sender: myTapCustom) {
+        delegate?.actionClickCardView(indexPath: sender.indexPath!)
+    }
+
+    class myTapCustom: UITapGestureRecognizer {
+
+        var indexPath: IndexPath?
+
+    }
     
     }
 

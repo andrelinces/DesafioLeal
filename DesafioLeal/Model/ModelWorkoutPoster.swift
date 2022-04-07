@@ -37,8 +37,8 @@ func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) 
     if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexpath) as? ModelWorkoutPosterCell {
     
         
-        cell.setupView()
-        cell.setupDesign()
+        //cell.setupView()
+        //cell.setupDesign()
         //cell.setupValues(imagePosterWorkout: imagePosterWorkout)
         cell.setupImage(imagePosterWorkout: imagePosterWorkout, titleWorkout: titleWorkout)
         

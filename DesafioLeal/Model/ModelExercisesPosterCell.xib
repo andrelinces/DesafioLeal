@@ -78,7 +78,7 @@
                 <outlet property="labelObservation" destination="piJ-DY-Di3" id="FDi-Ff-ESY"/>
                 <outlet property="labelTitle" destination="4ZI-B3-PIy" id="DZY-gp-G35"/>
             </connections>
-            <point key="canvasLocation" x="1189.8550724637682" y="-124.88839285714285"/>
+            <point key="canvasLocation" x="1167" y="-128"/>
         </tableViewCell>
     </objects>
     <resources>
