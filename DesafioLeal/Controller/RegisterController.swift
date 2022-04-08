@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
+
 class RegisterController: UIViewController {
 //    internal init(nameUserField: UITextField? = nil, emailUserField: UITextField? = nil, passawordUserField: UITextField? = nil) {
 //        self.nameUserField = nameUserField

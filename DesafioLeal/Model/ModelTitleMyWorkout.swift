@@ -1,50 +1,53 @@
 //
-//  ModelWorkout.swift
+//  ModelTitleMyWorkout.swift
 //  DesafioLeal
 //
-//  Created by Andre Linces on 06/04/22.
+//  Created by Andre Linces on 07/04/22.
 //
 
 import UIKit
 
-protocol ModelWorkoutCellCallBack: class {
+protocol ModelTitleMyWorkoutCellCallBack: class {
     
     func actionClickCardView (indexPath: IndexPath)
-    
 }
-class ModelWorkout: tableViewCompatible{
-    internal init(delegate: ModelWorkoutPosterCellCallBack? = nil, imageWorkout: String, myWorkout: String) {
+
+class ModelTitleMyWorkout: tableViewCompatible {
+    internal init(delegate: ModelTitleMyWorkoutCellCallBack? = nil, navigationController : UINavigationController?, imageWorkout: String, titleMyWorkout: String) {
+        
         self.delegate = delegate
         self.imageWorkout = imageWorkout
-        self.myWorkout = myWorkout
+        self.titleMyWorkout = titleMyWorkout
     }
-    
-    
-    
-    open weak var delegate: ModelWorkoutPosterCellCallBack?
     
     var reuseIdentifier: String {
         
-        "ModelWorkoutCellIdentifier"
+        "ModelTitleMyWorkoutCellIdentifier"
+        
     }
-    //Variables initialization
+   
+    open weak var delegate : ModelTitleMyWorkoutCellCallBack?
+
+
     var imageWorkout: String
-    var myWorkout: String
+    var titleMyWorkout: String
+    
     
     func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexpath) as? ModelWorkoutCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexpath) as? ModelTitleMyWorkoutCell {
         
             
-            cell.setupView()
-            cell.setupDesign()
-            //cell.setupValues(imagePosterWorkout: imagePosterWorkout)
-            cell.setupImage(imageWorkout: imageWorkout, myWorkout: myWorkout)
+            //cell.setupView()
+            //cell.setupDesign()
+            cell.setupValues(titleMyWorkout: titleMyWorkout)
+            //cell.setupImage(imageWorkout: imageWorkout, myWorkout: myWorkout)
             
             //Adding clicks in card from tableview
             let gestureClickCard = myTapCustom(target: self, action: #selector(actionClickCardView))
             gestureClickCard.indexPath = indexpath
             
-            cell.cardViewWorkout.addGestureRecognizer(gestureClickCard)
+            cell.cardViewTitle.addGestureRecognizer(gestureClickCard)
             
             return cell
             
@@ -56,6 +59,7 @@ class ModelWorkout: tableViewCompatible{
         }
     }
     
+    
     @objc func actionClickCardView (sender: myTapCustom) {
         delegate?.actionClickCardView(indexPath: sender.indexPath!)
     }
@@ -65,5 +69,8 @@ class ModelWorkout: tableViewCompatible{
         var indexPath: IndexPath?
 
     }
-     
+    
+    
 }
+
+

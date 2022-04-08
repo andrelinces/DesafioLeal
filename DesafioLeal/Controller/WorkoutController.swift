@@ -12,9 +12,15 @@ import FirebaseAuth
 
 class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWorkoutPosterCellCallBack, ModelWorkoutCellCallBack {
     func actionClickCardView(indexPath: IndexPath) {
-        print("clicou no card\(indexPath)")
+        print("click in card!!\(indexPath)")
+        
+        if indexPath.row == 1 {
+            
+            performSegue(withIdentifier: "segueMyWorkout" , sender: nil)
+        }
+            
     }
-    
+        
     
     @IBOutlet weak var tableViewWorkout: UITableView!
     

@@ -9,7 +9,7 @@ import UIKit
 
 protocol ModelWorkoutPosterCellCallBack: class {
     
-    
+    func actionClickCardView (indexPath: IndexPath)
     
 }
 
