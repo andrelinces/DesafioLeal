@@ -9,29 +9,47 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ModelExercisesTitleCellIdentifier" rowHeight="100" id="P6L-FJ-5zQ" customClass="ModelExercisesTitleCell" customModule="DesafioLeal" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ModelExercisesTitleCellIdentifier" rowHeight="310" id="P6L-FJ-5zQ" customClass="ModelExercisesTitleCell" customModule="DesafioLeal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="431" height="310"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P6L-FJ-5zQ" id="YNI-Zd-LQ9">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P6L-FJ-5zQ" id="YNI-Zd-LQ9">
+                <rect key="frame" x="0.0" y="0.0" width="431" height="310"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0B-jb-B4e">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="431" height="300"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chose exercises for to workout." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZv-Ae-VPO">
+                                <rect key="frame" x="30" y="253.5" width="371" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="suportehalteres" translatesAutoresizingMaskIntoConstraints="NO" id="fwD-eN-799">
+                                <rect key="frame" x="0.0" y="78.5" width="431" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="HXW-pf-hZ2"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercises" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvk-Ek-Dmw">
-                                <rect key="frame" x="120" y="45" width="174" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="115" y="32" width="201" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="separatorColor"/>
                         <constraints>
-                            <constraint firstItem="Gvk-Ek-Dmw" firstAttribute="leading" secondItem="j0B-jb-B4e" secondAttribute="leading" constant="120" id="3VK-7R-h8Q"/>
-                            <constraint firstItem="Gvk-Ek-Dmw" firstAttribute="top" secondItem="j0B-jb-B4e" secondAttribute="top" constant="45" id="Cun-Z3-kmv"/>
-                            <constraint firstAttribute="height" constant="100" id="FzX-jb-6NH"/>
-                            <constraint firstAttribute="trailing" secondItem="Gvk-Ek-Dmw" secondAttribute="trailing" constant="120" id="H5p-8P-nQw"/>
+                            <constraint firstItem="Gvk-Ek-Dmw" firstAttribute="top" secondItem="j0B-jb-B4e" secondAttribute="top" constant="32" id="6mO-Lj-seK"/>
+                            <constraint firstAttribute="trailing" secondItem="XZv-Ae-VPO" secondAttribute="trailing" constant="30" id="BdC-5F-IAX"/>
+                            <constraint firstAttribute="height" constant="300" id="FzX-jb-6NH"/>
+                            <constraint firstAttribute="trailing" secondItem="fwD-eN-799" secondAttribute="trailing" id="Ou0-Vr-MIz"/>
+                            <constraint firstAttribute="trailing" secondItem="Gvk-Ek-Dmw" secondAttribute="trailing" constant="115" id="Ubn-fq-dBU"/>
+                            <constraint firstItem="fwD-eN-799" firstAttribute="leading" secondItem="j0B-jb-B4e" secondAttribute="leading" id="X6g-rQ-NWF"/>
+                            <constraint firstItem="Gvk-Ek-Dmw" firstAttribute="leading" secondItem="j0B-jb-B4e" secondAttribute="leading" constant="115" id="bNR-2w-o56"/>
+                            <constraint firstItem="XZv-Ae-VPO" firstAttribute="top" secondItem="fwD-eN-799" secondAttribute="bottom" constant="15" id="g4U-nH-kTI"/>
+                            <constraint firstItem="fwD-eN-799" firstAttribute="top" secondItem="Gvk-Ek-Dmw" secondAttribute="bottom" constant="19" id="v4e-gM-wyI"/>
+                            <constraint firstItem="XZv-Ae-VPO" firstAttribute="leading" secondItem="j0B-jb-B4e" secondAttribute="leading" constant="30" id="wi0-OQ-VTr"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -46,12 +64,13 @@
                 <outlet property="cardViewTitle" destination="j0B-jb-B4e" id="AY3-mk-Enc"/>
                 <outlet property="labelExercisesTitle" destination="Gvk-Ek-Dmw" id="Y9A-Oz-LGy"/>
             </connections>
-            <point key="canvasLocation" x="298.55072463768118" y="34.151785714285715"/>
+            <point key="canvasLocation" x="309.4202898550725" y="103.79464285714285"/>
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="suportehalteres" width="1920" height="1280"/>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

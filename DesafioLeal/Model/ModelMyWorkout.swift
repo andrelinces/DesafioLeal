@@ -9,12 +9,12 @@ import UIKit
 
 protocol ModelMyWorkoutCellCallBack: class {
     
-    
+    func actionClickCardView (indexPath: IndexPath)
 }
 
 class ModelMyWorkout: tableViewCompatible {
-    internal init(delegate: ModelMyWorkoutCellCallBack, navigationController:  UINavigationController?, nameTitleMyWorkout: String, nameMyWorkout: String, descriptionMyWorkout: String) {
-        self.nameTitleMyWorkout = nameTitleMyWorkout
+    internal init(delegate: ModelMyWorkoutCellCallBack, navigationController:  UINavigationController?, nameMyWorkout: String, descriptionMyWorkout: String) {
+        
         self.nameMyWorkout = nameMyWorkout
         self.descriptionMyWorkout = descriptionMyWorkout
     }
@@ -27,7 +27,8 @@ class ModelMyWorkout: tableViewCompatible {
     }
     open weak var delegate : ModelMyWorkoutCellCallBack?
     
-    var nameTitleMyWorkout :  String = " "
+//    var nameTitleMyWorkout :  String = " "
+//    var nameMyWorkoutTitle: String = " "
     var nameMyWorkout: String = " "
     var descriptionMyWorkout: String = " "
     var navigationController : UINavigationController?
@@ -40,14 +41,14 @@ class ModelMyWorkout: tableViewCompatible {
             
             cell.setupView()
             cell.setupDesign()
-            cell.setupValues(nameTitleMyWorkout: "Name your Workout", nameWorkout: nameMyWorkout, descriptionMyWorkout: descriptionMyWorkout)
+            cell.setupValues(nameMyWorkout: nameMyWorkout, descriptionMyWorkout: descriptionMyWorkout)
             //cell.setupImage(imageWorkout: imageWorkout, myWorkout: myWorkout)
             
-            //Adding clicks in card from tableview
-//            let gestureClickCard = myTapCustom(target: self, action: #selector(actionClickCardView))
-//            gestureClickCard.indexPath = indexpath
-//
-//            cell.cardViewTitle.addGestureRecognizer(gestureClickCard)
+            //[Adding clicks in card from tableview]
+            let gestureClickCard = myTapCustom(target: self, action: #selector(actionClickCardView))
+            gestureClickCard.indexPath = indexpath
+
+            cell.cardViewWorkout.addGestureRecognizer(gestureClickCard)
             
             return cell
             
@@ -60,6 +61,15 @@ class ModelMyWorkout: tableViewCompatible {
         
     }
     
+    @objc func actionClickCardView (sender: myTapCustom) {
+        delegate?.actionClickCardView(indexPath: sender.indexPath!)
+    }
+
+    class myTapCustom: UITapGestureRecognizer {
+
+        var indexPath: IndexPath?
+
+    }
     
     
 }

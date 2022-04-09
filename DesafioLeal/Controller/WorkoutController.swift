@@ -45,10 +45,12 @@ class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWo
     var titleWorkout : String = ""
     var imageWorkout : String = ""
     var myWorkout : String = ""
+    var descriptionWorkout : String = " "
     
-    
-    func initiate(imagePosterWorkout : String, exercisesTitle : String, observation : String){
+    func initiate(imagePosterWorkout : String, titleWorkout : String,  descriptionWorkout: String){
         self.imagePosterWorkout = imagePosterWorkout
+        self.titleWorkout = titleWorkout
+        self.descriptionWorkout = descriptionWorkout
         
         
         //self.urlDetails = urlDetails
@@ -58,7 +60,7 @@ class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWo
         
         //dataSource.data = [Any]()
         
-        let cardWorkoutPoster = ModelWorkoutPoster(delegate: self, navigationController: self.navigationController, imagePosterWorkout: imagePosterWorkout, titleWorkout: "Test Workout" )
+        let cardWorkoutPoster = ModelWorkoutPoster(delegate: self, navigationController: self.navigationController, imagePosterWorkout: imagePosterWorkout, titleWorkout: "titleWorkout", descriptionWorkout: descriptionWorkout )
         
         let cardWorkout = ModelWorkout(delegate: self, imageWorkout: imageWorkout, myWorkout: "My Workout" )
         

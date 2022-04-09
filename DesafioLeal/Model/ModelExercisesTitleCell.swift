@@ -12,6 +12,7 @@ class ModelExercisesTitleCell: UITableViewCell {
     @IBOutlet weak var labelExercisesTitle: UILabel!
     @IBOutlet weak var cardViewTitle: UIView!
     
+    
     func setupDesign () {
 
         cardViewTitle.changeDesigneView(cornerRadius: 28, shadow: CGSize(width: 0, height: 2) , shadowOpacity: 0.3)
@@ -24,7 +25,7 @@ class ModelExercisesTitleCell: UITableViewCell {
         
         labelExercisesTitle.text = exercisesTitle
         labelExercisesTitle.font = .boldSystemFont(ofSize: 30)
-        labelExercisesTitle.textColor = .blue
+        labelExercisesTitle.textColor = .black
         
         
         //cardViewTitle.backgroundColor = .lightGray

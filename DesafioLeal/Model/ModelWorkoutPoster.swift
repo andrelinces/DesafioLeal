@@ -14,10 +14,11 @@ protocol ModelWorkoutPosterCellCallBack: class {
 }
 
 class ModelWorkoutPoster: tableViewCompatible {
-    internal init (delegate: ModelWorkoutPosterCellCallBack?, navigationController : UINavigationController?, imagePosterWorkout: String, titleWorkout: String){
+    internal init (delegate: ModelWorkoutPosterCellCallBack?, navigationController : UINavigationController?, imagePosterWorkout: String, titleWorkout: String, descriptionWorkout: String){
             self.delegate = delegate
             self.imagePosterWorkout = imagePosterWorkout
             self.titleWorkout = titleWorkout
+            self.descriptionWorkout = descriptionWorkout
         
 }
 
@@ -29,7 +30,8 @@ var reuseIdentifier: String {
 }
 
 var imagePosterWorkout: String
-var titleWorkout: String
+var titleWorkout: String 
+var descriptionWorkout : String
 
 
 func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) -> UITableViewCell {
@@ -39,7 +41,7 @@ func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) 
         
         //cell.setupView()
         //cell.setupDesign()
-        //cell.setupValues(imagePosterWorkout: imagePosterWorkout)
+        cell.setupValues( descriptionWorkout: descriptionWorkout)
         cell.setupImage(imagePosterWorkout: imagePosterWorkout, titleWorkout: titleWorkout)
         
         return cell

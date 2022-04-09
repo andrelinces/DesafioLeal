@@ -127,27 +127,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3Jh-ca-6ci">
-                                <rect key="frame" x="0.0" y="-88" width="414" height="984"/>
+                                <rect key="frame" x="0.0" y="-88" width="414" height="784"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCh-Zx-ZuX">
+                                <rect key="frame" x="170" y="738" width="90" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="obb-v8-WJj"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                <connections>
+                                    <action selector="buttonCancel:" destination="rvy-sV-x2g" eventType="touchUpInside" id="7iV-OQ-2UE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFY-pv-NHE">
+                                <rect key="frame" x="292" y="738" width="90" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="YnT-Ji-WWd"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Confirm"/>
+                                <connections>
+                                    <action selector="buttonConfirm:" destination="rvy-sV-x2g" eventType="touchUpInside" id="hrz-jl-wWM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ldy-7H-fud"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ldy-7H-fud" firstAttribute="trailing" secondItem="3Jh-ca-6ci" secondAttribute="trailing" id="1j0-rL-r8h"/>
+                            <constraint firstItem="RFY-pv-NHE" firstAttribute="top" secondItem="3Jh-ca-6ci" secondAttribute="bottom" constant="42" id="1vQ-Lk-6Cn"/>
                             <constraint firstItem="3Jh-ca-6ci" firstAttribute="leading" secondItem="Ldy-7H-fud" secondAttribute="leading" id="Ul3-g1-v1r"/>
+                            <constraint firstItem="jCh-Zx-ZuX" firstAttribute="leading" secondItem="Ldy-7H-fud" secondAttribute="leading" constant="170" id="a4x-T4-Xa2"/>
                             <constraint firstItem="3Jh-ca-6ci" firstAttribute="top" secondItem="Gi4-XI-V5c" secondAttribute="top" constant="-88" id="g12-4j-FKs"/>
-                            <constraint firstAttribute="bottom" secondItem="3Jh-ca-6ci" secondAttribute="bottom" id="oQZ-F4-84c"/>
+                            <constraint firstItem="Ldy-7H-fud" firstAttribute="trailing" secondItem="RFY-pv-NHE" secondAttribute="trailing" constant="32" id="mBr-6c-rOK"/>
+                            <constraint firstItem="jCh-Zx-ZuX" firstAttribute="top" secondItem="3Jh-ca-6ci" secondAttribute="bottom" constant="42" id="mTl-0F-IIq"/>
+                            <constraint firstAttribute="bottom" secondItem="3Jh-ca-6ci" secondAttribute="bottom" constant="200" id="oQZ-F4-84c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8rS-SK-lEK"/>
                     <connections>
                         <outlet property="tableViewWorkout" destination="3Jh-ca-6ci" id="Hj0-RB-lU2"/>
+                        <segue destination="QHO-0f-aSD" kind="show" identifier="segueWorkoutExercises" id="MWH-4P-3EL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KoB-tt-fHs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2322" y="1092"/>
+            <point key="canvasLocation" x="2321.739130434783" y="1091.5178571428571"/>
         </scene>
         <!--Exercises-->
         <scene sceneID="7pI-zl-bCZ">
@@ -158,20 +187,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="W4O-No-aVW">
-                                <rect key="frame" x="0.0" y="-88" width="414" height="984"/>
+                                <rect key="frame" x="0.0" y="-88" width="414" height="864"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOO-T0-NmE">
+                                <rect key="frame" x="0.0" y="776" width="414" height="31"/>
+                                <color key="backgroundColor" systemColor="systemFillColor"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pvE-zF-yng"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="W4O-No-aVW" secondAttribute="bottom" id="CgN-cl-25T"/>
+                            <constraint firstAttribute="bottom" secondItem="W4O-No-aVW" secondAttribute="bottom" constant="120" id="CgN-cl-25T"/>
+                            <constraint firstItem="iOO-T0-NmE" firstAttribute="leading" secondItem="pvE-zF-yng" secondAttribute="leading" id="L8B-rr-mHQ"/>
                             <constraint firstItem="W4O-No-aVW" firstAttribute="leading" secondItem="pvE-zF-yng" secondAttribute="leading" id="MHi-Du-agd"/>
+                            <constraint firstItem="pvE-zF-yng" firstAttribute="trailing" secondItem="iOO-T0-NmE" secondAttribute="trailing" id="NoD-2f-oOh"/>
+                            <constraint firstItem="iOO-T0-NmE" firstAttribute="top" secondItem="W4O-No-aVW" secondAttribute="bottom" id="UIf-ba-gUD"/>
                             <constraint firstItem="pvE-zF-yng" firstAttribute="trailing" secondItem="W4O-No-aVW" secondAttribute="trailing" id="aCp-c4-uBf"/>
                             <constraint firstItem="W4O-No-aVW" firstAttribute="top" secondItem="0G4-Yr-Fre" secondAttribute="top" constant="-88" id="jqe-ff-8yI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Exercises" image="control" catalog="system" id="x8E-Iy-MQe"/>
+                    <navigationItem key="navigationItem" id="nHr-ip-dBt"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableViewExercises" destination="W4O-No-aVW" id="tHB-d4-DtA"/>
@@ -180,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wq4-eM-RCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2988" y="-1328"/>
+            <point key="canvasLocation" x="3436" y="1092"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="QIS-NX-CnW">
@@ -196,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvq-nT-y9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3912" y="-1565"/>
+            <point key="canvasLocation" x="4545" y="1092"/>
         </scene>
         <!--Item-->
         <scene sceneID="B1S-pE-OOZ">
@@ -496,6 +536,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="MWH-4P-3EL"/>
         <segue reference="3ii-ke-q2L"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -506,6 +547,9 @@
         <image name="musculacaoPoster" width="275" height="183"/>
         <image name="paperplane.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

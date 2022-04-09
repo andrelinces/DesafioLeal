@@ -13,6 +13,7 @@ class ModelWorkoutPosterCell: UITableViewCell {
     @IBOutlet weak var cardViewWorkout: UIView!
     @IBOutlet weak var imageViewWorkout: UIImageView!
     @IBOutlet weak var titleLabelWorkout: UILabel!
+    @IBOutlet weak var descriptionLabelWorkout: UILabel!
     
     func setupDesign () {
 
@@ -26,11 +27,13 @@ class ModelWorkoutPosterCell: UITableViewCell {
         
     }
     
-    func setupValues (exercisesTitle: String) {
+    func setupValues (descriptionWorkout: String) {
         
 //        labelExercisesTitle.text = exercisesTitle
 //        labelExercisesTitle.font = .boldSystemFont(ofSize: 30)
 //        labelExercisesTitle.textColor = .blue
+        
+        descriptionLabelWorkout.text = "Choose a workout or build your own!"
         
         
         //cardViewTitle.backgroundColor = .lightGray
@@ -39,10 +42,11 @@ class ModelWorkoutPosterCell: UITableViewCell {
     func setupImage (imagePosterWorkout: String, titleWorkout: String) {
         
         imageViewWorkout.downloaded(from: imagePosterWorkout)
-        imageViewWorkout.contentMode = .scaleAspectFill
-        imageViewWorkout.clipsToBounds = (2 != 0)
-        imageViewWorkout.borderDesigneView(cornerRadius: 48)
-        imageViewWorkout.image = UIImage(named: "academia")
+//        imageViewWorkout.contentMode = .scaleAspectFill
+//        imageViewWorkout.clipsToBounds = (2 != 0)
+//        imageViewWorkout.borderDesigneView(cornerRadius: 8)
+        
+        //imageViewWorkout.image = UIImage(named: "academia")
         titleLabelWorkout.text = titleWorkout
         
     }

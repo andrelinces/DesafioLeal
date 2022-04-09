@@ -31,7 +31,7 @@ class AccountController: UIViewController {
         //getMultiple()
         //setDocument()
         //setUser()
-        //getCollection()
+        getCollection()
         //listenForUsers()
         //listenForUsersFoldersIds()
         //setSubcollection()

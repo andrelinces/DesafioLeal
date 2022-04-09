@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 protocol ModelExercisesPosterCallBack: class {
     
     func actionClickCardView (indexPath: IndexPath)
-    
+   
 }
+
+var db = Firestore.firestore()
+
 class ModelExercisesPoster: tableViewCompatible {
     internal init (delegate: ModelExercisesPosterCallBack?, navigationController : UINavigationController?, imageExercisesPoster: String, exercisesTitle: String, observation: String){
         self.delegate = delegate
@@ -34,9 +38,7 @@ class ModelExercisesPoster: tableViewCompatible {
     var observation: String
     var navigationController : UINavigationController?
     
-
-    //cell.img.sd_setImage(with: ref2)
-    
+   
     func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexpath) as? ModelExercisesPosterCell {
@@ -56,7 +58,9 @@ class ModelExercisesPoster: tableViewCompatible {
             
             cell.cardViewPoster.addGestureRecognizer(gestureClickCard)
             
+           // let listTest = db.collection("exercices").document("Categories").collection("Legs")
             
+           
             return cell
             
             
@@ -79,7 +83,7 @@ class ModelExercisesPoster: tableViewCompatible {
     class myTapCustom: UITapGestureRecognizer {
 
         var indexPath: IndexPath?
-
+        
     }
     
     }

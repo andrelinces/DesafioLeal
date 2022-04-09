@@ -13,19 +13,80 @@ import Kingfisher
 
 
 class ExercisesController: UIViewController, ModelExercisesPosterCallBack, ModelExercisesTitleCellCallBack {
-    func actionClickCardView(indexPath: IndexPath) {
-        print("clicou no card\(indexPath)")
-    }
+    var auth = Auth.auth().currentUser?.uid
     
+    var db = Firestore.firestore()
+    
+    func actionClickCardView(indexPath: IndexPath) {
+        print("clicou no card\(indexPath.row)")
+        
+//        if indexPath.row == 1 {
+//
+//            db.collection("exercicies").getDocuments() { (querySnapshot, err) in
+//                if let err = err {
+//                    print("Error getting documents: \(err)")
+//                } else {
+//                    repeat {
+//                        for save in querySnapshot!.documents {
+//
+//                        let sav =
+//                    print("save... \(save)")
+//                        }
+//                    }; while indexPath.row == 1
+//                }
+//        }
+//
+        
+        
+        
+       
+        //var refList = db.collection("Exercises").document("Categories").collection("legs")
+        db.collection("exercicies").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                
+                
+                
+                for document in querySnapshot!.documents {
+                    print("Print get Collection..\(document.documentID) => \(document.data())")
+                    let list = document.data()
+                    
+                    switch indexPath.row == 1 {
+                    
+                    case (let test):
+                     
+                        if test == true {
+                            
+                            print("check\(test) and \(document.documentID)")
+                            let save = document.documentID
+                            indexPath.row == 2
+                            print("checSave: \(save)")
+                        }
+                    case (let test2):
+                        
+                        print("check\(test2) and \(document.documentID)")
+                        let save = document.documentID
+                        
+                        break }
+                    
+                    
+                    
+                }
+                
+            }
+        }
+        
+    }
     
     func actionReturn() {
         print("Teste voltar : \(navigationController)")
         navigationController?.popViewController(animated: true)
     }
     
-    var auth = Auth.auth().currentUser?.uid
+    //var auth = Auth.auth().currentUser?.uid
     
-    var db = Firestore.firestore()
+    //var db = Firestore.firestore()
     
     let dataSource = DataSource()
     
@@ -33,6 +94,10 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        
         
         
         //print("test auth...\(auth)")
@@ -88,29 +153,71 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
     }
     
     
-//    func setuptableview2 () {
-//
-//        //var scheduleIDarray = [String : Any]() // <-- If this is made an array literal, everything works
-//
-//            func loadData() {
-//                db.collection("Exercises").getDocuments() { (querySnapshot, err) in
-//                    if let err = err {
-//                        print("Error getting documents: \(err)")
-//                    } else {
-//                        for document in querySnapshot!.documents {
-//
-//                            self.scheduleIDarray.data.append(document.documentID)
-//                        }
-//                    }
-//                    print(self.scheduleIDarray) // <-- This prints the content in db correctly
-//                }
-//            }
-//
-//
-//
-//
-//
-//    }
+    func saveExercises () {
+
+         // listTest <-- If this is made an array literal, everything works
+
+            
+        let listTest = db.collection("Exercises").document("Categories").collection("Legs")
+        
+        let idTest =  listTest.document().documentID
+    
+        let cardExercisesTitle = ModelExercisesTitle(delegate: self, navigationController: self.navigationController, exercisesTitle: "Exercises")
+    
+        self.dataSource.data.append(cardExercisesTitle)
+    
+        //checking IdlistExercises
+        listTest.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    //let test = document.data(as: exercisesCategories.self)
+                    
+                    var listExercises : exercisesCategories? = nil
+                    
+                    do {
+                        
+                        listExercises = try document.data(as: exercisesCategories.self)
+                        
+                        
+                    }catch {
+                        
+                        print("error listCollection \(err)")
+                    }
+            
+                    
+                    print ("Test list exercises.. \(listExercises?.name)")
+                    print ("test observation... \(listExercises?.observation)")
+                    let imageExercisesPoster = listExercises?.urlImage
+                    let exercisesTitle = listExercises?.name
+                    let observation = listExercises?.observation
+            //var scheduleIDarray = [String] ()
+                    let id = document.documentID
+                    
+                    
+                    
+                    
+                    let cardExercisesPoster = ModelExercisesPoster(delegate: self, navigationController: self.navigationController, imageExercisesPoster: imageExercisesPoster ?? "Url", exercisesTitle: exercisesTitle ?? "Url", observation: observation ?? "Url" )
+                    
+                    //let cardExercisesTitle = ModelExercisesTitle(delegate: self, navigationController: self.navigationController, exercisesTitle: "Exercises")
+
+                   // self.dataSource.data.append(cardExercisesTitle)
+
+                    self.dataSource.data.append(cardExercisesPoster)
+
+                    self.tableViewExercises.reloadData()
+                    
+                }
+            }
+        }
+
+
+
+
+
+    }
     
     
     //var scheduleIDarray = [String : Any] ()
@@ -161,7 +268,11 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
             
             //listTest.whereField("Legs", in: ["Legs"])
             let idTest =  listTest.document().documentID
-            
+        
+            let cardExercisesTitle = ModelExercisesTitle(delegate: self, navigationController: self.navigationController, exercisesTitle: "Exercises")
+        
+            self.dataSource.data.append(cardExercisesTitle)
+        
             //checking IdlistExercises
             listTest.getDocuments() { (querySnapshot, err) in
                 if let err = err {
@@ -193,7 +304,7 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
     //                    print ("list exercises... \(test.description)")
                         
                         print ("Test list exercises.. \(listExercises?.name)")
-                        
+                        print ("test observation... \(listExercises?.observation)")
                         let imageExercisesPoster = listExercises?.urlImage
                         let exercisesTitle = listExercises?.name
                         let observation = listExercises?.observation
@@ -202,9 +313,9 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
                         
                         let cardExercisesPoster = ModelExercisesPoster(delegate: self, navigationController: self.navigationController, imageExercisesPoster: imageExercisesPoster ?? "Url", exercisesTitle: exercisesTitle ?? "Url", observation: observation ?? "Url" )
                         
-                        let cardExercisesTitle = ModelExercisesTitle(delegate: self, navigationController: self.navigationController, exercisesTitle: "Exercises")
+                        //let cardExercisesTitle = ModelExercisesTitle(delegate: self, navigationController: self.navigationController, exercisesTitle: "Exercises")
 
-                        self.dataSource.data.append(cardExercisesTitle)
+                       // self.dataSource.data.append(cardExercisesTitle)
 
                         self.dataSource.data.append(cardExercisesPoster)
 
@@ -254,8 +365,6 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
         //var scheduleIDarray = [String] ()
                 
                 
-
-
                 let cardExercisesPoster = ModelExercisesPoster(delegate: self, navigationController: self.navigationController, imageExercisesPoster: imageExercisesPoster ?? "Url", exercisesTitle: exercisesTitle ?? "Url", observation: observation ?? "Url" )
 
                 self.dataSource.data.append(cardExercisesPoster)
@@ -280,17 +389,7 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
 
             dataSource.data.append(cardExercisesTitle)
 
-//        dataSource.data.append(cardExercisesPoster)
-//
-//        dataSource.data.append(cardExercisesPoster)
-//
-//        dataSource.data.append(cardExercisesPoster)
-//
-//        dataSource.data.append(cardExercisesPoster)
-//
-//        dataSource.data.append(cardExercisesPoster)
-//
-//        dataSource.data.append(cardExercisesPoster)
+
 
         dataSource.initializeTableView(tableView: tableViewExercises)
 

@@ -7,13 +7,15 @@
 
 import UIKit
 
+
 class ModelMyWorkoutCell: UITableViewCell{
     
     @IBOutlet weak var cardViewWorkout: UIView!
-    @IBOutlet weak var nameWorkoutTitleLabel: UILabel!
-   
-    @IBOutlet weak var descriptionWorkoutLabel: UILabel!
-    @IBOutlet weak var descriptionWorkoutField: UITextField!
+   // @IBOutlet weak var WorkoutTitleLabel: UILabel!
+    //@IBOutlet weak var nameMyWorkoutLabel: UILabel!
+    @IBOutlet weak var nameMyWorkoutField: UITextField!
+   // @IBOutlet weak var descriptionMyWorkoutLabel: UILabel!
+    @IBOutlet weak var descriptionMyWorkoutField: UITextField!
     
     
     
@@ -29,11 +31,14 @@ class ModelMyWorkoutCell: UITableViewCell{
         
     }
     
-    func setupValues (nameTitleMyWorkout: String, nameWorkout: String, descriptionMyWorkout: String ) {
+    func setupValues (nameMyWorkout: String, descriptionMyWorkout: String ) {
         
-        nameWorkoutTitleLabel.text = nameTitleMyWorkout
-        //nameWorkoutField.text = nameWorkout
-        descriptionWorkoutField.text = descriptionMyWorkout
+        //WorkoutTitleLabel.text = WorkoutTitle
+       // nameMyWorkoutLabel.text = labelMyWorkout
+        
+        nameMyWorkoutField.text = nameMyWorkout
+       // descriptionMyWorkoutLabel.text = labelDescriptionMyWorkout
+        descriptionMyWorkoutField.text = descriptionMyWorkout
         
 //        labelExercisesTitle.font = .boldSystemFont(ofSize: 30)
 //        labelExercisesTitle.textColor = .blue
@@ -41,6 +46,41 @@ class ModelMyWorkoutCell: UITableViewCell{
         
         //cardViewTitle.backgroundColor = .lightGray
     }
+    
+   
+    
+    
+//    func newWorkout () {
+//        
+//        let user = Auth.auth().currentUser
+//        
+//        if let user = user {
+//        
+//            let uid = user.uid
+//        //}
+//            
+//            let docId = db.collection("users").document(uid).collection(nameMyWorkout).document()
+//            let db = db.collection("users").document(uid)
+//                .collection(nameMyWorkout).document().setData([
+//                    
+//                    "idUser" : uid,
+//                    "idUser" : docId,
+//                    "Name Workout" : nameMyWorkout,
+//                    "Description" : descriptionMyWorkout,
+//                    "TimesTramp" : FieldValue.serverTimestamp(),
+//                    
+//                                ]) { err in
+//            if let err = err {
+//                print("Error writing document: \(err)")
+//            } else {
+//                print("Document successfully written!")
+//            }
+//            
+//            }
+//            
+//        print("test func newTraining...\(db)")
+//    }
+//    }
     
 }
 
