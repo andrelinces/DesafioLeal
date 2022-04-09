@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="582" height="204"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Workout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAw-S0-qfO">
-                                        <rect key="frame" x="45" y="145" width="106" height="24"/>
+                                        <rect key="frame" x="25" y="50" width="106" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -49,8 +49,8 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Dwi-pJ-65h" firstAttribute="top" secondItem="BM4-JN-e2c" secondAttribute="top" constant="20" id="7WN-sU-Vzj"/>
-                                    <constraint firstItem="RAw-S0-qfO" firstAttribute="leading" secondItem="BM4-JN-e2c" secondAttribute="leading" constant="45" id="Ak3-Ew-AfS"/>
-                                    <constraint firstItem="RAw-S0-qfO" firstAttribute="top" secondItem="BM4-JN-e2c" secondAttribute="top" constant="145" id="E9F-BF-jWn"/>
+                                    <constraint firstItem="RAw-S0-qfO" firstAttribute="leading" secondItem="BM4-JN-e2c" secondAttribute="leading" constant="25" id="Ak3-Ew-AfS"/>
+                                    <constraint firstItem="RAw-S0-qfO" firstAttribute="top" secondItem="BM4-JN-e2c" secondAttribute="top" constant="50" id="E9F-BF-jWn"/>
                                     <constraint firstAttribute="trailing" secondItem="TXY-gO-kYm" secondAttribute="trailing" id="Wvd-uK-M6o"/>
                                     <constraint firstItem="TXY-gO-kYm" firstAttribute="top" secondItem="BM4-JN-e2c" secondAttribute="top" id="aLW-sx-S8W"/>
                                     <constraint firstAttribute="trailing" secondItem="Dwi-pJ-65h" secondAttribute="trailing" constant="20" id="cHS-aA-wBW"/>
@@ -81,7 +81,7 @@
                 <outlet property="imageViewWorkout" destination="TXY-gO-kYm" id="VnJ-t8-hYJ"/>
                 <outlet property="labelWorkout" destination="RAw-S0-qfO" id="bGU-lM-mtZ"/>
             </connections>
-            <point key="canvasLocation" x="360.86956521739131" y="14.0625"/>
+            <point key="canvasLocation" x="238" y="-46"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -124,13 +124,13 @@ class RegisterController: UIViewController {
         }// [END func buttonRegister]
         
     
-    func singIn () {
-        
-        Auth.auth().signIn(withEmail: "joetest@gmail.com", password: "123456") { [weak self] authResult, error in
-            guard let strongSelf = self else { return }
-            
-        }
-    }
+//    func singIn () {
+//        
+//        Auth.auth().signIn(withEmail: "joetest@gmail.com", password: "123456") { [weak self] authResult, error in
+//            guard let strongSelf = self else { return }
+//            
+//        }
+//    }
     
     func newTraining () {
         

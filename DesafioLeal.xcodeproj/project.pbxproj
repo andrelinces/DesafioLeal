@@ -45,6 +45,7 @@
 		D3777ED927F7AB160027BC34 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777ED827F7AB160027BC34 /* Extension.swift */; };
 		D3795B0127F85E3E00B70C74 /* ModelExercisesPosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3795B0027F85E3E00B70C74 /* ModelExercisesPosterCell.swift */; };
 		D3795B0327F862A300B70C74 /* ModelExercisesPosterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3795B0227F862A300B70C74 /* ModelExercisesPosterCell.xib */; };
+		D3AAFEFA2802191F00E811B4 /* SingInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AAFEF92802191F00E811B4 /* SingInController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		D3777ED827F7AB160027BC34 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		D3795B0027F85E3E00B70C74 /* ModelExercisesPosterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelExercisesPosterCell.swift; sourceTree = "<group>"; };
 		D3795B0227F862A300B70C74 /* ModelExercisesPosterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModelExercisesPosterCell.xib; sourceTree = "<group>"; };
+		D3AAFEF92802191F00E811B4 /* SingInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				D3777EC327EDEF270027BC34 /* AccountController.swift */,
+				D3AAFEF92802191F00E811B4 /* SingInController.swift */,
 				D316301E27FC7681006ED4D4 /* RegisterController.swift */,
 				D3777EC527F481400027BC34 /* ExercisesController.swift */,
 				D3777EC727F5E8CF0027BC34 /* WorkoutController.swift */,
@@ -388,6 +391,7 @@
 				D316303727FF0EAF006ED4D4 /* ModelMyWorkoutCell.swift in Sources */,
 				D3777EC827F5E8CF0027BC34 /* WorkoutController.swift in Sources */,
 				D3777EC427EDEF270027BC34 /* AccountController.swift in Sources */,
+				D3AAFEFA2802191F00E811B4 /* SingInController.swift in Sources */,
 				D316301F27FC7681006ED4D4 /* RegisterController.swift in Sources */,
 				D3795B0127F85E3E00B70C74 /* ModelExercisesPosterCell.swift in Sources */,
 				D316302527FD0C45006ED4D4 /* ModelWorkoutPoster.swift in Sources */,

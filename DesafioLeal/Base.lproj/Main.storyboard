@@ -268,7 +268,7 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="BuQ-lC-eVO" kind="show" id="EIL-2i-CfL"/>
+                                                    <segue destination="BuQ-lC-eVO" kind="show" identifier="segueSingIn" id="rrb-dr-lcU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kb-eH-hYZ">
@@ -323,12 +323,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x7U-yk-rMZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4293" y="-577"/>
+            <point key="canvasLocation" x="5387" y="-546"/>
         </scene>
         <!--Account-->
         <scene sceneID="QbM-hL-e6T">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="BuQ-lC-eVO" customClass="AccountController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="BuQ-lC-eVO" customClass="SingInController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vHV-rH-W48">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -344,6 +344,10 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Sing In">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonSingIn:" destination="BuQ-lC-eVO" eventType="touchUpInside" id="KZF-8G-8ga"/>
+                                    <segue destination="rvy-sV-x2g" kind="show" identifier="segueSingInWorkout" id="i6s-zF-jA9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbc-gH-qhu">
                                 <rect key="frame" x="120" y="80.5" width="174" height="32.5"/>
@@ -412,10 +416,16 @@
                     <tabBarItem key="tabBarItem" title="Account" image="person.fill" catalog="system" id="QV4-GE-EG9"/>
                     <navigationItem key="navigationItem" id="7Gw-dL-WH1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="emailSingInField" destination="INn-Wz-rch" id="Tes-sK-8Lx"/>
+                        <outlet property="passawordSingInField" destination="ext-eY-bHl" id="a5j-H5-oIa"/>
+                        <outlet property="passawordSingInLabel" destination="p3K-Oy-nTN" id="dRL-v3-c7b"/>
+                        <outlet property="titleSingInLabel" destination="C5q-ic-9cH" id="5Hb-fX-HSV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIK-Kx-fjH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5387" y="-1039"/>
+            <point key="canvasLocation" x="4661" y="186"/>
         </scene>
         <!--Register Controller-->
         <scene sceneID="5Yw-CZ-BKB">
@@ -532,11 +542,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ZF-s3-wq4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5386.9565217391309" y="-358.25892857142856"/>
+            <point key="canvasLocation" x="6217" y="185"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="MWH-4P-3EL"/>
+        <segue reference="i6s-zF-jA9"/>
         <segue reference="3ii-ke-q2L"/>
     </inferredMetricsTieBreakers>
     <resources>
