@@ -164,24 +164,9 @@
 		D3777ECB27F72D0E0027BC34 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D316301627F90077006ED4D4 /* ModelExercisesTitleCell.xib */,
-				D316301827F900CF006ED4D4 /* ModelExercisesTitleCell.swift */,
-				D316301A27F90294006ED4D4 /* ModelExercisesTitle.swift */,
-				D3795B0227F862A300B70C74 /* ModelExercisesPosterCell.xib */,
-				D3795B0027F85E3E00B70C74 /* ModelExercisesPosterCell.swift */,
-				D3777ED127F735D70027BC34 /* ModelExercisesPoster.swift */,
-				D316302027FD08E3006ED4D4 /* ModelWorkoutPosterCell.xib */,
-				D316302227FD08F9006ED4D4 /* ModelWorkoutPosterCell.swift */,
-				D316302427FD0C45006ED4D4 /* ModelWorkoutPoster.swift */,
-				D316302627FDD0CB006ED4D4 /* ModelWorkoutCell.xib */,
-				D316302827FDD0D9006ED4D4 /* ModelWorkoutCell.swift */,
-				D316302A27FDD111006ED4D4 /* ModelWorkout.swift */,
-				D316302C27FEED25006ED4D4 /* ModelTitleMyWorkoutCell.xib */,
-				D316302E27FEED53006ED4D4 /* ModelTitleMyWorkoutCell.swift */,
-				D316303027FEED8C006ED4D4 /* ModelTitleMyWorkout.swift */,
-				D316303427FF0E9D006ED4D4 /* ModelMyWorkoutCell.xib */,
-				D316303627FF0EAF006ED4D4 /* ModelMyWorkoutCell.swift */,
-				D316303827FF0EBB006ED4D4 /* ModelMyWorkout.swift */,
+				D3AAFEF62802107400E811B4 /* ModelExecises */,
+				D3AAFEF7280210A800E811B4 /* ModelWorkout */,
+				D3AAFEF8280210FE00E811B4 /* ModelMyWorkout */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +194,45 @@
 				D3777ED827F7AB160027BC34 /* Extension.swift */,
 			);
 			path = "Global Extension";
+			sourceTree = "<group>";
+		};
+		D3AAFEF62802107400E811B4 /* ModelExecises */ = {
+			isa = PBXGroup;
+			children = (
+				D316301627F90077006ED4D4 /* ModelExercisesTitleCell.xib */,
+				D316301827F900CF006ED4D4 /* ModelExercisesTitleCell.swift */,
+				D316301A27F90294006ED4D4 /* ModelExercisesTitle.swift */,
+				D3795B0227F862A300B70C74 /* ModelExercisesPosterCell.xib */,
+				D3795B0027F85E3E00B70C74 /* ModelExercisesPosterCell.swift */,
+				D3777ED127F735D70027BC34 /* ModelExercisesPoster.swift */,
+			);
+			path = ModelExecises;
+			sourceTree = "<group>";
+		};
+		D3AAFEF7280210A800E811B4 /* ModelWorkout */ = {
+			isa = PBXGroup;
+			children = (
+				D316302027FD08E3006ED4D4 /* ModelWorkoutPosterCell.xib */,
+				D316302227FD08F9006ED4D4 /* ModelWorkoutPosterCell.swift */,
+				D316302427FD0C45006ED4D4 /* ModelWorkoutPoster.swift */,
+				D316302627FDD0CB006ED4D4 /* ModelWorkoutCell.xib */,
+				D316302827FDD0D9006ED4D4 /* ModelWorkoutCell.swift */,
+				D316302A27FDD111006ED4D4 /* ModelWorkout.swift */,
+			);
+			path = ModelWorkout;
+			sourceTree = "<group>";
+		};
+		D3AAFEF8280210FE00E811B4 /* ModelMyWorkout */ = {
+			isa = PBXGroup;
+			children = (
+				D316302C27FEED25006ED4D4 /* ModelTitleMyWorkoutCell.xib */,
+				D316302E27FEED53006ED4D4 /* ModelTitleMyWorkoutCell.swift */,
+				D316303027FEED8C006ED4D4 /* ModelTitleMyWorkout.swift */,
+				D316303427FF0E9D006ED4D4 /* ModelMyWorkoutCell.xib */,
+				D316303627FF0EAF006ED4D4 /* ModelMyWorkoutCell.swift */,
+				D316303827FF0EBB006ED4D4 /* ModelMyWorkout.swift */,
+			);
+			path = ModelMyWorkout;
 			sourceTree = "<group>";
 		};
 		D85B0C67B31A4A4E03C87D6B /* Pods */ = {
