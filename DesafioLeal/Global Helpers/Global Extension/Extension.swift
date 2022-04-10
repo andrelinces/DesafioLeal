@@ -50,5 +50,5 @@ extension UIView {
             downloaded(from: url, contentMode: mode)
         }
     }
-    
+
 

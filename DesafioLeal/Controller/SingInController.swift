@@ -69,6 +69,7 @@ class SingInController: UIViewController {
                         
                     Auth.auth().signIn(withEmail: emailUser, password: passawordUser) { [weak self] authResult, error in
                         guard let strongSelf = self else { return }
+                        
                         if error == nil {
                             
                             if error != nil {

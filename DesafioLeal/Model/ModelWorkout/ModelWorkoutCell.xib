@@ -39,11 +39,15 @@
                                         <menu key="menu" id="9nT-TD-SQR">
                                             <menuOptions key="menuOptions" displayInline="YES"/>
                                             <children>
-                                                <command title="Add new exercises" id="zMi-M2-n1h"/>
-                                                <command title="Editing exercises" id="pjM-0S-vJC"/>
+                                                <command title="Add new exercises" menuElementState="on" id="zMi-M2-n1h"/>
+                                                <command title="Editing exercises" menuElementState="on" id="pjM-0S-vJC"/>
+                                                <command title="Delete exercises" menuElementState="on" id="vbw-k4-H4G"/>
                                             </children>
                                         </menu>
                                         <state key="normal" image="list.dash" catalog="system"/>
+                                        <connections>
+                                            <action selector="buttonMenu:" destination="VWV-RK-etN" eventType="touchUpInside" id="1WJ-ST-WiM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,6 +81,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="buttonPullDonwMenu" destination="9nT-TD-SQR" id="a9q-nS-AhB"/>
                 <outlet property="cardViewWorkout" destination="BM4-JN-e2c" id="xaC-6r-vrY"/>
                 <outlet property="imageViewWorkout" destination="TXY-gO-kYm" id="VnJ-t8-hYJ"/>
                 <outlet property="labelWorkout" destination="RAw-S0-qfO" id="bGU-lM-mtZ"/>

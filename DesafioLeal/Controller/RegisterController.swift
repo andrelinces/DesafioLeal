@@ -12,16 +12,7 @@ import FirebaseFirestore
 
 
 class RegisterController: UIViewController {
-//    internal init(nameUserField: UITextField? = nil, emailUserField: UITextField? = nil, passawordUserField: UITextField? = nil) {
-//        self.nameUserField = nameUserField
-//        self.emailUserField = emailUserField
-//        self.passawordUserField = passawordUserField
-//
-//    }
-    
 
-    
-    
     @IBOutlet weak var nameUserField: UITextField!
     @IBOutlet weak var emailUserField: UITextField!
     @IBOutlet weak var passawordUserField: UITextField!
@@ -36,101 +27,98 @@ class RegisterController: UIViewController {
         
     }
     
-//    var self.nameUser = nameUserField
-//    var emailUser = emailUserField
-//    var passawordUser = passawordUserField
-    
-//    func initiate(nameUser : String, emailUser : String, passawordUser : String){
-//        self.nameUser = nameUser
-//        self.emailUser = emailUser
-//        self.passawordUser = passawordUser
-//        //self.urlDetails = urlDetails
-//    }
-    
-    
     @IBAction func buttonRegister(_ sender: Any) {
         
-//        let nameUser = nameUserField
-//        let emailUser = emailUserField
-//        let passawordUser = passawordUserField
+     
         let validateReturn = validateFields()
         
         if validateReturn == " " {
             
-        if let nameUser = nameUserField.text {
-            if let emailUser = emailUserField.text {
-                if let passawordUser = passawordUserField.text {
+            if let nameUser = nameUserField.text {
+                if let emailUser = emailUserField.text {
+                    if let passawordUser = passawordUserField.text {
                         
-                    Auth.auth().createUser(withEmail: emailUser, password: passawordUser) { authResult, error in
-                      
-                        if error == nil {
-                            //print to test on success when creating the user.
-                            print("Successfully creating user account ! ")
+                        Auth.auth().createUser(withEmail: emailUser, password: passawordUser) { authResult, error in
                             
-                            // [Alert for to user, account created successfully]
-                            let alert = UIAlertController(title:  "Created user successfully !!", message: nameUser, preferredStyle: .alert)
-                            
-                            let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                            
-                            let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
-                                //testing...
-                                print("confirmAction")
-                            }
+                            if error == nil {
+                                //print to test on success when creating the user.
+                                print("Successfully creating user account ! ")
+                                
+                                // [Alert for to user, account created successfully]
+                                let alert = UIAlertController(title:  "Created user successfully !!", message: nameUser, preferredStyle: .alert)
+                                
+                                let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                                
+                                let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
+                                    //testing...
+                                    print("confirmAction")
+                                }
                                 alert.addAction(cancelAlert)
                                 alert.addAction(confirmAction)
                                 
                                 self.present(alert, animated: true, completion: nil)
-                            
-                            //passing user to workout view if he is logged in.
-                            self.performSegue(withIdentifier: "segueRegister", sender: nil)
-                            
-                            if authResult != nil {
-                                //self.performSegue(withIdentifier: "segueLoginRegister", sender: nil)
                                 
-                                //configure database
-                                let db = Firestore.firestore()
+                                //passing user to workout view if he is logged in.
+                                self.performSegue(withIdentifier: "segueRegister", sender: nil)
                                 
-                                let user = Auth.auth().currentUser
-                                
-                                if let user = user {
-                                
-                                    let uid = user.uid
-                                
-                                let users = db.collection("users").document(uid).setData([
+                                if authResult != nil {
+                                    //self.performSegue(withIdentifier: "segueLoginRegister", sender: nil)
                                     
-                                    "userId" : uid,
-                                    "name" : nameUser,
-                                    "email" : emailUser
+                                    //configure database
+                                    let db = Firestore.firestore()
                                     
+                                    let user = Auth.auth().currentUser
                                     
-                                ]) { err in
-                                    if let err = err {
-                                        print("Error writing document: \(err)")
-                                    } else {
-                                        print("Document successfully written!")
+                                    if let user = user {
+                                        
+                                        let uid = user.uid
+                                        
+                                        let users = db.collection("users").document(uid).setData([
+                                            
+                                            "userId" : uid,
+                                            "name" : nameUser,
+                                            "email" : emailUser
+                                            
+                                            
+                                        ]) { err in
+                                            if let err = err {
+                                                print("Error writing document: \(err)")
+                                            } else {
+                                                print("Document successfully written!")
+                                            }
+                                            
+                                        }
+                                        
                                     }
-                                    
-                                    }
-                                
                                 }
-                                }
+                            }
                         }
                     }
                 }
             }
-        }
             
-        }
-        }// [END func buttonRegister]
+        }else{
+            //print to show if the user left any field empety!
+            print("The field \(validateReturn) was not filled in !!")
+            
+            let alert = UIAlertController(title:  "Field empty !!", message: "The field \(validateReturn) was not filled in !!" , preferredStyle: .alert)
+            
+            let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
+                //testing...
+                print("confirmAction")
+            }
+            alert.addAction(cancelAlert)
+            alert.addAction(confirmAction)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }//[end ValidateFiels]
         
-    
-//    func singIn () {
-//        
-//        Auth.auth().signIn(withEmail: "joetest@gmail.com", password: "123456") { [weak self] authResult, error in
-//            guard let strongSelf = self else { return }
-//            
-//        }
-//    }
+        
+    }// [END func buttonRegister]
+        
     
     func newTraining () {
         
@@ -158,13 +146,13 @@ class RegisterController: UIViewController {
     //Method for validate user-entered fields
     func validateFields() -> String {
         
-        if (self.emailUserField.text?.isEmpty)! {
+        if (self.nameUserField.text?.isEmpty)! {
             
-            return "E-mail"
+            return "Name"
             
-        }else if (self.nameUserField.text?.isEmpty)! {
+        }else if (self.emailUserField.text?.isEmpty)! {
             
-            return "Full Name"
+            return "email"
         }else if (self.passawordUserField.text?.isEmpty)! {
             
             return "Passaword"

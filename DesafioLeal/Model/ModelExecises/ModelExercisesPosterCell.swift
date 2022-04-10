@@ -7,7 +7,7 @@
 
 import UIKit
 
-import Kingfisher
+
 import FirebaseStorage
 
 class ModelExercisesPosterCell: UITableViewCell {

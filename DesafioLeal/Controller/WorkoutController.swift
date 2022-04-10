@@ -20,6 +20,8 @@ class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWo
         }
             
     }
+    
+    
         
     
     @IBOutlet weak var tableViewWorkout: UITableView!
