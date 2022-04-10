@@ -18,66 +18,69 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
     var db = Firestore.firestore()
     
     func actionClickCardView(indexPath: IndexPath) {
-        print("clicou no card\(indexPath.row)")
+       // print("clicou no card\(indexPath.row)")
         
-//        if indexPath.row == 1 {
+        
+        let user = Auth.auth().currentUser
+        
+//                                if let user == nil {
 //
-//            db.collection("exercicies").getDocuments() { (querySnapshot, err) in
-//                if let err = err {
-//                    print("Error getting documents: \(err)")
-//                } else {
-//                    repeat {
-//                        for save in querySnapshot!.documents {
-//
-//                        let sav =
-//                    print("save... \(save)")
-//                        }
-//                    }; while indexPath.row == 1
-//                }
-//        }
-//
+//                                    let uid = user.uid
+//                                }
         
-        
-        
-       
-        //var refList = db.collection("Exercises").document("Categories").collection("legs")
-        db.collection("exercicies").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
+            // [Alert for to user, account created successfully]
+            let alert = UIAlertController(title:  "Save Exercises", message: "Do you want add this exercise from your workout? ?", preferredStyle: .alert)
+            
+            let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
+                //testing...
+                print("confirmAction")
                 
-                
-                
-                for document in querySnapshot!.documents {
-                    print("Print get Collection..\(document.documentID) => \(document.data())")
-                    let list = document.data()
-                    
-                    switch indexPath.row == 1 {
-                    
-                    case (let test):
-                     
-                        if test == true {
-                            
-                            print("check\(test) and \(document.documentID)")
-                            let save = document.documentID
-                            indexPath.row == 2
-                            print("checSave: \(save)")
-                        }
-                    case (let test2):
-                        
-                        print("check\(test2) and \(document.documentID)")
-                        let save = document.documentID
-                        
-                        break }
-                    
-                    
-                    
-                }
                 
             }
-        }
+            
+            
+            alert.addAction(cancelAlert)
+            alert.addAction(confirmAction)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+           // performSegue(withIdentifier: "segueMyWorkout" , sender: nil)
         
+        
+    }//[end actionCliqueCard]
+    
+    var handle: AuthStateDidChangeListenerHandle?
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // [START auth_listener]
+        handle = Auth.auth().addStateDidChangeListener { auth, user in
+          // [START_EXCLUDE]
+            
+            
+          self.setTitleDisplay(user)
+          self.tableViewExercises.reloadData()
+            
+           // self.performSegue(withIdentifier: "segueSingInWorkout", sender: nil)
+          // [END_EXCLUDE]
+        }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // [START remove_auth_listener]
+        Auth.auth().removeStateDidChangeListener(handle!)
+        // [END remove_auth_listener]
+      }
+    
+    func setTitleDisplay(_ user: User?) {
+        if let name = user?.displayName {
+          navigationItem.title = "Welcome \(name)"
+        } else {
+          navigationItem.title = "Authentication Example"
+        }
+      }
     
     func actionReturn() {
         print("Teste voltar : \(navigationController)")
@@ -418,6 +421,23 @@ public struct exercisesCategories: Codable {
         case urlImage
         case observation
         
+    }
+
+}
+
+public struct userWorkout: Codable {
+
+    let name: String
+    let days: String?
+    let timesTramp: String?
+    let idWorkout: String
+    
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case days
+        case timesTramp
+        case idWorkout
     }
 
 }

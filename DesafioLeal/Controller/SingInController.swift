@@ -24,7 +24,7 @@ class SingInController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+       
     }
     var handle: AuthStateDidChangeListenerHandle?
     
@@ -32,6 +32,10 @@ class SingInController: UIViewController {
         super.viewWillAppear(animated)
         // [START auth_listener]
         handle = Auth.auth().addStateDidChangeListener { auth, user in
+            
+            if  user?.isAnonymous == true {
+                print ("User singOut: \(user)")
+            }
           // [START_EXCLUDE]
           //self.setTitleDisplay(user)
           //self.tableView.reloadData()

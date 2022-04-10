@@ -30,7 +30,7 @@ class MyWorkoutController: UIViewController, ModelTitleMyWorkoutCellCallBack, Mo
       
         setupTableView ()
         
-        singIn()
+        //singIn()
     }
     
     func singIn () {

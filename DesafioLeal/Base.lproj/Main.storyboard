@@ -11,7 +11,7 @@
         <!--Home-->
         <scene sceneID="63i-hI-DNt">
             <objects>
-                <viewController id="bcf-ve-ksW" userLabel="Home" sceneMemberID="viewController">
+                <viewController id="bcf-ve-ksW" userLabel="Home" customClass="HomeController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7kb-MN-EvN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,6 +112,7 @@
                     <connections>
                         <outlet property="tableViewWorkout" destination="pjA-V6-rM4" id="MWm-0K-5xh"/>
                         <segue destination="rvy-sV-x2g" kind="show" identifier="segueMyWorkout" id="eM8-4H-Ocg"/>
+                        <segue destination="DPJ-8D-lV9" kind="show" id="fe1-qa-0JA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgd-hZ-vCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -176,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KoB-tt-fHs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2321.739130434783" y="1091.5178571428571"/>
+            <point key="canvasLocation" x="2348" y="1231"/>
         </scene>
         <!--Exercises-->
         <scene sceneID="7pI-zl-bCZ">
@@ -215,12 +216,11 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableViewExercises" destination="W4O-No-aVW" id="tHB-d4-DtA"/>
-                        <segue destination="DPJ-8D-lV9" kind="show" id="YPh-EW-vNy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wq4-eM-RCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3436" y="1092"/>
+            <point key="canvasLocation" x="3671" y="1231"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="QIS-NX-CnW">
@@ -236,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvq-nT-y9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4545" y="1092"/>
+            <point key="canvasLocation" x="1126" y="1231"/>
         </scene>
         <!--Item-->
         <scene sceneID="B1S-pE-OOZ">
@@ -547,7 +547,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="MWH-4P-3EL"/>
-        <segue reference="i6s-zF-jA9"/>
+        <segue reference="eM8-4H-Ocg"/>
         <segue reference="3ii-ke-q2L"/>
     </inferredMetricsTieBreakers>
     <resources>

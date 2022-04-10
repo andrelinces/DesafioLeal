@@ -8,37 +8,24 @@
 import UIKit
 import Foundation
 
+
 class ModelWorkoutCell: UITableViewCell {
+    
+    
     
     @IBOutlet weak var cardViewWorkout: UIView!
     @IBOutlet weak var imageViewWorkout: UIImageView!
     @IBOutlet weak var labelWorkout: UILabel!
     
-    @IBOutlet weak var buttonPullDonwMenu: UIButton!
+    @IBOutlet weak var buttonPullDonwMenu: UIMenuController!
     
-    
-    
+  
     
     @IBAction func buttonMenu(_ sender: Any) {
-     
-        
-        //buttonPullDonwMenu.menu?.options.rawValue
-        
-        enum PaperSize: String {
-            case A4, A5, Letter, Legal
-        }
-
-        let selectedSize = PaperSize.Letter
-        print(selectedSize.rawValue)
-        // Prints "Letter"
-
-        print(selectedSize == PaperSize(rawValue: selectedSize.rawValue)!)
-        // Prints "true"
-        
         
     }
-    
-    
+        
+       
     func setupDesign () {
 
         cardViewWorkout.borderDesigneView(cornerRadius: 38)
