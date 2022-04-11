@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="439" height="130"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oM-yx-4lR">
-                                <rect key="frame" x="304" y="53" width="114" height="22"/>
+                                <rect key="frame" x="306" y="60" width="112" height="22"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <menu key="menu" id="TB3-DL-MjK">
                                     <children>
@@ -29,23 +29,23 @@
                                         <command title="Item 2" id="2Zj-3w-Q6T"/>
                                     </children>
                                 </menu>
-                                <state key="normal" title="Menu" image="list.bullet.circle" catalog="system"/>
+                                <state key="normal" image="plus" catalog="system"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Workout " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xl7-E3-tkn">
-                                <rect key="frame" x="78" y="48" width="146" height="33"/>
+                                <rect key="frame" x="120" y="60" width="146" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="separatorColor"/>
                         <constraints>
-                            <constraint firstItem="Xl7-E3-tkn" firstAttribute="leading" secondItem="20n-uQ-BdS" secondAttribute="leading" constant="78" id="8lV-Os-CsF"/>
+                            <constraint firstItem="Xl7-E3-tkn" firstAttribute="leading" secondItem="20n-uQ-BdS" secondAttribute="leading" constant="120" id="8lV-Os-CsF"/>
                             <constraint firstAttribute="height" constant="130" id="9ai-Hc-KSF"/>
-                            <constraint firstItem="Xl7-E3-tkn" firstAttribute="top" secondItem="20n-uQ-BdS" secondAttribute="top" constant="48" id="bdc-3u-xyb"/>
+                            <constraint firstItem="Xl7-E3-tkn" firstAttribute="top" secondItem="20n-uQ-BdS" secondAttribute="top" constant="60" id="bdc-3u-xyb"/>
                             <constraint firstAttribute="trailing" secondItem="7oM-yx-4lR" secondAttribute="trailing" constant="21" id="muf-VI-iCt"/>
-                            <constraint firstItem="7oM-yx-4lR" firstAttribute="top" secondItem="20n-uQ-BdS" secondAttribute="top" constant="53" id="q5o-Ab-As2"/>
-                            <constraint firstItem="7oM-yx-4lR" firstAttribute="leading" secondItem="Xl7-E3-tkn" secondAttribute="trailing" constant="80" id="rzn-Ar-BNs"/>
+                            <constraint firstItem="7oM-yx-4lR" firstAttribute="top" secondItem="20n-uQ-BdS" secondAttribute="top" constant="60" id="q5o-Ab-As2"/>
+                            <constraint firstItem="7oM-yx-4lR" firstAttribute="leading" secondItem="Xl7-E3-tkn" secondAttribute="trailing" constant="40" id="rzn-Ar-BNs"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -57,6 +57,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="buttonMenuMyWorkout" destination="TB3-DL-MjK" id="56P-fE-OcM"/>
                 <outlet property="cardViewTitle" destination="20n-uQ-BdS" id="WfN-Qz-N52"/>
                 <outlet property="titleWorkoutLabel" destination="Xl7-E3-tkn" id="2vT-fP-6J6"/>
             </connections>
@@ -64,9 +65,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="list.bullet.circle" catalog="system" width="128" height="121"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

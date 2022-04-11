@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ModelUserMyWorkoutCellIdentifier" rowHeight="150" id="9Fm-p2-vL3" customClass="ModelUserMyWorkoutCell" customModule="DesafioLeal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Fm-p2-vL3" id="8H3-1K-BCd">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfC-Lv-jt3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iyd-hm-crk">
+                                <rect key="frame" x="12" y="8" width="390" height="134"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NameWorkout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSY-K2-LKt">
+                                        <rect key="frame" x="140" y="8" width="110" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cW-NZ-JBe">
+                                        <rect key="frame" x="16" y="77" width="358" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wf5-p5-XK4">
+                                        <rect key="frame" x="16" y="40" width="174" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qSY-K2-LKt" secondAttribute="trailing" constant="140" id="9n8-7m-RZV"/>
+                                    <constraint firstItem="Wf5-p5-XK4" firstAttribute="leading" secondItem="Iyd-hm-crk" secondAttribute="leading" constant="16" id="ECy-fI-3iS"/>
+                                    <constraint firstItem="qSY-K2-LKt" firstAttribute="top" secondItem="Iyd-hm-crk" secondAttribute="top" constant="8" id="Gq5-IR-jnJ"/>
+                                    <constraint firstItem="qSY-K2-LKt" firstAttribute="leading" secondItem="Iyd-hm-crk" secondAttribute="leading" constant="140" id="MVe-P1-R9P"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wf5-p5-XK4" secondAttribute="trailing" constant="200" id="O2k-2C-34r"/>
+                                    <constraint firstItem="7cW-NZ-JBe" firstAttribute="top" secondItem="Wf5-p5-XK4" secondAttribute="bottom" constant="16" id="Tsw-kt-ALQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="7cW-NZ-JBe" secondAttribute="trailing" constant="16" id="Wyi-Ei-rdk"/>
+                                    <constraint firstItem="Wf5-p5-XK4" firstAttribute="top" secondItem="Iyd-hm-crk" secondAttribute="top" constant="40" id="cZY-1G-Pli"/>
+                                    <constraint firstItem="7cW-NZ-JBe" firstAttribute="leading" secondItem="Iyd-hm-crk" secondAttribute="leading" constant="16" id="gJI-ea-Dw8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Iyd-hm-crk" firstAttribute="leading" secondItem="DfC-Lv-jt3" secondAttribute="leading" constant="12" id="0IV-KN-iFU"/>
+                            <constraint firstItem="Iyd-hm-crk" firstAttribute="top" secondItem="DfC-Lv-jt3" secondAttribute="top" constant="8" id="ArF-8y-8aA"/>
+                            <constraint firstAttribute="height" constant="150" id="PMk-dH-gNF"/>
+                            <constraint firstAttribute="bottom" secondItem="Iyd-hm-crk" secondAttribute="bottom" constant="8" id="Tdz-HX-b9J"/>
+                            <constraint firstAttribute="trailing" secondItem="Iyd-hm-crk" secondAttribute="trailing" constant="12" id="zGu-uG-SNN"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="DfC-Lv-jt3" secondAttribute="trailing" id="Ftw-oc-4fm"/>
+                    <constraint firstItem="DfC-Lv-jt3" firstAttribute="top" secondItem="8H3-1K-BCd" secondAttribute="top" id="Phx-dc-oRb"/>
+                    <constraint firstAttribute="bottom" secondItem="DfC-Lv-jt3" secondAttribute="bottom" id="U36-66-plR"/>
+                    <constraint firstItem="DfC-Lv-jt3" firstAttribute="leading" secondItem="8H3-1K-BCd" secondAttribute="leading" id="yzM-XI-ZO5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cardViewMyWorkout" destination="Iyd-hm-crk" id="T2C-De-MEn"/>
+                <outlet property="labelDateWorkout" destination="Wf5-p5-XK4" id="Gzj-F7-g4m"/>
+                <outlet property="labelDescriptionWorkout" destination="7cW-NZ-JBe" id="HSi-Ll-zgE"/>
+                <outlet property="labelNameWorkout" destination="qSY-K2-LKt" id="ZfK-iI-yhq"/>
+            </connections>
+            <point key="canvasLocation" x="324.63768115942031" y="-71.651785714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

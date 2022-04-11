@@ -99,10 +99,6 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
         super.viewDidLoad()
         
         
-        
-        
-        
-        
         //print("test auth...\(auth)")
         //singIn()
         //newWorkout()
@@ -110,6 +106,7 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
         setupTableview2()
         //setupTableView()
         tableViewExercises.reloadData()
+        
     }
     
     var imageExercisesPoster : String = ""
@@ -431,13 +428,32 @@ public struct userWorkout: Codable {
     let days: String?
     let timesTramp: String?
     let idWorkout: String
-    
+    let description : String
 
     enum CodingKeys: String, CodingKey {
         case name
         case days
         case timesTramp
         case idWorkout
+        case description
+    }
+
+}
+
+public struct userWorkoutExercises: Codable {
+
+    let name: String
+    let days: String?
+    let imageUrl: String
+    let idExercises : String
+    let description : String
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case days
+        case imageUrl
+        case idExercises
+        case description
     }
 
 }

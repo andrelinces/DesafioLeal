@@ -112,7 +112,7 @@
                     <connections>
                         <outlet property="tableViewWorkout" destination="pjA-V6-rM4" id="MWm-0K-5xh"/>
                         <segue destination="rvy-sV-x2g" kind="show" identifier="segueMyWorkout" id="eM8-4H-Ocg"/>
-                        <segue destination="DPJ-8D-lV9" kind="show" id="fe1-qa-0JA"/>
+                        <segue destination="DPJ-8D-lV9" kind="show" identifier="segueUserWorkout" id="fe1-qa-0JA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgd-hZ-vCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -222,17 +222,33 @@
             </objects>
             <point key="canvasLocation" x="3671" y="1231"/>
         </scene>
-        <!--View Controller-->
+        <!--My Workout Controller-->
         <scene sceneID="QIS-NX-CnW">
             <objects>
-                <viewController id="DPJ-8D-lV9" sceneMemberID="viewController">
+                <viewController id="DPJ-8D-lV9" customClass="MyWorkoutController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5nY-Wa-B5d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dmS-aC-Y2M">
+                                <rect key="frame" x="0.0" y="-88" width="414" height="984"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RVI-tG-gpO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RVI-tG-gpO" firstAttribute="trailing" secondItem="dmS-aC-Y2M" secondAttribute="trailing" id="5vt-UJ-6mt"/>
+                            <constraint firstItem="dmS-aC-Y2M" firstAttribute="leading" secondItem="RVI-tG-gpO" secondAttribute="leading" id="OWu-lM-d71"/>
+                            <constraint firstItem="dmS-aC-Y2M" firstAttribute="top" secondItem="5nY-Wa-B5d" secondAttribute="top" constant="-88" id="Tqm-FG-y5y"/>
+                            <constraint firstAttribute="bottom" secondItem="dmS-aC-Y2M" secondAttribute="bottom" id="bo0-Hg-ESg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wGc-HO-0Wf"/>
+                    <connections>
+                        <outlet property="tableViewMyWorkout" destination="dmS-aC-Y2M" id="EWN-Ei-pcI"/>
+                        <segue destination="rvy-sV-x2g" kind="show" identifier="segueUserUpadate" id="DxH-Gb-8e7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvq-nT-y9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -547,7 +563,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="MWH-4P-3EL"/>
-        <segue reference="eM8-4H-Ocg"/>
+        <segue reference="DxH-Gb-8e7"/>
         <segue reference="3ii-ke-q2L"/>
     </inferredMetricsTieBreakers>
     <resources>

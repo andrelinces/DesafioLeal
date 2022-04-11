@@ -70,14 +70,14 @@ class HomeController: UIViewController {
                                 print ("User id: \(userId)")
                                 
                                 // [Alert for to user, account created successfully]
-                                let alert = UIAlertController(title:  "Welcome \(listExercises?.name)!", message: "\(listExercises?.name), Do you want add this exercise from your workout? ?", preferredStyle: .alert)
+                                let alert = UIAlertController(title:  "Welcome \(listExercises!.name)!", message: "\(listExercises?.name), Do you want to workout now? ", preferredStyle: .alert)
                                 
                                 let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
                                 
                                 let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
                                     //testing...
                                     print("confirmAction")
-                                    
+                                    self.performSegue(withIdentifier: "segueUserWorkout", sender: nil)
                                     //alert.awakeFromNib()
                                 
                                 }

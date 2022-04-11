@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ModelUserMyWorkoutCellIdentifier" rowHeight="150" id="ji3-Na-uOm" customClass="ModelUserMyWorkoutCell" customModule="DesafioLeal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ji3-Na-uOm" id="rjC-7d-83f">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61d-cW-mbw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pke-uO-YhQ">
+                                <rect key="frame" x="12" y="8" width="390" height="134"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NameWorkout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSp-FL-U7J">
+                                        <rect key="frame" x="100" y="16" width="190" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rI4-qW-4CB">
+                                        <rect key="frame" x="124" y="90" width="250" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="JHe-0H-gJV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGa-EM-nZQ">
+                                        <rect key="frame" x="16" y="90" width="92" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days of the Workout:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raX-BQ-i1J">
+                                        <rect key="frame" x="16" y="53" width="160" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yP-ug-8G0">
+                                        <rect key="frame" x="199" y="53" width="175" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="175" id="aVu-Sf-oEs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.77947443181818188" green="0.13976241547575152" blue="0.42277873732496524" alpha="0.12" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="SGa-EM-nZQ" firstAttribute="top" secondItem="raX-BQ-i1J" secondAttribute="bottom" constant="16" id="5GY-an-FO6"/>
+                                    <constraint firstItem="RSp-FL-U7J" firstAttribute="top" secondItem="pke-uO-YhQ" secondAttribute="top" constant="16" id="AgS-JV-C0a"/>
+                                    <constraint firstItem="rI4-qW-4CB" firstAttribute="top" secondItem="6yP-ug-8G0" secondAttribute="bottom" constant="16" id="DGf-JI-9eH"/>
+                                    <constraint firstItem="raX-BQ-i1J" firstAttribute="leading" secondItem="pke-uO-YhQ" secondAttribute="leading" constant="16" id="GVj-fS-eef"/>
+                                    <constraint firstAttribute="trailing" secondItem="rI4-qW-4CB" secondAttribute="trailing" constant="16" id="Ibl-V7-1hy"/>
+                                    <constraint firstItem="raX-BQ-i1J" firstAttribute="top" secondItem="RSp-FL-U7J" secondAttribute="bottom" constant="16" id="MgP-FS-THg"/>
+                                    <constraint firstAttribute="trailing" secondItem="6yP-ug-8G0" secondAttribute="trailing" constant="16" id="R55-hR-Iny"/>
+                                    <constraint firstItem="SGa-EM-nZQ" firstAttribute="leading" secondItem="pke-uO-YhQ" secondAttribute="leading" constant="16" id="c8L-gP-SBs"/>
+                                    <constraint firstAttribute="trailing" secondItem="RSp-FL-U7J" secondAttribute="trailing" constant="100" id="fNR-zH-6mH"/>
+                                    <constraint firstItem="RSp-FL-U7J" firstAttribute="leading" secondItem="pke-uO-YhQ" secondAttribute="leading" constant="100" id="pv7-1p-kZ8"/>
+                                    <constraint firstItem="6yP-ug-8G0" firstAttribute="top" secondItem="RSp-FL-U7J" secondAttribute="bottom" constant="16" id="wyo-Am-14H"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pke-uO-YhQ" firstAttribute="leading" secondItem="61d-cW-mbw" secondAttribute="leading" constant="12" id="1gn-e8-2Wx"/>
+                            <constraint firstAttribute="trailing" secondItem="pke-uO-YhQ" secondAttribute="trailing" constant="12" id="Cif-53-k4i"/>
+                            <constraint firstAttribute="height" constant="150" id="Wkn-3z-H9a"/>
+                            <constraint firstItem="pke-uO-YhQ" firstAttribute="top" secondItem="61d-cW-mbw" secondAttribute="top" constant="8" id="cqd-DS-Z0Y"/>
+                            <constraint firstAttribute="bottom" secondItem="pke-uO-YhQ" secondAttribute="bottom" constant="8" id="yz2-eD-RPR"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="61d-cW-mbw" secondAttribute="bottom" id="9ux-28-2GH"/>
+                    <constraint firstAttribute="trailing" secondItem="61d-cW-mbw" secondAttribute="trailing" id="Plk-6W-4h3"/>
+                    <constraint firstItem="61d-cW-mbw" firstAttribute="leading" secondItem="rjC-7d-83f" secondAttribute="leading" id="dU1-Ks-As6"/>
+                    <constraint firstItem="61d-cW-mbw" firstAttribute="top" secondItem="rjC-7d-83f" secondAttribute="top" id="wME-AI-jB9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cardViewMyWorkout" destination="pke-uO-YhQ" id="5Nk-pt-3pL"/>
+                <outlet property="labelDateWorkout" destination="6yP-ug-8G0" id="pi6-91-mbi"/>
+                <outlet property="labelDescriptionWorkout" destination="rI4-qW-4CB" id="94m-Rb-dXh"/>
+                <outlet property="labelNameWorkout" destination="RSp-FL-U7J" id="81W-jq-ZaN"/>
+            </connections>
+            <point key="canvasLocation" x="302.89855072463769" y="-125.22321428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

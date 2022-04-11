@@ -29,12 +29,12 @@ class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWo
             let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
                 //testing...
                 print("confirmAction")
-                self.performSegue(withIdentifier: "segueMyWorkout", sender: nil)
+                self.performSegue(withIdentifier: "segueUserWorkout", sender: nil)
                 
                 
                 let cardWorkoutPoster = UIAlertController(nibName: "ModelMyWorkoutCellIdentifier", bundle: Bundle.main)
 //                let cardWorkoutPoster = ModelWorkoutPoster(delegate: self, navigationController: self.navigationController, imagePosterWorkout: imagePosterWorkout, titleWorkout: "titleWorkout", descriptionWorkout: descriptionWorkout )
-               
+                
             }
             alert.addTextField { UITextField in
                 self.titleWorkout = ""

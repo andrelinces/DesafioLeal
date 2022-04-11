@@ -11,7 +11,7 @@ class ModelTitleMyWorkoutCell: UITableViewCell {
     
     @IBOutlet weak var cardViewTitle: UIView!
     @IBOutlet weak var titleWorkoutLabel: UILabel!
-    
+    @IBOutlet weak var buttonMenuMyWorkout: UIButton!
     
     
     
