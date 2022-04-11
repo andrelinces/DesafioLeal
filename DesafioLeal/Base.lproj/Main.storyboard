@@ -21,6 +21,9 @@
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="2Wk-fm-PJ4" userLabel="Home"/>
                     <navigationItem key="navigationItem" id="SFz-Zj-JJe"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="rvy-sV-x2g" kind="show" identifier="segueHomeMyWorkout" id="VLA-Zs-WQR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MsW-5P-uwn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -563,7 +566,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="MWH-4P-3EL"/>
-        <segue reference="DxH-Gb-8e7"/>
+        <segue reference="VLA-Zs-WQR"/>
         <segue reference="3ii-ke-q2L"/>
     </inferredMetricsTieBreakers>
     <resources>

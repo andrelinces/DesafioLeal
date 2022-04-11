@@ -19,28 +19,22 @@ class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWo
             
             
             // [Alert for to user, account created successfully]
-            let alert = UIAlertController(title:  "Menu Workout", message: "Select choice: !!", preferredStyle: .alert)
-            let addAlert = UIAlertAction(title: "Add", style: (.init(rawValue: 3) ?? .default)) { alertAction in
-                print( "testAlert workout")
-                //let addAlert = UIAlert
-            }
+            let alert = UIAlertController(title:  "Menu Workout", message: "Do your want to editing your workout ?", preferredStyle: .alert)
+           
             let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             
             let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
                 //testing...
                 print("confirmAction")
                 self.performSegue(withIdentifier: "segueUserWorkout", sender: nil)
-                
+            }
                 
                 let cardWorkoutPoster = UIAlertController(nibName: "ModelMyWorkoutCellIdentifier", bundle: Bundle.main)
-//                let cardWorkoutPoster = ModelWorkoutPoster(delegate: self, navigationController: self.navigationController, imagePosterWorkout: imagePosterWorkout, titleWorkout: "titleWorkout", descriptionWorkout: descriptionWorkout )
-                
-            }
-            alert.addTextField { UITextField in
-                self.titleWorkout = ""
-            }
-            
-            alert.addAction(addAlert)
+
+//            alert.addTextField { UITextField in
+//                self.titleWorkout = ""
+//            }
+           
             alert.addAction(cancelAlert)
             alert.addAction(confirmAction)
             

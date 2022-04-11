@@ -77,7 +77,7 @@ class HomeController: UIViewController {
                                 let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
                                     //testing...
                                     print("confirmAction")
-                                    self.performSegue(withIdentifier: "segueUserWorkout", sender: nil)
+                                    self.performSegue(withIdentifier: "segueHomeMyWorkout", sender: nil)
                                     //alert.awakeFromNib()
                                 
                                 }

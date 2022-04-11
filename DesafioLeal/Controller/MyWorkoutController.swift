@@ -17,45 +17,69 @@ class MyWorkoutController: UIViewController, ModelTitleMyWorkoutCellCallBack, Mo
         
         if indexPath.row == 1 {
             
+                // [Alert for to user, account created successfully]
+                let alert = UIAlertController(title:  "Menu Workout", message: "Do your want to editing your workout ?", preferredStyle: .alert)
+               
+                let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                
+                let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
+                    //testing...
+                    print("confirmAction")
+                    self.performSegue(withIdentifier: "segueUserUpadate", sender: nil)
+                }
+                    
+                    let cardWorkoutPoster = UIAlertController(nibName: "ModelMyWorkoutCellIdentifier", bundle: Bundle.main)
+
+    //            alert.addTextField { UITextField in
+    //                self.titleWorkout = ""
+    //            }
+               
+                alert.addAction(cancelAlert)
+                alert.addAction(confirmAction)
+                
+                self.present(alert, animated: true, completion: nil)
+                
+               // performSegue(withIdentifier: "segueMyWorkout" , sender: nil)
+            
             
             // [Alert for to user, account created successfully]
-            let alert = UIAlertController(title:  "Menu Workout", message: "Select choice: !!", preferredStyle: .alert)
+//            let alert = UIAlertController(title:  "Menu Workout", message: "Select choice: !!", preferredStyle: .alert)
+//
+//            let addAlert = UIAlertAction(title: "Add New Workout", style: (.init(rawValue: 6) ?? .default)) { alertAction in
+//                print( "testAlert workout")
+//                //let addAlert = UIAlert
+//                //self.performSegue(withIdentifier: "segueUserUpadate", sender: nil)
+//            }
+//            let updateAlert = UIAlertAction(title: "update your Workout?", style: (.init(rawValue: 6) ?? .default)) { alertAction in
+//                print( "testAlert workout")
+//                //let addAlert = UIAlert
+//                //self.performSegue(withIdentifier: "segueUserUpadate", sender: nil)
+//            }
+//            let deleteteAlert = UIAlertAction(title: "update your Workout?", style: (.init(rawValue: 6) ?? .default)) { alertAction in
+//                print( "testAlert workout")
+//                //let addAlert = UIAlert
+//               // self.performSegue(withIdentifier: "segueUserMyWorkout", sender: nil)
+//
+//            }
+//            let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//
+//            let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
+//                //testing...
+//                print("confirmAction")
+//                self.performSegue(withIdentifier: "segueUserUpadate", sender: nil)
+//
+//
+//            }
+//
+//            alert.addAction(addAlert)
+//            alert.addAction(updateAlert)
+//            alert.addAction(deleteteAlert)
+//            alert.addAction(cancelAlert)
+//            alert.addAction(confirmAction)
+//
+//            self.present(alert, animated: true, completion: nil)
             
-            let addAlert = UIAlertAction(title: "Add New Workout", style: (.init(rawValue: 3) ?? .default)) { alertAction in
-                print( "testAlert workout")
-                //let addAlert = UIAlert
-                //self.performSegue(withIdentifier: "segueUserUpadate", sender: nil)
-            }
-            let updateAlert = UIAlertAction(title: "update your Workout?", style: (.init(rawValue: 3) ?? .default)) { alertAction in
-                print( "testAlert workout")
-                //let addAlert = UIAlert
-                //self.performSegue(withIdentifier: "segueUserUpadate", sender: nil)
-            }
-            let deleteteAlert = UIAlertAction(title: "update your Workout?", style: (.init(rawValue: 3) ?? .default)) { alertAction in
-                print( "testAlert workout")
-                //let addAlert = UIAlert
-               // self.performSegue(withIdentifier: "segueUserMyWorkout", sender: nil)
-            
-            }
-            let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            
-            let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
-                //testing...
-                print("confirmAction")
-                self.performSegue(withIdentifier: "segueUserUpadate", sender: nil)
-                
-                
-            }
-            
-            alert.addAction(addAlert)
-            alert.addAction(updateAlert)
-            alert.addAction(deleteteAlert)
-            alert.addAction(cancelAlert)
-            alert.addAction(confirmAction)
-            
-            self.present(alert, animated: true, completion: nil)
-            
-            }
+            }//[end if actionclickcard]
     }
     
     var db = Firestore.firestore()
@@ -72,7 +96,7 @@ class MyWorkoutController: UIViewController, ModelTitleMyWorkoutCellCallBack, Mo
         super.viewDidLoad()
       
         setupTableView ()
-        self.tableViewMyWorkout.reloadData()
+        //self.tableViewMyWorkout.reloadData()
         //singIn()
     }
     
@@ -84,19 +108,22 @@ class MyWorkoutController: UIViewController, ModelTitleMyWorkoutCellCallBack, Mo
         }
     }
     
-    var nameTitleMyWorkout :  String = " "
+    var nameTitleMyWorkout :  String = ""
     var nameMyWorkout : String = ""
-    var descriptionMyWorkout :  String = " "
+    var descriptionMyWorkout :  String = ""
     
     //[variables class ModelUserMyWorkoutCell]
-    var nameWorkout: String = " "
-    var dateWorkout: String = " "
-    var descriptionWorkout: String = " "
+    var nameWorkout: String = ""
+    var dateWorkout: String = ""
+    var descriptionWorkout: String = ""
     
-    func initiate(nameMyWorkout: String, descriptionMyWorkout: String ){
+    func initiate(nameMyWorkout: String, descriptionMyWorkout: String, nameTitleMyWorkout: String, nameWorkout: String  ){
         
         self.nameMyWorkout = nameMyWorkout
         self.descriptionMyWorkout = descriptionMyWorkout
+        self.nameTitleMyWorkout = nameTitleMyWorkout
+        self.nameWorkout = nameWorkout
+        
     }
     
     @IBAction func buttonConfirm(_ sender: Any) {
@@ -351,8 +378,6 @@ class MyWorkoutController: UIViewController, ModelTitleMyWorkoutCellCallBack, Mo
 
                                              self.tableViewMyWorkout.allowsSelection = false
 
-
-
                                              self.tableViewMyWorkout.separatorStyle = UITableViewCell.SeparatorStyle.none
 
                                              self.tableViewMyWorkout.reloadData()
@@ -377,8 +402,8 @@ class MyWorkoutController: UIViewController, ModelTitleMyWorkoutCellCallBack, Mo
                              
                              print("error listCollection \(err)")
                          }
-                         
-                         let cardMyWorkout = ModelUserMyWorkout(delegate: self, navigationController: self.navigationController, nameWorkout: workoutUser!.name, dateWorkout: workoutUser!.days!, descriptionWorkout: workoutUser!.description)
+                         //checking cell created my workout
+                         let cardMyWorkout = ModelMyWorkout(delegate: self, navigationController: self.navigationController, nameMyWorkout: self.nameWorkout, descriptionMyWorkout: self.descriptionWorkout)
                          
                          self.dataSource.data.append(cardMyWorkout)
                          
@@ -403,24 +428,22 @@ class MyWorkoutController: UIViewController, ModelTitleMyWorkoutCellCallBack, Mo
         
         let cardTitleMyWorkout = ModelTitleMyWorkout(delegate: self, navigationController: self.navigationController, imageWorkout: "musculacao" , titleMyWorkout: "MY Workout" )
         
-       // let cardMyWorkout = ModelMyWorkout(delegate: self, navigationController: self.navigationController, nameMyWorkout: nameMyWorkout, descriptionMyWorkout: descriptionMyWorkout)
+        let cardMyWorkout = ModelMyWorkout(delegate: self, navigationController: self.navigationController, nameMyWorkout: nameMyWorkout, descriptionMyWorkout: descriptionMyWorkout)
         
         //let cardMyWorkout = ModelUserMyWorkout(delegate: self, navigationController: self.navigationController, nameWorkout: "Test", dateWorkout: "Test", descriptionWorkout: "Test")
         
         
         dataSource.data.append(cardTitleMyWorkout)
         
+        dataSource.data.append(cardMyWorkout)
         
+        dataSource.initializeTableView(tableView: tableViewWorkout)
         
-       // dataSource.data.append(cardMyWorkout)
+        tableViewWorkout.allowsSelection = false
         
-        dataSource.initializeTableView(tableView: tableViewMyWorkout)
+        tableViewWorkout.separatorStyle = UITableViewCell.SeparatorStyle.none
         
-        tableViewMyWorkout.allowsSelection = false
-        
-        tableViewMyWorkout.separatorStyle = UITableViewCell.SeparatorStyle.none
-        
-        self.tableViewMyWorkout.reloadData()
+        self.tableViewWorkout.reloadData()
         
                 
     }

@@ -17,8 +17,8 @@ class ModelMyWorkout: tableViewCompatible {
         
         self.nameMyWorkout = nameMyWorkout
         self.descriptionMyWorkout = descriptionMyWorkout
+        //self.nameTitleMyWorkout = nameTitleMyWorkout
     }
-    
     
     var reuseIdentifier: String {
         
@@ -27,11 +27,11 @@ class ModelMyWorkout: tableViewCompatible {
     }
     open weak var delegate : ModelMyWorkoutCellCallBack?
     
-//    var nameTitleMyWorkout :  String = " "
+ //   var nameTitleMyWorkout :  String
 //    var nameMyWorkoutTitle: String = " "
-    var nameMyWorkout: String = " "
-    var descriptionMyWorkout: String = " "
-    var navigationController : UINavigationController?
+    var nameMyWorkout: String
+    var descriptionMyWorkout: String 
+    //var navigationController : UINavigationController?
     
     
     func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) -> UITableViewCell {
