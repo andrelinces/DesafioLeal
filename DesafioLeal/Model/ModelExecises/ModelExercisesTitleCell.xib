@@ -37,10 +37,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pql-G7-WMe">
+                                <rect key="frame" x="30" y="32" width="43" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUT-X6-n9Y">
+                                        <rect key="frame" x="0.0" y="8" width="43" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="wUT-X6-n9Y" secondAttribute="trailing" id="2Vo-kp-NXj"/>
+                                    <constraint firstAttribute="height" constant="50" id="L8a-US-o0B"/>
+                                    <constraint firstItem="wUT-X6-n9Y" firstAttribute="leading" secondItem="Pql-G7-WMe" secondAttribute="leading" id="XY8-bm-9es"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="tYc-gY-nN6"/>
+                                    <constraint firstItem="wUT-X6-n9Y" firstAttribute="top" secondItem="Pql-G7-WMe" secondAttribute="top" constant="8" id="zuY-wt-E3S"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="separatorColor"/>
                         <constraints>
                             <constraint firstItem="Gvk-Ek-Dmw" firstAttribute="top" secondItem="j0B-jb-B4e" secondAttribute="top" constant="32" id="6mO-Lj-seK"/>
+                            <constraint firstItem="Gvk-Ek-Dmw" firstAttribute="leading" secondItem="Pql-G7-WMe" secondAttribute="trailing" constant="42" id="7hK-Yn-8GW"/>
                             <constraint firstAttribute="trailing" secondItem="XZv-Ae-VPO" secondAttribute="trailing" constant="30" id="BdC-5F-IAX"/>
                             <constraint firstAttribute="height" constant="300" id="FzX-jb-6NH"/>
                             <constraint firstAttribute="trailing" secondItem="fwD-eN-799" secondAttribute="trailing" id="Ou0-Vr-MIz"/>
@@ -48,8 +68,10 @@
                             <constraint firstItem="fwD-eN-799" firstAttribute="leading" secondItem="j0B-jb-B4e" secondAttribute="leading" id="X6g-rQ-NWF"/>
                             <constraint firstItem="Gvk-Ek-Dmw" firstAttribute="leading" secondItem="j0B-jb-B4e" secondAttribute="leading" constant="115" id="bNR-2w-o56"/>
                             <constraint firstItem="XZv-Ae-VPO" firstAttribute="top" secondItem="fwD-eN-799" secondAttribute="bottom" constant="15" id="g4U-nH-kTI"/>
+                            <constraint firstItem="Pql-G7-WMe" firstAttribute="leading" secondItem="j0B-jb-B4e" secondAttribute="leading" constant="30" id="uh4-lO-9do"/>
                             <constraint firstItem="fwD-eN-799" firstAttribute="top" secondItem="Gvk-Ek-Dmw" secondAttribute="bottom" constant="19" id="v4e-gM-wyI"/>
                             <constraint firstItem="XZv-Ae-VPO" firstAttribute="leading" secondItem="j0B-jb-B4e" secondAttribute="leading" constant="30" id="wi0-OQ-VTr"/>
+                            <constraint firstItem="Pql-G7-WMe" firstAttribute="top" secondItem="j0B-jb-B4e" secondAttribute="top" constant="32" id="wqT-Gl-JVc"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -61,14 +83,20 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="buttonReturn" destination="wUT-X6-n9Y" id="5u3-As-xuB"/>
                 <outlet property="cardViewTitle" destination="j0B-jb-B4e" id="AY3-mk-Enc"/>
+                <outlet property="cornerViewButtonReturn" destination="Pql-G7-WMe" id="9cu-Og-EPR"/>
                 <outlet property="labelExercisesTitle" destination="Gvk-Ek-Dmw" id="Y9A-Oz-LGy"/>
             </connections>
             <point key="canvasLocation" x="309.4202898550725" y="103.79464285714285"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="suportehalteres" width="1920" height="1280"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

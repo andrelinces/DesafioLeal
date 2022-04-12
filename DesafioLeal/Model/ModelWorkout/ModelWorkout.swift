@@ -13,7 +13,7 @@ protocol ModelWorkoutCellCallBack: class {
     
 }
 class ModelWorkout: tableViewCompatible{
-    internal init(delegate: ModelWorkoutPosterCellCallBack? = nil, imageWorkout: String, myWorkout: String) {
+    internal init(delegate: ModelWorkoutPosterCellCallBack? = nil, navigationController : UINavigationController?, imageWorkout: String, myWorkout: String) {
         self.delegate = delegate
         self.imageWorkout = imageWorkout
         self.myWorkout = myWorkout

@@ -15,24 +15,28 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
        super.viewDidLoad()
-        //singOut()
         
-        print("handle: \(self.handle?.description)")
-        print("test didload home")
+        //singOut()
+        checkUserSingIn()
+      
        
     }
-    
-//    var handle: AuthStateDidChangeListenerHandle?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         print("test appear home")
+              
+    }
+    
+    func checkUserSingIn () {
+        
+        
+        print("test appear home")
         // [START auth_listener]
         handle = Auth.auth().addStateDidChangeListener { auth, user in
-          // [START_EXCLUDE]
-          //self.setTitleDisplay(user)
-          //self.tableView.reloadData()
+            // [START_EXCLUDE]
+            
             print("handle: \(self.handle)")
             if  user?.isAnonymous == false {
                 let testUser = auth.currentUser?.email
@@ -46,9 +50,8 @@ class HomeController: UIViewController {
                     } else {
                         for document in querySnapshot!.documents {
                             switch document.documentID == userId {
-                                 
                                 
-                            case true : //(document.exists):
+                            case true :
                                 let test = document.documentID
                                 print("Document..\(document.documentID) => \(document.data())");
                                 print("\(test)")
@@ -59,34 +62,11 @@ class HomeController: UIViewController {
                                     
                                     listExercises = try document.data(as: exercisesCategories.self)
                                     
-                                    
                                 }catch {
                                     
                                     print("error listCollection \(err)")
                                 }
-                                print("name user? \(listExercises?.name)")
-                                print ("User ?: \(testUser)")
-                                print("Document..\(document.documentID) => \(document.data())")
-                                print ("User id: \(userId)")
-                                
-                                // [Alert for to user, account created successfully]
-                                let alert = UIAlertController(title:  "Welcome \(listExercises!.name)!", message: "\(listExercises?.name), Do you want to workout now? ", preferredStyle: .alert)
-                                
-                                let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                                
-                                let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
-                                    //testing...
-                                    print("confirmAction")
-                                    self.performSegue(withIdentifier: "segueHomeMyWorkout", sender: nil)
-                                    //alert.awakeFromNib()
-                                
-                                }
-                                alert.addAction(cancelAlert)
-                                alert.addAction(confirmAction)
-                                
-                                self.present(alert, animated: true, completion: nil)
-                                
-                                
+                                   
                             case false : //(document.data() .isEmpty):
                                 print("document dont exists!")
                                 break
@@ -95,45 +75,44 @@ class HomeController: UIViewController {
                             
                         }
                     }
-                print("uref: \(uRef)")
-//                db.collection("users")
-//                    .getDocuments() { (querySnapshot, err) in
-//                        if let err = err {
-//                            print("Error getting documents: \(err)")
-//                        } else {
-//                            for document in querySnapshot!.documents {
-//                                print("Document..\(document.documentID) => \(document.data())")
-//                                print ("User id: \(userId)")
-//                            }
-//                        }
-//                }
-                print ("User emailx: \(testUser)")
-                print ("User singOut: \(refUser.description)")
+                    
+//                    // [Alert for to user, account created successfully]
+//                    let alert = UIAlertController(title:  "Save Exercises", message: "Do you want add this exercise from your workout? ?", preferredStyle: .alert)
+//                    
+//                    let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//                    
+//                    let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
+//                        //testing...
+//                        print("confirmAction")
+//                        
+//                    }
+//                    
+//                    alert.addAction(cancelAlert)
+//                    alert.addAction(confirmAction)
+//                    
+//                    self.present(alert, animated: true, completion: nil)
+                    
+                }
                 
-                // [Alert for to user, account created successfully]
-                let alert = UIAlertController(title:  "Save Exercises", message: "Do you want add this exercise from your workout? ?", preferredStyle: .alert)
+            }else {
                 
-                let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                let alert = UIAlertController(title:  "Welcome !", message: " Do you don't are logged, do you need logged for to the use app, please singIn our register! ", preferredStyle: .alert)
                 
                 let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
                     //testing...
                     print("confirmAction")
-                    
+                    self.performSegue(withIdentifier: "segueHomeLogin", sender: nil)
                     
                 }
                 
-                
-                alert.addAction(cancelAlert)
                 alert.addAction(confirmAction)
                 
                 self.present(alert, animated: true, completion: nil)
                 
             }
-            //self.singOut()
             
-            //self.performSegue(withIdentifier: "segueSingInWorkout", sender: nil)
-          // [END_EXCLUDE]
         }
+        
     }
     
     func singOut() {
@@ -148,4 +127,4 @@ class HomeController: UIViewController {
     
 }
 
-}
+

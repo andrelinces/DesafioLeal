@@ -11,7 +11,9 @@ class ModelExercisesTitleCell: UITableViewCell {
     
     @IBOutlet weak var labelExercisesTitle: UILabel!
     @IBOutlet weak var cardViewTitle: UIView!
-    
+    @IBOutlet weak var cornerViewButtonReturn : UIView!
+    @IBOutlet weak var buttonReturn : UIButton!
+  
     
     func setupDesign () {
 
@@ -19,6 +21,8 @@ class ModelExercisesTitleCell: UITableViewCell {
         //cardViewTitle.layer.backgroundColor = .init(srgbRed: 55, green: 90, blue: 30, alpha: 1)
         
         //cardViewTitle.backgroundColor = .lightGray
+        cornerViewButtonReturn.changeDesigneView(cornerRadius: cornerViewButtonReturn.frame.height/2, shadow: CGSize(width: 0, height: 0), shadowOpacity: 0)
+        
     }
 
     func setupValues (exercisesTitle: String) {

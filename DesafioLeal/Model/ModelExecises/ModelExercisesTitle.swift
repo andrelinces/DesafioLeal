@@ -9,7 +9,7 @@ import UIKit
 
 protocol ModelExercisesTitleCellCallBack: class {
     
-   // func actionReturn ()
+   func actionReturn ()
     
 }
 class ModelExercisesTitle: tableViewCompatible {
@@ -43,7 +43,7 @@ class ModelExercisesTitle: tableViewCompatible {
             
             
             //MARK: Return button action on movie details screen, this method is used in main view..
-//            cell.buttonReturn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(actionReturn)))
+            cell.buttonReturn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(actionReturn)))
             
             
             return cell
@@ -56,9 +56,9 @@ class ModelExercisesTitle: tableViewCompatible {
         }
     }
     //Function of the return button, used into main view.
-//    @objc func actionReturn(sender : UITapGestureRecognizer){
-//
-//        delegate?.actionReturn()
-//    }
+    @objc func actionReturn(sender : UITapGestureRecognizer){
+
+        delegate?.actionReturn()
+    }
     
     }

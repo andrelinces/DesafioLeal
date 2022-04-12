@@ -21,7 +21,7 @@ func initializeTableView(tableView: UITableView){
     
     navigationController?.setNavigationBarHidden(false, animated: true)
     navigationController?.navigationBar.alpha = 0
-    navigationController?.navigationBar.backItem?.title = "Voltar"
+    navigationController?.navigationBar.backItem?.title = "Back"
     
     //Registing the cells
     tableView.register(UINib(nibName: "ModelExercisesTitleCell", bundle: Bundle.main), forCellReuseIdentifier: "ModelExercisesTitleCellIdentifier")
@@ -31,12 +31,7 @@ func initializeTableView(tableView: UITableView){
     tableView.register(UINib(nibName: "ModelTitleMyWorkoutCell", bundle: Bundle.main), forCellReuseIdentifier: "ModelTitleMyWorkoutCellIdentifier")
     tableView.register(UINib(nibName: "ModelMyWorkoutCell", bundle: Bundle.main), forCellReuseIdentifier: "ModelMyWorkoutCellIdentifier")
     tableView.register(UINib(nibName: "ModelUserMyWorkoutCell", bundle: Bundle.main), forCellReuseIdentifier: "ModelUserMyWorkoutCellIdentifier")
-    
-    
-    
-    
-    
-    
+      
 }
 }
 
@@ -75,7 +70,6 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
         return ModelUserMyWorkoutCell.cellForTableView(tableView: tableView, atIndexpath: indexPath)
         
-        
     }else{
         
         
@@ -86,15 +80,16 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
 //funciton for scrollview when the user scroll the list, show navigation bar
 func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    
     //Print for tests and to display the position of the scroll, the initial position is -44
-    //print("Scroll contentOffset: \(scrollView.contentOffset.y)")
+    print("Scroll contentOffset: \(scrollView.contentOffset.y)")
     
     if navigationController != nil {
         if scrollView.contentOffset.y > 30 {//MARK: Displays navigation bar when the down scroll.
 
             navigationController?.navigationBar.alpha = scrollView.contentOffset.y / 180
             navigationController?.navigationBar.tintColor = .darkGray
-            navigationController?.navigationBar.backgroundColor = .red
+            navigationController?.navigationBar.backgroundColor = .gray
         }else{
             navigationController?.navigationBar.alpha = 0
 

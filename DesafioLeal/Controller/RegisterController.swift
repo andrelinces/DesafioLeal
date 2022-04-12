@@ -9,10 +9,11 @@ import Foundation
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 
 class RegisterController: UIViewController {
-
+    
     @IBOutlet weak var nameUserField: UITextField!
     @IBOutlet weak var emailUserField: UITextField!
     @IBOutlet weak var passawordUserField: UITextField!
@@ -58,9 +59,6 @@ class RegisterController: UIViewController {
                                 
                                 self.present(alert, animated: true, completion: nil)
                                 
-                                //passing user to workout view if he is logged in.
-                                self.performSegue(withIdentifier: "segueRegister", sender: nil)
-                                
                                 if authResult != nil {
                                     //self.performSegue(withIdentifier: "segueLoginRegister", sender: nil)
                                     
@@ -89,8 +87,37 @@ class RegisterController: UIViewController {
                                             
                                         }
                                         
+                                        db.collection("workout")
+                                            .document().setData([
+                                                
+                                                "name": "defaul workout",
+                                                "days": "mon, fri",
+                                                "description" : "squat workout" ,
+                                                "idWorkout" : "test"
+                                            
+                                                ]) { (error) in
+                                                
+                                                print("User and data folders, successfully created!")
+                                        
+
+                                            if error != nil {
+                                                //Show error message
+                                                print("Error creating the user\(error)")
+                                            }
+                                        }
                                     }
                                 }
+                            }else{
+                                let alert = UIAlertController(title: nameUser , message: " Failed create user, all fields to need filled !! Type valid email !", preferredStyle: .alert)
+                                
+                                let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
+                                    //testing...
+                                    print("confirmAction")
+                                }
+                                
+                                alert.addAction(confirmAction)
+                                self.present(alert, animated: true, completion: nil)
+                                print("Faild create user!!")
                             }
                         }
                     }
@@ -119,30 +146,7 @@ class RegisterController: UIViewController {
         
     }// [END func buttonRegister]
         
-    
-    func newTraining () {
-        
-        let user = Auth.auth().currentUser
-        
-        if let user = user {
-        
-            let uid = user.uid
-        //}
-       
-            let db = db.collection("Users").document(uid)
-                .collection("NameChoiceUser2").document("NameChoiceUser2").setData(["Exercicies 1" : "NameChoiceUser2"]) { err in
-            if let err = err {
-                print("Error writing document: \(err)")
-            } else {
-                print("Document successfully written!")
-            }
-            
-            }
-        print("test func newTraining...\(db)")
-    }
-        
-    }
-    
+   
     //Method for validate user-entered fields
     func validateFields() -> String {
         
@@ -151,7 +155,7 @@ class RegisterController: UIViewController {
             return "Name"
             
         }else if (self.emailUserField.text?.isEmpty)! {
-            
+            passawordUserField.textContentType = .emailAddress
             return "email"
         }else if (self.passawordUserField.text?.isEmpty)! {
             

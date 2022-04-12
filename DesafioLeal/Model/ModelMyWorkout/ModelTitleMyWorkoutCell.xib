@@ -10,18 +10,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ModelTitleMyWorkoutCellIdentifier" rowHeight="130" id="LYq-rG-60v" customClass="ModelTitleMyWorkoutCell" customModule="DesafioLeal" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="439" height="130"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ModelTitleMyWorkoutCellIdentifier" rowHeight="151" id="LYq-rG-60v" customClass="ModelTitleMyWorkoutCell" customModule="DesafioLeal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="439" height="151"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LYq-rG-60v" id="VGl-1a-rPe">
-                <rect key="frame" x="0.0" y="0.0" width="439" height="130"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LYq-rG-60v" id="VGl-1a-rPe">
+                <rect key="frame" x="0.0" y="0.0" width="439" height="151"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20n-uQ-BdS">
                         <rect key="frame" x="0.0" y="0.0" width="439" height="130"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oM-yx-4lR">
-                                <rect key="frame" x="306" y="60" width="112" height="22"/>
+                                <rect key="frame" x="306" y="80" width="112" height="22"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <menu key="menu" id="TB3-DL-MjK">
                                     <children>
@@ -32,19 +32,40 @@
                                 <state key="normal" image="plus" catalog="system"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Workout " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xl7-E3-tkn">
-                                <rect key="frame" x="120" y="60" width="146" height="33"/>
+                                <rect key="frame" x="120" y="80" width="146" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="loV-Gc-Lcx">
+                                <rect key="frame" x="32" y="70" width="43" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNN-ZX-1uy">
+                                        <rect key="frame" x="0.0" y="8" width="43" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zNN-ZX-1uy" secondAttribute="trailing" id="F9s-Yh-khf"/>
+                                    <constraint firstItem="zNN-ZX-1uy" firstAttribute="top" secondItem="loV-Gc-Lcx" secondAttribute="top" constant="8" id="WNM-rW-ha5"/>
+                                    <constraint firstAttribute="height" constant="50" id="nad-By-fPL"/>
+                                    <constraint firstItem="zNN-ZX-1uy" firstAttribute="leading" secondItem="loV-Gc-Lcx" secondAttribute="leading" id="xKV-9F-5Jw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="separatorColor"/>
                         <constraints>
+                            <constraint firstItem="Xl7-E3-tkn" firstAttribute="leading" secondItem="loV-Gc-Lcx" secondAttribute="trailing" constant="45" id="51W-QT-x0a"/>
                             <constraint firstItem="Xl7-E3-tkn" firstAttribute="leading" secondItem="20n-uQ-BdS" secondAttribute="leading" constant="120" id="8lV-Os-CsF"/>
                             <constraint firstAttribute="height" constant="130" id="9ai-Hc-KSF"/>
-                            <constraint firstItem="Xl7-E3-tkn" firstAttribute="top" secondItem="20n-uQ-BdS" secondAttribute="top" constant="60" id="bdc-3u-xyb"/>
+                            <constraint firstItem="Xl7-E3-tkn" firstAttribute="top" secondItem="20n-uQ-BdS" secondAttribute="top" constant="80" id="bdc-3u-xyb"/>
+                            <constraint firstItem="loV-Gc-Lcx" firstAttribute="leading" secondItem="20n-uQ-BdS" secondAttribute="leading" constant="32" id="lAb-tO-XWy"/>
                             <constraint firstAttribute="trailing" secondItem="7oM-yx-4lR" secondAttribute="trailing" constant="21" id="muf-VI-iCt"/>
-                            <constraint firstItem="7oM-yx-4lR" firstAttribute="top" secondItem="20n-uQ-BdS" secondAttribute="top" constant="60" id="q5o-Ab-As2"/>
+                            <constraint firstItem="loV-Gc-Lcx" firstAttribute="top" secondItem="20n-uQ-BdS" secondAttribute="top" constant="70" id="n7z-6B-eN2"/>
+                            <constraint firstItem="7oM-yx-4lR" firstAttribute="top" secondItem="20n-uQ-BdS" secondAttribute="top" constant="80" id="q5o-Ab-As2"/>
                             <constraint firstItem="7oM-yx-4lR" firstAttribute="leading" secondItem="Xl7-E3-tkn" secondAttribute="trailing" constant="40" id="rzn-Ar-BNs"/>
                         </constraints>
                     </view>
@@ -58,14 +79,20 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="buttonMenuMyWorkout" destination="TB3-DL-MjK" id="56P-fE-OcM"/>
+                <outlet property="buttonReturn" destination="zNN-ZX-1uy" id="SdF-K7-HG5"/>
                 <outlet property="cardViewTitle" destination="20n-uQ-BdS" id="WfN-Qz-N52"/>
+                <outlet property="cornerViewButtonReturn" destination="loV-Gc-Lcx" id="JWW-1Q-RK9"/>
                 <outlet property="titleWorkoutLabel" destination="Xl7-E3-tkn" id="2vT-fP-6J6"/>
             </connections>
-            <point key="canvasLocation" x="297.82608695652175" y="2.6785714285714284"/>
+            <point key="canvasLocation" x="297.82608695652175" y="9.7098214285714288"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -43,44 +43,11 @@ class ModelMyWorkoutCell: UITableViewCell{
 //        labelExercisesTitle.font = .boldSystemFont(ofSize: 30)
 //        labelExercisesTitle.textColor = .blue
         
-        
         //cardViewTitle.backgroundColor = .lightGray
     }
     
    
     
-    
-//    func newWorkout () {
-//        
-//        let user = Auth.auth().currentUser
-//        
-//        if let user = user {
-//        
-//            let uid = user.uid
-//        //}
-//            
-//            let docId = db.collection("users").document(uid).collection(nameMyWorkout).document()
-//            let db = db.collection("users").document(uid)
-//                .collection(nameMyWorkout).document().setData([
-//                    
-//                    "idUser" : uid,
-//                    "idUser" : docId,
-//                    "Name Workout" : nameMyWorkout,
-//                    "Description" : descriptionMyWorkout,
-//                    "TimesTramp" : FieldValue.serverTimestamp(),
-//                    
-//                                ]) { err in
-//            if let err = err {
-//                print("Error writing document: \(err)")
-//            } else {
-//                print("Document successfully written!")
-//            }
-//            
-//            }
-//            
-//        print("test func newTraining...\(db)")
-//    }
-//    }
     
 }
 

@@ -49,6 +49,8 @@
 		D3AAFEFE2803AC3E00E811B4 /* ModelUserMyWorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AAFEFD2803AC3E00E811B4 /* ModelUserMyWorkoutCell.swift */; };
 		D3AAFF002803AC6A00E811B4 /* ModelUserMyWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AAFEFF2803AC6A00E811B4 /* ModelUserMyWorkout.swift */; };
 		D3AAFF022803B8B600E811B4 /* ModelUserMyWorkoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AAFF012803B8B600E811B4 /* ModelUserMyWorkoutCell.xib */; };
+		D3F129BB2804D29400AF5729 /* ManagerWorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F129BA2804D29400AF5729 /* ManagerWorkoutController.swift */; };
+		D3F129BD2805DD0C00AF5729 /* ManagerNewWorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F129BC2805DD0B00AF5729 /* ManagerNewWorkoutController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,8 @@
 		D3AAFEFD2803AC3E00E811B4 /* ModelUserMyWorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUserMyWorkoutCell.swift; sourceTree = "<group>"; };
 		D3AAFEFF2803AC6A00E811B4 /* ModelUserMyWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUserMyWorkout.swift; sourceTree = "<group>"; };
 		D3AAFF012803B8B600E811B4 /* ModelUserMyWorkoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModelUserMyWorkoutCell.xib; sourceTree = "<group>"; };
+		D3F129BA2804D29400AF5729 /* ManagerWorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerWorkoutController.swift; sourceTree = "<group>"; };
+		D3F129BC2805DD0B00AF5729 /* ManagerNewWorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerNewWorkoutController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,8 @@
 				D316301E27FC7681006ED4D4 /* RegisterController.swift */,
 				D3777EC527F481400027BC34 /* ExercisesController.swift */,
 				D3777EC727F5E8CF0027BC34 /* WorkoutController.swift */,
+				D3F129BA2804D29400AF5729 /* ManagerWorkoutController.swift */,
+				D3F129BC2805DD0B00AF5729 /* ManagerNewWorkoutController.swift */,
 				D316303227FEF3A2006ED4D4 /* MyWorkoutController.swift */,
 				D3777EC027ECA2D30027BC34 /* HomeController.swift */,
 				D3777EC927F5EBA30027BC34 /* DataSource.swift */,
@@ -404,10 +410,12 @@
 				D3777EC427EDEF270027BC34 /* AccountController.swift in Sources */,
 				D3AAFEFA2802191F00E811B4 /* SingInController.swift in Sources */,
 				D316301F27FC7681006ED4D4 /* RegisterController.swift in Sources */,
+				D3F129BD2805DD0C00AF5729 /* ManagerNewWorkoutController.swift in Sources */,
 				D3795B0127F85E3E00B70C74 /* ModelExercisesPosterCell.swift in Sources */,
 				D316302527FD0C45006ED4D4 /* ModelWorkoutPoster.swift in Sources */,
 				D316302B27FDD111006ED4D4 /* ModelWorkout.swift in Sources */,
 				D3777EC627F481400027BC34 /* ExercisesController.swift in Sources */,
+				D3F129BB2804D29400AF5729 /* ManagerWorkoutController.swift in Sources */,
 				D316302927FDD0D9006ED4D4 /* ModelWorkoutCell.swift in Sources */,
 				D316302327FD08F9006ED4D4 /* ModelWorkoutPosterCell.swift in Sources */,
 				D3AAFF002803AC6A00E811B4 /* ModelUserMyWorkout.swift in Sources */,

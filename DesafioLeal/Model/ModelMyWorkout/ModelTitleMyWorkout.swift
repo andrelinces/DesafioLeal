@@ -10,6 +10,9 @@ import UIKit
 protocol ModelTitleMyWorkoutCellCallBack: class {
     
     func actionClickCardView (indexPath: IndexPath)
+    
+    func actionReturn ()
+    
 }
 
 class ModelTitleMyWorkout: tableViewCompatible {
@@ -39,7 +42,7 @@ class ModelTitleMyWorkout: tableViewCompatible {
         
             
             //cell.setupView()
-            //cell.setupDesign()
+            cell.setupDesign()
             cell.setupValues(titleMyWorkout: titleMyWorkout)
             //cell.setupImage(imageWorkout: imageWorkout, myWorkout: myWorkout)
             
@@ -48,6 +51,11 @@ class ModelTitleMyWorkout: tableViewCompatible {
             gestureClickCard.indexPath = indexpath
             
             cell.cardViewTitle.addGestureRecognizer(gestureClickCard)
+            
+            //MARK: Return button action on movie details screen, this method is used in main view..
+            cell.buttonReturn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(actionReturn)))
+            cell.cornerViewButtonReturn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(alertAdd)))
+            
             
             return cell
             
@@ -70,7 +78,28 @@ class ModelTitleMyWorkout: tableViewCompatible {
 
     }
     
+    //Function of the return button, used into main view.
+    @objc func actionReturn(sender : UITapGestureRecognizer){
+        
+        delegate?.actionReturn()
+    }
     
+    @objc func alertAdd () {
+        
+        // [Alert for to user, account created successfully]
+        let alert = UIAlertController(title:  "Menu Workout", message: "Do your want to editing your workout ?", preferredStyle: .alert)
+       
+        let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
+            //testing...
+            print("confirmAction")
+//                self.performSegue(withIdentifier: "segueUserWorkout", sender: nil)
+            //self.performSegue(withIdentifier: "segueMyWorkout", sender: inde)
+        }
+        
+        
+    }
 }
 
 
