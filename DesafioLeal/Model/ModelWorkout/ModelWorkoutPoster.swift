@@ -44,6 +44,12 @@ func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) 
         cell.setupValues( descriptionWorkout: descriptionWorkout)
         cell.setupImage(imagePosterWorkout: imagePosterWorkout, titleWorkout: titleWorkout)
         
+        //Adding clicks in card from tableview
+        let gestureClickCard = myTapCustom(target: self, action: #selector(actionClickCardView))
+        gestureClickCard.indexPath = indexpath
+        
+        cell.cardViewWorkout.addGestureRecognizer(gestureClickCard)
+        
         return cell
         
         
@@ -54,4 +60,14 @@ func cellForTableView(tableView: UITableView, atIndexpath indexpath: IndexPath) 
     }
 }
 
+    @objc func actionClickCardView (sender: myTapCustom) {
+        delegate?.actionClickCardView(indexPath: sender.indexPath!)
+    }
+
+    class myTapCustom: UITapGestureRecognizer {
+
+        var indexPath: IndexPath?
+
+    }
+    
 }

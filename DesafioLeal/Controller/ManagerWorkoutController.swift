@@ -48,15 +48,15 @@ class ManagerWorkoutController: UIViewController {
         handle = Auth.auth().addStateDidChangeListener { auth, user in
             
             let validateReturn = self.validateFields()
-            
+            let userId = auth.currentUser?.uid
             if validateReturn == " " {
                 
                 if let nameExercises = self.fieldNameExercises.text {
                     if let descriptionExercises = self.fieldDescriptionExercises.text {
                         if let imageUrlExercises = self.fieldImageUrl.text {
                             
-                            let userId = auth.currentUser?.uid
-                            if user?.isAnonymous == true {
+                            
+                            if userId == nil {
                                 
                                 print("user anonymous? \(user)")
                             }
@@ -86,15 +86,19 @@ class ManagerWorkoutController: UIViewController {
                                             print("error listCollection \(err)")
                                         }
                                         print("Refexe before: \(err)")
-                                        let refExe = self.db.collection("users").document(userId!)
-                                            .collection("workout").document(workoutUser!.idWorkout).collection("myexercises")
+                                        
+                                        var workExe = self.db.collection("users").document(userId ?? "defaul")
+                                            .collection("workout")
+                                        var  refExe = worRef.document().collection("myexercises")
+                                        
                                         print("Refexe before: \(refExe)")
                                         refExe.document().setData([
                                             
                                             "name" : nameExercises,
                                             "description" : descriptionExercises,
-                                            "imageurl" : imageUrlExercises,
-                                            "idExercises" : document.documentID
+                                            "urlImage" : imageUrlExercises,
+                                            "idExercises" : document.documentID,
+                                            "days" : "default "
                                             
                                         ]) { err in
                                             if let err = err {
@@ -108,7 +112,7 @@ class ManagerWorkoutController: UIViewController {
                                                 let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
                                                     //testing...
                                                     print("confirmAction")
-                                                    self.performSegue(withIdentifier: "segueMyWorkout", sender: nil)
+                                                    self.performSegue(withIdentifier: "segueNewExercisesMyWorkout", sender: nil)
                                                 }
                                                 
                                                 alert.addAction(confirmAction)

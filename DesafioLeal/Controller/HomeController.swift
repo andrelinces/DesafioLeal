@@ -18,8 +18,9 @@ class HomeController: UIViewController {
         
         //singOut()
         checkUserSingIn()
-      
-       
+      actionReturn()
+           //testCreateDoc()
+        //testGetExer()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,91 +30,184 @@ class HomeController: UIViewController {
               
     }
     
-    func checkUserSingIn () {
+    func testGetExer () {
         
-        
-        print("test appear home")
-        // [START auth_listener]
-        handle = Auth.auth().addStateDidChangeListener { auth, user in
-            // [START_EXCLUDE]
-            
-            print("handle: \(self.handle)")
-            if  user?.isAnonymous == false {
-                let testUser = auth.currentUser?.email
-                let userId = auth.currentUser?.uid
-                let refUser =   db.collection("users").whereField("name", isEqualTo: userId)
+        let testRef = db.collection("users/yvfX1VrDLLfNO0ZQXLRRc87N9vl1/workout/Zqt7GQgkmEMCBQryhCdg/myexercises")
+        testRef.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
                 
-                let uRef = db.collection("users")
-                db.collection("users").getDocuments() { (querySnapshot, err) in
+            } else {
+                for document in querySnapshot!.documents {
+                    print("funcTesGet GET\(document.documentID) => \(document.data())")
+                    
+                    var workoutUser : userWorkout? = nil
+                    
+                    do {
+                        workoutUser = try document.data(as: userWorkout.self)
+                    }catch{
+                        print("Error getting documents testGEt: \(err)")
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    
+    
+    func testCreateDoc () {
+        
+        var auth = Auth.auth()
+        
+        let userId = auth.currentUser?.uid
+        
+        if userId != nil {
+            
+            //configure database
+            let db = Firestore.firestore()
+            
+            let nameUser = "test22"
+            let emailUser = "test22@gmail.com"
+            
+            
+            if userId == auth.currentUser?.uid {
+                
+                var userRef = db.collection("users").document(userId ?? "default").setData([
+                    
+                    "userId" : userId,
+                    "name" : nameUser,
+                    "email" : emailUser
+                    
+                    
+                ]) { err in
                     if let err = err {
-                        print("Error getting documents: \(err)")
+                        print("Error writing document: \(err)")
                     } else {
-                        for document in querySnapshot!.documents {
-                            switch document.documentID == userId {
-                                
-                            case true :
-                                let test = document.documentID
-                                print("Document..\(document.documentID) => \(document.data())");
-                                print("\(test)")
-                                
-                                var listExercises : exercisesCategories? = nil
-                                
-                                do {
-                                    
-                                    listExercises = try document.data(as: exercisesCategories.self)
-                                    
-                                }catch {
-                                    
-                                    print("error listCollection \(err)")
-                                }
-                                   
-                            case false : //(document.data() .isEmpty):
-                                print("document dont exists!")
-                                break
-                                
-                            }
-                            
-                        }
+                        print("Document successfully written!")
                     }
                     
-//                    // [Alert for to user, account created successfully]
-//                    let alert = UIAlertController(title:  "Save Exercises", message: "Do you want add this exercise from your workout? ?", preferredStyle: .alert)
-//                    
-//                    let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//                    
-//                    let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
-//                        //testing...
-//                        print("confirmAction")
-//                        
-//                    }
-//                    
-//                    alert.addAction(cancelAlert)
-//                    alert.addAction(confirmAction)
-//                    
-//                    self.present(alert, animated: true, completion: nil)
-                    
                 }
                 
-            }else {
+                userRef = db.collection("workout")
+                    .document().setData([
+                        
+                        "name": "defaul workout",
+                        "days": "mon, fri",
+                        "description" : "squat workout" ,
+                        "idWorkout" : "test",
+                        "timesTramp" : FieldValue.serverTimestamp()
+                        
+                    ]) { (error) in
+                        
+                        print("User and data folders, successfully created!")
+                        print("User and data folders, successfully created! \(userRef)")
+                        
+                    }
+            }
+        }
+        
+        
+        if userId != nil {
+            
+            //configure database
+            let db = Firestore.firestore()
+            
+            let nameUser = "test22"
+            let emailUser = "test22@gmail.com"
+            
+            
+            if userId == auth.currentUser?.uid {
                 
-                let alert = UIAlertController(title:  "Welcome !", message: " Do you don't are logged, do you need logged for to the use app, please singIn our register! ", preferredStyle: .alert)
+                var userRef = db.collection("users").document(userId ?? "default")
                 
-                let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
-                    //testing...
-                    print("confirmAction")
-                    self.performSegue(withIdentifier: "segueHomeLogin", sender: nil)
+                var userRef2 = userRef
+                
+                userRef2.collection("workout")
+                    .document().setData([
+                        
+                        "name": "defaul workout",
+                        "days": "mon, fri",
+                        "description" : "squat workout" ,
+                        "idWorkout" : "test",
+                        "timesTramp" : FieldValue.serverTimestamp()
+                        
+                    ]) { err in
+                        if let err = err {
+                            print("Error writing document: \(err)")
+                        } else {
+                            print("Document successfully written!\(userRef2)")
+                        }
+                        
+                        
+                    }
+            }
+        }//[end]
+        
+        
+    }//[end]
+    
+
+    
+    func actionReturn() {
+        print("Back SingIn: \(tabBarController)")
+        navigationController?.popViewController(animated: true)
+        self.tabBarController?.selectedIndex = 0
+    }
+    
+    
+    
+    func checkUserSingIn () {
+        
+        // [START auth_listener]
+        handle = Auth.auth().addStateDidChangeListener { auth, user in
+
+            if  user?.email == nil {
+                if user?.uid == nil {
+                    
+                print ("User singOut: \(user)")
+                      
+                    // [Alert for to user, account created successfully]
+                    let alert = UIAlertController(title:  "logged out user.", message: "logged out user, do you need singIn for to use APP !!", preferredStyle: .alert)
+    
+                    let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
+                        //testing...
+                        print("confirmAction")
+    
+                        self.performSegue(withIdentifier: "segueHomeLogin", sender: nil)
+                    }
+    
+                        alert.addAction(confirmAction)
+    
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }else{
+                    
+                    print("Failed SingInButton  !! ")
+                    
+                    // [Alert for to user, account created successfully]
+                    let alert = UIAlertController(title:  "Welcome !", message: " Do you don't are logged, do you need logged for to the use app, please singIn our register! ", preferredStyle: .alert)
+                    
+                    let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
+                        //testing...
+                        print("confirmAction")
+                        self.performSegue(withIdentifier: "segueHomeLogin", sender: nil)
+                        
+                    }
+                    
+                    alert.addAction(confirmAction)
+                    
+                    self.present(alert, animated: true, completion: nil)
                     
                 }
-                
-                alert.addAction(confirmAction)
-                
-                self.present(alert, animated: true, completion: nil)
                 
             }
             
+            
         }
-        
-    }
+  
+    }//[END funcCheckSingIn]
     
     func singOut() {
         let firebaseAuth = Auth.auth()

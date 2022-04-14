@@ -16,20 +16,27 @@ class ModelWorkoutCell: UITableViewCell {
     @IBOutlet weak var cardViewWorkout: UIView!
     @IBOutlet weak var imageViewWorkout: UIImageView!
     @IBOutlet weak var labelWorkout: UILabel!
-    
-    @IBOutlet weak var buttonPullDonwMenu: UIMenuController!
+    @IBOutlet weak var cornerViewButtonReturn : UIView!
+   
     
   
     
     @IBAction func buttonMenu(_ sender: Any) {
         
-    }
         
-       
+        
+    }
+  
+   
+    
+    
+    
     func setupDesign () {
 
         cardViewWorkout.borderDesigneView(cornerRadius: 38)
-
+        
+        //cornerViewButtonReturn.changeDesigneView(cornerRadius: cornerViewButtonReturn.frame.height/2, shadow: CGSize(width: 0, height: 0), shadowOpacity: 0)
+        
     }
     
     func setupView () {

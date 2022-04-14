@@ -11,7 +11,7 @@ import FirebaseFirestore
 protocol ModelExercisesPosterCallBack: class {
     
     func actionClickCardView (indexPath: IndexPath)
-   
+    func actionReturn ()
 }
 
 var db = Firestore.firestore()
@@ -71,10 +71,10 @@ class ModelExercisesPoster: tableViewCompatible {
         }
     }
     //Function of the return button, used into main view.
-//    @objc func actionReturn(sender : UITapGestureRecognizer){
-//
-//        delegate?.actionReturn()
-//    }
+    @objc func actionReturn(sender : UITapGestureRecognizer){
+
+        delegate?.actionReturn()
+    }
     
     @objc func actionClickCardView (sender: myTapCustom) {
         delegate?.actionClickCardView(indexPath: sender.indexPath!)

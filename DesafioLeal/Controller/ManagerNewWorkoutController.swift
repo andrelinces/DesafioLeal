@@ -60,7 +60,7 @@ class ManagerNewWorkoutController: UIViewController {
                                             
                                         } else {
                                             for document in querySnapshot!.documents {
-                                                print("funcWorkout\(document.documentID) => \(document.data())")
+                                                print("funcWCreateWork\(document.documentID) => \(document.data())")
                                                 //print("Error getting documents: \(worRef)")
                                                 
                                                 var workoutUser : userWorkout? = nil
@@ -74,14 +74,19 @@ class ManagerNewWorkoutController: UIViewController {
                                                     print("error listCollection \(err)")
                                                 }
                                                 print("Refexe before: \(err)")
-                                                let refExe = self.db.collection("users").document(userId!)
+                                                
+                                                var refExe = self.db.collection("users").document(userId ?? "default")
+                                                    .collection("workout").document()
+                                                
+                                                let newRefWork = self.db.collection("users").document(userId ?? "default")
                                                     .collection("workout")
+                                                //users/lYcWf4U78cOFOQ7Wo2eQjDv786F3/workout/qmkRFkUnfn6Hn9DnlyWl/myexercises
                                                
-                                                refExe.document().setData([
+                                                refExe.setData([
                                                     
                                                     "name" : nameWorkout,
                                                     "description" : descriptionWorkout,
-                                                    "imageurl" : daysWorkout,
+                                                    "urlImage" : daysWorkout,
                                                     "idWorkout" : document.documentID
                                                     
                                                 ]) { err in

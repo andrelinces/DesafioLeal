@@ -21,13 +21,12 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
         print("Teste voltar : \(tabBarController)")
         navigationController?.popViewController(animated: true)
         
-        self.tabBarController?.selectedIndex = 1
+        self.tabBarController?.selectedIndex = 0
     }
     
     
     func actionClickCardView(indexPath: IndexPath) {
-       // print("clicou no card\(indexPath.row)")
-        
+   
         
         let user = Auth.auth().currentUser
         
@@ -47,48 +46,15 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
             
             self.present(alert, animated: true, completion: nil)
             
-           // performSegue(withIdentifier: "segueMyWorkout" , sender: nil)
-        
-        
     }//[end actionCliqueCard]
     
     var handle: AuthStateDidChangeListenerHandle?
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // [START auth_listener]
-        handle = Auth.auth().addStateDidChangeListener { auth, user in
-          // [START_EXCLUDE]
-            
-            
-            self.setTitleDisplay(user)
-          self.tableViewExercises.reloadData()
-            
-           // self.performSegue(withIdentifier: "segueSingInWorkout", sender: nil)
-          // [END_EXCLUDE]
+       
+       
         }
-    }
-    
-    //Update from navigation controller.
-//    override func viewWillDisappear(_ animated: Bool) {
-//        self.navigationController?.setNavigationBarHidden(true, animated: true)
-//        dataSource.navigationController = nil
-//    }
-    
-    
-    
-    func setTitleDisplay(_ user: User?) {
-        if let name = user?.displayName {
-          navigationItem.title = "Welcome \(name)"
-        } else {
-            navigationItem.title = user?.displayName
-        }
-      }
-   
-    
-    //var auth = Auth.auth().currentUser?.uid
-    
-    //var db = Firestore.firestore()
-    
+ 
     let dataSource = DataSource()
     
     @IBOutlet weak var tableViewExercises: UITableView!
@@ -115,14 +81,7 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
         //self.urlDetails = urlDetails
     }
 
-//    func singIn () {
-//        
-//        Auth.auth().signIn(withEmail: "joetest@gmail.com", password: "123456") { [weak self] authResult, error in
-//            guard let strongSelf = self else { return }
-//            
-//        }
-//    }
-    
+
     func setupTableview () {
         
         dataSource.navigationController = self.navigationController
@@ -139,6 +98,7 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
         
             //checking IdlistExercises
             listTest.getDocuments() { (querySnapshot, err) in
+                
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
@@ -157,8 +117,8 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
                         }
  
                         
-                        print ("Test list exercises.. \(listExercises?.name)")
-                        print ("test observation... \(listExercises?.observation)")
+                        print ("Test list exercises.. \(String(describing: listExercises?.name))")
+                        print ("test observation... \(String(describing: listExercises?.observation))")
                         let imageExercisesPoster = listExercises?.urlImage
                         let exercisesTitle = listExercises?.name
                         let observation = listExercises?.observation
@@ -191,13 +151,13 @@ public struct exercisesCategories: Codable {
     let name: String
     let urlImage: String?
     let observation: String?
-    
+    //let idExercises: String
 
     enum CodingKeys: String, CodingKey {
         case name
         case urlImage
         case observation
-        
+        //case idExercises
     }
 
 }
@@ -206,16 +166,16 @@ public struct userWorkout: Codable {
 
     let name: String
     let days: String?
-    let timesTramp: String?
     let idWorkout: String
     let description : String
+    let timesTramp: String
 
     enum CodingKeys: String, CodingKey {
         case name
         case days
-        case timesTramp
         case idWorkout
         case description
+        case timesTramp
     }
 
 }
@@ -224,16 +184,17 @@ public struct userWorkoutExercises: Codable {
 
     let name: String
     //let days: String?
-    let imageurl: String
+    let urlImage: String
     let idExercises : String
     let description : String
 
     enum CodingKeys: String, CodingKey {
         case name
         //case days
-        case imageurl
+        case urlImage
         case idExercises
         case description
     }
 
 }
+

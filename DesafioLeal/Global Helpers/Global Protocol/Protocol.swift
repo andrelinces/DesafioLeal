@@ -15,11 +15,11 @@ protocol tableViewCompatible {
     func cellForTableView ( tableView: UITableView, atIndexpath indexpath: IndexPath ) -> UITableViewCell
 
 }
-protocol menuList {
-    
-    func UIMenuBuilder()
-    
-    var system: UIMenuSystem { get }
+//protocol menuList {
+//
+//    func UIMenuBuilder()
+//
+//    var system: UIMenuSystem { get }
     
 //    func menu(for identifier: UIMenu.Identifier) -> UIMenu? {
 //        <#code#>
@@ -63,4 +63,4 @@ protocol menuList {
         
     
     
-}
+

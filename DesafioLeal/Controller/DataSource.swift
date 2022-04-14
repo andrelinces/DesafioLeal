@@ -36,6 +36,7 @@ func initializeTableView(tableView: UITableView){
 }
 
 extension DataSource: UITableViewDataSource, UITableViewDelegate {
+    
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return data.count
 }

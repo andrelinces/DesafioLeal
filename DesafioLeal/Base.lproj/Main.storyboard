@@ -11,16 +11,16 @@
         <!--Home-->
         <scene sceneID="63i-hI-DNt">
             <objects>
-                <viewController id="bcf-ve-ksW" userLabel="Home" customClass="HomeController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="bcf-ve-ksW" userLabel="Home" customClass="HomeController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7kb-MN-EvN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="academia" translatesAutoresizingMaskIntoConstraints="NO" id="SuK-PY-zgK">
-                                <rect key="frame" x="0.0" y="-44" width="414" height="803"/>
+                                <rect key="frame" x="0.0" y="-44" width="414" height="857"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desafio Leal App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjc-b3-0LR">
-                                <rect key="frame" x="41" y="200" width="332" height="48"/>
+                                <rect key="frame" x="41" y="244" width="332" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" systemColor="systemOrangeColor"/>
                                 <nil key="highlightedColor"/>
@@ -32,7 +32,7 @@
                             <constraint firstItem="SfA-u1-2B1" firstAttribute="trailing" secondItem="SuK-PY-zgK" secondAttribute="trailing" id="G0g-1r-zOU"/>
                             <constraint firstItem="fjc-b3-0LR" firstAttribute="top" secondItem="SfA-u1-2B1" secondAttribute="top" constant="200" id="Lk3-be-dVb"/>
                             <constraint firstItem="fjc-b3-0LR" firstAttribute="leading" secondItem="SfA-u1-2B1" secondAttribute="leading" constant="41" id="TEr-1U-Oe6"/>
-                            <constraint firstItem="SuK-PY-zgK" firstAttribute="top" secondItem="SfA-u1-2B1" secondAttribute="top" constant="-44" id="ghL-6U-wsc"/>
+                            <constraint firstItem="SuK-PY-zgK" firstAttribute="top" secondItem="SfA-u1-2B1" secondAttribute="top" constant="-88" id="ghL-6U-wsc"/>
                             <constraint firstItem="SfA-u1-2B1" firstAttribute="trailing" secondItem="fjc-b3-0LR" secondAttribute="trailing" constant="41" id="qmF-5c-Ozh"/>
                             <constraint firstItem="SfA-u1-2B1" firstAttribute="bottom" secondItem="SuK-PY-zgK" secondAttribute="bottom" id="yib-AQ-NQk"/>
                             <constraint firstItem="SuK-PY-zgK" firstAttribute="leading" secondItem="SfA-u1-2B1" secondAttribute="leading" id="z90-B9-tTx"/>
@@ -42,7 +42,6 @@
                     <navigationItem key="navigationItem" id="SFz-Zj-JJe"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="rvy-sV-x2g" kind="show" identifier="segueHomeMyWorkout" id="VLA-Zs-WQR"/>
                         <segue destination="vwW-Yc-rov" kind="show" identifier="segueHomeLogin" id="PxL-e8-tCD"/>
                     </connections>
                 </viewController>
@@ -53,7 +52,7 @@
         <!--Navigation Controller-->
         <scene sceneID="cwE-i3-hvm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lBu-iZ-VCs" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overFullScreen" id="lBu-iZ-VCs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Tgd-bJ-cIF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gyw-jz-kvL">
@@ -72,24 +71,24 @@
         <!--Explorer-->
         <scene sceneID="29Z-hn-7uT">
             <objects>
-                <viewController id="y35-aE-S0v" userLabel="Explorer" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="y35-aE-S0v" userLabel="Explorer" customClass="ExplorerController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aqk-b7-iS5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="LmC-LY-zsm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explorer" image="paperplane.circle.fill" catalog="system" id="pw4-fN-m8y" userLabel="Explorer"/>
+                    <navigationItem key="navigationItem" id="i1W-Vr-YT7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGi-6N-51d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3796" y="123"/>
+            <point key="canvasLocation" x="4613" y="-1073"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="a1b-sn-etZ">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="fCP-Fy-98x" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overFullScreen" id="fCP-Fy-98x" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="I9I-W2-A6z"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vn6-f2-9A3">
@@ -99,8 +98,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="bcf-ve-ksW" kind="relationship" relationship="viewControllers" id="1ns-p8-NeW"/>
-                        <segue destination="jOx-Bn-bfF" kind="relationship" relationship="viewControllers" id="BVH-3T-7Tf"/>
-                        <segue destination="y35-aE-S0v" kind="relationship" relationship="viewControllers" id="WHU-g0-RY0"/>
+                        <segue destination="HZy-0Y-g30" kind="relationship" relationship="viewControllers" id="BVH-3T-7Tf"/>
+                        <segue destination="T0b-sL-nFM" kind="relationship" relationship="viewControllers" id="WHU-g0-RY0"/>
                         <segue destination="QHO-0f-aSD" kind="relationship" relationship="viewControllers" id="sHK-YV-8Ok"/>
                         <segue destination="vwW-Yc-rov" kind="relationship" relationship="viewControllers" id="9Cp-Ky-U3p"/>
                     </connections>
@@ -131,7 +130,6 @@
                             <constraint firstItem="N5f-sP-PkV" firstAttribute="trailing" secondItem="pjA-V6-rM4" secondAttribute="trailing" id="sT1-wP-mkq"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Workout" image="list.dash" catalog="system" id="7Yg-eG-YtS" userLabel="Training"/>
                     <navigationItem key="navigationItem" title="Workout" id="gHU-4I-FSB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bOD-hC-qPa">
                             <connections>
@@ -148,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgd-hZ-vCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2322" y="394"/>
+            <point key="canvasLocation" x="3231.884057971015" y="393.75"/>
         </scene>
         <!--My Workout Controller-->
         <scene sceneID="qjD-8S-rY4">
@@ -159,11 +157,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3Jh-ca-6ci">
-                                <rect key="frame" x="0.0" y="-80" width="414" height="856"/>
+                                <rect key="frame" x="0.0" y="-88" width="414" height="804"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCh-Zx-ZuX">
-                                <rect key="frame" x="170" y="806" width="90" height="31"/>
+                                <rect key="frame" x="170" y="746" width="90" height="31"/>
                                 <color key="backgroundColor" systemColor="systemFillColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="obb-v8-WJj"/>
@@ -176,7 +174,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFY-pv-NHE">
-                                <rect key="frame" x="292" y="806" width="90" height="31"/>
+                                <rect key="frame" x="292" y="746" width="90" height="31"/>
                                 <color key="backgroundColor" systemColor="systemFillColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="YnT-Ji-WWd"/>
@@ -188,32 +186,50 @@
                                     <action selector="menuButton:" destination="rvy-sV-x2g" eventType="touchUpInside" id="bmj-CG-pzD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpD-c7-oxj">
+                                <rect key="frame" x="34" y="746" width="90" height="31"/>
+                                <color key="backgroundColor" systemColor="systemFillColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="W44-r5-9Kz"/>
+                                    <constraint firstAttribute="width" constant="90" id="fAH-31-tia"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Myworkout">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonMyWorkout:" destination="rvy-sV-x2g" eventType="touchUpInside" id="1gb-eB-qFY"/>
+                                    <segue destination="HZy-0Y-g30" kind="show" identifier="segueMyWorkoutWorkout" id="uxV-Ls-YzS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ldy-7H-fud"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="Ldy-7H-fud" firstAttribute="trailing" secondItem="3Jh-ca-6ci" secondAttribute="trailing" id="1j0-rL-r8h"/>
                             <constraint firstItem="RFY-pv-NHE" firstAttribute="top" secondItem="3Jh-ca-6ci" secondAttribute="bottom" constant="30" id="1vQ-Lk-6Cn"/>
                             <constraint firstItem="3Jh-ca-6ci" firstAttribute="leading" secondItem="Ldy-7H-fud" secondAttribute="leading" id="Ul3-g1-v1r"/>
                             <constraint firstItem="jCh-Zx-ZuX" firstAttribute="leading" secondItem="Ldy-7H-fud" secondAttribute="leading" constant="170" id="a4x-T4-Xa2"/>
-                            <constraint firstItem="3Jh-ca-6ci" firstAttribute="top" secondItem="Gi4-XI-V5c" secondAttribute="top" constant="-80" id="g12-4j-FKs"/>
+                            <constraint firstItem="gpD-c7-oxj" firstAttribute="top" secondItem="3Jh-ca-6ci" secondAttribute="bottom" constant="30" id="dTl-Cl-3uw"/>
+                            <constraint firstItem="3Jh-ca-6ci" firstAttribute="top" secondItem="Gi4-XI-V5c" secondAttribute="top" constant="-88" id="g12-4j-FKs"/>
                             <constraint firstItem="Ldy-7H-fud" firstAttribute="trailing" secondItem="RFY-pv-NHE" secondAttribute="trailing" constant="32" id="mBr-6c-rOK"/>
                             <constraint firstItem="jCh-Zx-ZuX" firstAttribute="top" secondItem="3Jh-ca-6ci" secondAttribute="bottom" constant="30" id="mTl-0F-IIq"/>
-                            <constraint firstAttribute="bottom" secondItem="3Jh-ca-6ci" secondAttribute="bottom" constant="120" id="oQZ-F4-84c"/>
+                            <constraint firstAttribute="bottom" secondItem="3Jh-ca-6ci" secondAttribute="bottom" constant="180" id="oQZ-F4-84c"/>
+                            <constraint firstItem="gpD-c7-oxj" firstAttribute="leading" secondItem="Ldy-7H-fud" secondAttribute="leading" constant="34" id="rjc-Hz-39i"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8rS-SK-lEK"/>
                     <connections>
                         <outlet property="tableViewWorkout" destination="3Jh-ca-6ci" id="Hj0-RB-lU2"/>
                         <segue destination="QHO-0f-aSD" kind="show" identifier="segueWorkoutExercises" id="MWH-4P-3EL"/>
-                        <segue destination="fCP-Fy-98x" kind="show" identifier="segueWorkoutHome" id="1qf-pb-Z5I"/>
                         <segue destination="ZUq-7H-5Eu" kind="show" identifier="segueNewExercisesMyWorkout" id="QhL-gI-e4u"/>
                         <segue destination="sdO-Wj-YdL" kind="show" identifier="segueNewWorkoutMyWorkout" id="yVz-Wf-Neg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KoB-tt-fHs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2348" y="1231"/>
+            <point key="canvasLocation" x="2347.826086956522" y="1230.8035714285713"/>
         </scene>
         <!--Exercises-->
         <scene sceneID="7pI-zl-bCZ">
@@ -277,10 +293,10 @@
             </objects>
             <point key="canvasLocation" x="1126" y="1231"/>
         </scene>
-        <!--Item-->
+        <!--AccountController-->
         <scene sceneID="B1S-pE-OOZ">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="vwW-Yc-rov" customClass="AccountController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="AccountController" modalPresentationStyle="overFullScreen" id="vwW-Yc-rov" customClass="AccountController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UmN-KW-Wft">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -307,6 +323,7 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                                 </buttonConfiguration>
                                                 <connections>
+                                                    <action selector="buttonSingIN:" destination="vwW-Yc-rov" eventType="touchUpInside" id="lmi-LT-2Ap"/>
                                                     <segue destination="BuQ-lC-eVO" kind="show" identifier="segueSingIn" id="rrb-dr-lcU"/>
                                                 </connections>
                                             </button>
@@ -323,7 +340,7 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="l5C-Lo-ARB" kind="show" id="WoR-bA-n5f"/>
+                                                    <action selector="buttonRegister:" destination="vwW-Yc-rov" eventType="touchUpInside" id="0Me-ff-w6N"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -360,21 +377,25 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="person.fill" catalog="system" id="hEV-OV-Hfz"/>
                     <navigationItem key="navigationItem" id="C5q-qV-E1n"/>
+                    <connections>
+                        <segue destination="HZy-0Y-g30" kind="show" identifier="segueAcountWorkout" id="aXB-Ft-z65"/>
+                        <segue destination="CNI-lj-KkV" kind="show" identifier="segueRegister" id="qRi-rv-Cpf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x7U-yk-rMZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5413" y="-577"/>
         </scene>
-        <!--Account-->
+        <!--SingIn-->
         <scene sceneID="QbM-hL-e6T">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="BuQ-lC-eVO" customClass="SingInController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SingIn" modalPresentationStyle="overFullScreen" id="BuQ-lC-eVO" customClass="SingInController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vHV-rH-W48">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musculacaoPoster" translatesAutoresizingMaskIntoConstraints="NO" id="aFg-EJ-FW4">
-                                <rect key="frame" x="0.0" y="-88" width="414" height="984"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cI-Mb-yjE">
                                 <rect key="frame" x="115" y="663" width="184" height="50"/>
@@ -388,7 +409,7 @@
                                     <action selector="buttonSingIn:" destination="BuQ-lC-eVO" eventType="touchUpInside" id="KZF-8G-8ga"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbc-gH-qhu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SingIn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbc-gH-qhu">
                                 <rect key="frame" x="120" y="80.5" width="174" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -439,7 +460,7 @@
                         <constraints>
                             <constraint firstItem="jZB-pH-vgZ" firstAttribute="trailing" secondItem="CyP-z7-M1x" secondAttribute="trailing" constant="24" id="21N-td-LVI"/>
                             <constraint firstItem="jZB-pH-vgZ" firstAttribute="trailing" secondItem="1cI-Mb-yjE" secondAttribute="trailing" constant="115" id="4GO-pS-GYD"/>
-                            <constraint firstItem="aFg-EJ-FW4" firstAttribute="top" secondItem="vHV-rH-W48" secondAttribute="top" constant="-88" id="6Qh-3o-MqL"/>
+                            <constraint firstItem="aFg-EJ-FW4" firstAttribute="top" secondItem="vHV-rH-W48" secondAttribute="top" id="6Qh-3o-MqL"/>
                             <constraint firstAttribute="bottom" secondItem="aFg-EJ-FW4" secondAttribute="bottom" id="K4x-X1-DhM"/>
                             <constraint firstItem="CyP-z7-M1x" firstAttribute="leading" secondItem="jZB-pH-vgZ" secondAttribute="leading" constant="24" id="MH1-Po-br2"/>
                             <constraint firstItem="Wbc-gH-qhu" firstAttribute="leading" secondItem="jZB-pH-vgZ" secondAttribute="leading" constant="120" id="MJD-vj-sZY"/>
@@ -452,20 +473,20 @@
                             <constraint firstItem="jZB-pH-vgZ" firstAttribute="trailing" secondItem="Wbc-gH-qhu" secondAttribute="trailing" constant="120" id="sdl-sB-ZeO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" image="person.fill" catalog="system" id="QV4-GE-EG9"/>
-                    <navigationItem key="navigationItem" id="7Gw-dL-WH1"/>
+                    <tabBarItem key="tabBarItem" title="SingIn" image="person.fill" catalog="system" id="QV4-GE-EG9"/>
+                    <navigationItem key="navigationItem" title="SingIn" id="7Gw-dL-WH1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="emailSingInField" destination="INn-Wz-rch" id="Tes-sK-8Lx"/>
                         <outlet property="passawordSingInField" destination="ext-eY-bHl" id="a5j-H5-oIa"/>
                         <outlet property="passawordSingInLabel" destination="p3K-Oy-nTN" id="dRL-v3-c7b"/>
                         <outlet property="titleSingInLabel" destination="C5q-ic-9cH" id="5Hb-fX-HSV"/>
-                        <segue destination="rvy-sV-x2g" kind="show" identifier="segueSingInWorkout" id="Oa8-Hz-XhN"/>
+                        <segue destination="lBu-iZ-VCs" kind="show" identifier="segueSingInHome" id="Qcj-sm-6bz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIK-Kx-fjH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4661" y="186"/>
+            <point key="canvasLocation" x="6481.1594202898559" y="185.49107142857142"/>
         </scene>
         <!--Register Controller-->
         <scene sceneID="5Yw-CZ-BKB">
@@ -476,7 +497,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musculacaoPoster" translatesAutoresizingMaskIntoConstraints="NO" id="Wmo-bB-Ovs">
-                                <rect key="frame" x="0.0" y="-44" width="414" height="940"/>
+                                <rect key="frame" x="0.0" y="18" width="414" height="878"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbU-cS-nJo">
                                 <rect key="frame" x="70" y="80" width="274" height="27.5"/>
@@ -564,14 +585,18 @@
                             <constraint firstItem="Dr9-bO-OTB" firstAttribute="trailing" secondItem="Wmo-bB-Ovs" secondAttribute="trailing" id="Vgi-YY-I3l"/>
                             <constraint firstItem="WkR-n6-yf5" firstAttribute="leading" secondItem="Dr9-bO-OTB" secondAttribute="leading" constant="24" id="WOC-Iz-iNw"/>
                             <constraint firstItem="pbU-cS-nJo" firstAttribute="leading" secondItem="Dr9-bO-OTB" secondAttribute="leading" constant="70" id="Ysx-YJ-M5C"/>
-                            <constraint firstItem="Wmo-bB-Ovs" firstAttribute="top" secondItem="Dr9-bO-OTB" secondAttribute="top" constant="-88" id="bLA-Cj-aiD"/>
+                            <constraint firstItem="Wmo-bB-Ovs" firstAttribute="top" secondItem="Dr9-bO-OTB" secondAttribute="top" constant="-70" id="bLA-Cj-aiD"/>
                             <constraint firstItem="Dr9-bO-OTB" firstAttribute="trailing" secondItem="WkR-n6-yf5" secondAttribute="trailing" constant="24" id="dkS-qP-Sr6"/>
                             <constraint firstItem="61a-2c-BwY" firstAttribute="leading" secondItem="Dr9-bO-OTB" secondAttribute="leading" constant="122" id="f9P-4c-S4u"/>
                             <constraint firstItem="WkR-n6-yf5" firstAttribute="top" secondItem="pbU-cS-nJo" secondAttribute="bottom" constant="240" id="orF-dG-y8q"/>
                             <constraint firstItem="pbU-cS-nJo" firstAttribute="top" secondItem="9jf-Dp-vlt" secondAttribute="top" constant="80" id="pxI-GR-UJM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="CXT-Dy-djX"/>
+                    <navigationItem key="navigationItem" id="Iuf-D0-ZFV">
+                        <barButtonItem key="leftBarButtonItem" title="back" image="chevron.backward" catalog="system" id="MFw-uZ-hhE">
+                            <color key="tintColor" systemColor="labelColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="emailUserField" destination="Cfw-le-Ap5" id="P8N-Vw-Nuj"/>
                         <outlet property="nameUserField" destination="PG8-W7-554" id="NVx-zt-vY9"/>
@@ -580,12 +605,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ZF-s3-wq4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6157" y="232"/>
+            <point key="canvasLocation" x="8886.9565217391319" y="231.69642857142856"/>
         </scene>
-        <!--Account-->
+        <!--New Exercises-->
         <scene sceneID="wcJ-M2-Yez">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="ZUq-7H-5Eu" customClass="ManagerWorkoutController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New Exercises" modalPresentationStyle="overFullScreen" id="ZUq-7H-5Eu" customClass="ManagerWorkoutController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j51-h5-8TZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -664,10 +689,9 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7o-HN-X6h">
-                                <rect key="frame" x="20" y="753" width="60" height="40"/>
+                                <rect key="frame" x="20" y="753" width="56" height="40"/>
                                 <color key="backgroundColor" systemColor="systemFillColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="3lj-IG-MDE"/>
                                     <constraint firstAttribute="height" constant="40" id="wfu-V5-OtB"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -677,7 +701,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="createExercises:" destination="ZUq-7H-5Eu" eventType="touchUpInside" id="7qc-yg-JFc"/>
-                                    <segue destination="rvy-sV-x2g" kind="show" id="SEL-Nm-9PH"/>
+                                    <segue destination="rvy-sV-x2g" kind="show" identifier="segueNewExercisesMyWorkout" id="SEL-Nm-9PH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -697,11 +721,12 @@
                             <constraint firstItem="B7o-HN-X6h" firstAttribute="leading" secondItem="gIN-Nr-oZb" secondAttribute="leading" constant="20" id="uj3-v1-H1m"/>
                             <constraint firstItem="dju-tz-qus" firstAttribute="leading" secondItem="gIN-Nr-oZb" secondAttribute="leading" constant="115" id="vKv-s7-bdh"/>
                             <constraint firstItem="dju-tz-qus" firstAttribute="top" secondItem="ySv-5N-FgX" secondAttribute="bottom" constant="129" id="vUH-ND-KfT"/>
+                            <constraint firstItem="gIN-Nr-oZb" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="B7o-HN-X6h" secondAttribute="trailing" symbolic="YES" id="w8D-Gh-B23"/>
                             <constraint firstItem="gIN-Nr-oZb" firstAttribute="trailing" secondItem="ySv-5N-FgX" secondAttribute="trailing" constant="24" id="xJq-gM-Z56"/>
                             <constraint firstItem="ySv-5N-FgX" firstAttribute="leading" secondItem="gIN-Nr-oZb" secondAttribute="leading" constant="24" id="yFN-1j-8PU"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" image="person.fill" catalog="system" id="Aea-Wl-4xC"/>
+                    <tabBarItem key="tabBarItem" title="New Exercises" image="person.fill" catalog="system" id="Aea-Wl-4xC"/>
                     <navigationItem key="navigationItem" id="Yun-1t-2Hf"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -719,10 +744,10 @@
             </objects>
             <point key="canvasLocation" x="302.89855072463769" y="1230.8035714285713"/>
         </scene>
-        <!--Account-->
+        <!--New Workout-->
         <scene sceneID="suX-uy-rEM">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="sdO-Wj-YdL" customClass="ManagerNewWorkoutController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New Workout" modalPresentationStyle="overFullScreen" id="sdO-Wj-YdL" customClass="ManagerNewWorkoutController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vsO-jh-j6j">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -801,11 +826,10 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNs-Qh-fAg">
-                                <rect key="frame" x="20" y="753" width="60" height="40"/>
+                                <rect key="frame" x="20" y="753" width="56" height="40"/>
                                 <color key="backgroundColor" systemColor="systemFillColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="osi-ai-rbP"/>
-                                    <constraint firstAttribute="width" constant="60" id="pu4-sP-SH2"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -832,12 +856,13 @@
                             <constraint firstItem="ev0-14-Nbo" firstAttribute="bottom" secondItem="HNs-Qh-fAg" secondAttribute="bottom" constant="20" id="YzD-Oo-qK6"/>
                             <constraint firstItem="awY-he-spd" firstAttribute="trailing" secondItem="ev0-14-Nbo" secondAttribute="trailing" id="hv6-hk-drb"/>
                             <constraint firstItem="ev0-14-Nbo" firstAttribute="trailing" secondItem="XyZ-8V-5Ng" secondAttribute="trailing" constant="115" id="j9S-QO-rq1"/>
+                            <constraint firstItem="ev0-14-Nbo" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HNs-Qh-fAg" secondAttribute="trailing" symbolic="YES" id="jRc-Zx-eyU"/>
                             <constraint firstAttribute="bottom" secondItem="awY-he-spd" secondAttribute="bottom" id="jq9-g1-ikN"/>
                             <constraint firstItem="ev0-14-Nbo" firstAttribute="trailing" secondItem="Z71-Tf-OVO" secondAttribute="trailing" constant="100" id="r9H-1l-epP"/>
                             <constraint firstItem="uVm-Wu-cqT" firstAttribute="leading" secondItem="ev0-14-Nbo" secondAttribute="leading" constant="24" id="rsQ-OD-vua"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" image="person.fill" catalog="system" id="sn6-NN-eiT"/>
+                    <tabBarItem key="tabBarItem" title="New Workout" image="person.fill" catalog="system" id="sn6-NN-eiT"/>
                     <navigationItem key="navigationItem" id="rbL-uA-RHS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -852,15 +877,82 @@
             </objects>
             <point key="canvasLocation" x="302.89855072463769" y="1917.8571428571427"/>
         </scene>
+        <!--Explorer-->
+        <scene sceneID="Ls5-di-aah">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overFullScreen" id="T0b-sL-nFM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Explorer" image="paperplane.circle.fill" catalog="system" id="pw4-fN-m8y" userLabel="Explorer"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AkX-13-hns">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="y35-aE-S0v" kind="relationship" relationship="rootViewController" id="SAP-tX-hNk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oEf-Ct-xHw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3577" y="-1073"/>
+        </scene>
+        <!--Create New Account-->
+        <scene sceneID="wOj-eg-OHm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overFullScreen" toolbarHidden="NO" id="CNI-lj-KkV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Create New Account" id="BMp-0u-4wF"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="48G-BF-O9r">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S4n-45-YaX">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="l5C-Lo-ARB" kind="relationship" relationship="rootViewController" id="mZV-X1-dVA"/>
+                        <segue destination="bcf-ve-ksW" kind="show" identifier="segueHome" id="qDl-qc-3ER"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jNN-aM-TeZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7976.811594202899" y="231.69642857142856"/>
+        </scene>
+        <!--Workout-->
+        <scene sceneID="9zP-EE-udZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="HZy-0Y-g30" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Workout" image="list.dash" catalog="system" id="7Yg-eG-YtS" userLabel="Training"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="OKC-XH-N6l"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9OE-RN-jwO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jOx-Bn-bfF" kind="relationship" relationship="rootViewController" id="mh5-dS-rY1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mPf-kY-5kV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2013" y="380"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="aXB-Ft-z65"/>
         <segue reference="PxL-e8-tCD"/>
         <segue reference="MWH-4P-3EL"/>
-        <segue reference="VLA-Zs-WQR"/>
-        <segue reference="1qf-pb-Z5I"/>
+        <segue reference="SEL-Nm-9PH"/>
+        <segue reference="qDl-qc-3ER"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="academia" width="1000" height="667"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="control" catalog="system" width="128" height="72"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
@@ -876,6 +968,9 @@
         </systemColor>
         <systemColor name="systemFillColor">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

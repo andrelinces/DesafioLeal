@@ -51,6 +51,7 @@
 		D3AAFF022803B8B600E811B4 /* ModelUserMyWorkoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3AAFF012803B8B600E811B4 /* ModelUserMyWorkoutCell.xib */; };
 		D3F129BB2804D29400AF5729 /* ManagerWorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F129BA2804D29400AF5729 /* ManagerWorkoutController.swift */; };
 		D3F129BD2805DD0C00AF5729 /* ManagerNewWorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F129BC2805DD0B00AF5729 /* ManagerNewWorkoutController.swift */; };
+		D3F129BF2807A75600AF5729 /* ExplorerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F129BE2807A75500AF5729 /* ExplorerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		D3AAFF012803B8B600E811B4 /* ModelUserMyWorkoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModelUserMyWorkoutCell.xib; sourceTree = "<group>"; };
 		D3F129BA2804D29400AF5729 /* ManagerWorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerWorkoutController.swift; sourceTree = "<group>"; };
 		D3F129BC2805DD0B00AF5729 /* ManagerNewWorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerNewWorkoutController.swift; sourceTree = "<group>"; };
+		D3F129BE2807A75500AF5729 /* ExplorerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				D3777EC327EDEF270027BC34 /* AccountController.swift */,
+				D3F129BE2807A75500AF5729 /* ExplorerController.swift */,
 				D3AAFEF92802191F00E811B4 /* SingInController.swift */,
 				D316301E27FC7681006ED4D4 /* RegisterController.swift */,
 				D3777EC527F481400027BC34 /* ExercisesController.swift */,
@@ -420,6 +423,7 @@
 				D316302327FD08F9006ED4D4 /* ModelWorkoutPosterCell.swift in Sources */,
 				D3AAFF002803AC6A00E811B4 /* ModelUserMyWorkout.swift in Sources */,
 				D3777ED527F736F40027BC34 /* Protocol.swift in Sources */,
+				D3F129BF2807A75600AF5729 /* ExplorerController.swift in Sources */,
 				D316302F27FEED53006ED4D4 /* ModelTitleMyWorkoutCell.swift in Sources */,
 				D316303327FEF3A3006ED4D4 /* MyWorkoutController.swift in Sources */,
 			);
