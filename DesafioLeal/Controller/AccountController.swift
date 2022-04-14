@@ -9,26 +9,106 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 import FirebaseFirestoreSwift
+import SwiftUI
+import Kingfisher
 
 
 class AccountController: UIViewController {
     
-    @IBOutlet weak var buttonSingIN: UIButton!
-    @IBOutlet weak var buttonRegister: UIButton!
-    
-    
+    func actionReturn() {
+        dataSource.navigationController = self.navigationController
+        print("Teste voltar : \(tabBarController)")
+        navigationController?.popViewController(animated: true)
+        
+        //self.tabBarController?.selectedIndex = 0
+    }
     
     var db = Firestore.firestore()
     
     var auth = Auth.auth()
-
     
+    let dataSource = DataSource()
+    
+    var handle: AuthStateDidChangeListenerHandle?
+    
+    
+    @IBAction func buttonSingIN(_ sender: Any) {
+       
+        
+        self.performSegue(withIdentifier: "segueSingIn", sender: nil)
+    }
+    
+    @IBAction func buttonRegister(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "segueRegister", sender: nil)
+        //self.tabBarController?.selectedIndex = 0
+       
+        
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        singOut()
+        //singOut()
         
     }
+    
+    func checkUserSingIn () {
+        
+        // [START auth_listener]
+        handle = Auth.auth().addStateDidChangeListener { auth, user in
+
+            if  user?.email == nil {
+                if user?.uid == nil {
+                    
+                print ("User singOut: \(user)")
+                      
+                    // [Alert for to user, account created successfully]
+                    let alert = UIAlertController(title:  "User is logged in !!", message: "Welcome", preferredStyle: .alert)
+    
+                    let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
+                        //testing...
+                        print("confirmAction")
+    
+                        self.performSegue(withIdentifier: "segueAcountWorkout", sender: nil)
+                    }
+    
+                        alert.addAction(confirmAction)
+    
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }else{
+                    
+                    print("Failed SingInButton  !! ")
+                    
+                    // [Alert for to user, account created successfully]
+                    let alert = UIAlertController(title:  "Welcome !", message: " Do you don't are logged, do you need logged for to the use app, please singIn our register! ", preferredStyle: .alert)
+                    
+                    let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
+                        //testing...
+                        print("confirmAction")
+                        self.performSegue(withIdentifier: "segueHomeLogin", sender: nil)
+                        
+                    }
+                    
+                    alert.addAction(confirmAction)
+                    
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
+                
+            }
+            
+            
+        }
+  
+    }//[END checkUserSingIn]
 
     func singOut() {
         let firebaseAuth = Auth.auth()
@@ -40,60 +120,7 @@ class AccountController: UIViewController {
         }
     }
     
-    // [START codable_struct]
-    public struct City: Codable {
-
-        let name: String
-        let state: String?
-        let country: String?
-        let isCapital: Bool?
-        let population: Int64?
-
-        enum CodingKeys: String, CodingKey {
-            case name
-            case state
-            case country
-            case isCapital = "capital"
-            case population
-        }
-
-    }
-    // [END codable_struct]
-    
-    // [START codable_struct]
-    public struct exercisesCategories: Codable {
-
-        let name: String
-        let urlImage: String?
-        let observation: String?
-        
-
-        enum CodingKeys: String, CodingKey {
-            case name
-            case urlImage
-            case observation
-            
-        }
-
-    }
-    
-    public struct userWorkout: Codable {
-
-        let name: String
-        let urlImage: String?
-        let description: String?
-        
-
-        enum CodingKeys: String, CodingKey {
-            case name
-            case urlImage
-            case description
-            
-        }
-
-    }
-    
-    // [END codable_struct]
+   
     
 }// [END class AccountController]
 
