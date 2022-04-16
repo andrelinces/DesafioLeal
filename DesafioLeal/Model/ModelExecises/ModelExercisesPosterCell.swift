@@ -26,39 +26,22 @@ func setupDesign () {
 }
     func setupView () {
         
-        cardViewPoster.changeDesigneView(cornerRadius: 8, shadow: CGSize(width: 0, height: 2), shadowOpacity: 0.3)
+        cardViewPoster.changeDesigneView(cornerRadius: 18, shadow: CGSize(width: 0, height: 2), shadowOpacity: 0.8)
         
     }
-    // Create a reference to the file you want to download
-    //let islandRef = storageRef.child("images/island.jpg")
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        if selected {
+            cardViewPoster.backgroundColor = UIColor.green
+        } else {
+            cardViewPoster.backgroundColor = UIColor.opaqueSeparator
+        }
+    }
     
 
     func setupValues (imageExercisesPoster: String, exercisesTitle: String, observation: String) {
-    
-//    let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/desafioleal.appspot.com/o/musculacaoPoster.jpeg?alt=media&token=f3d3e29c-f450-444a-a373-e8b8a930aa22")
-//    imageViewExercises.kf.setImage(with: url)
-    
-    //imageViewExercises.contentMode = .scaleAspectFill
-    
-//    let refStorage = Storage.storage().reference().child("https://firebasestorage.googleapis.com/v0/b/desafioleal.appspot.com/o/musculacaoPoster.jpeg?alt=media&token=f3d3e29c-f450-444a-a373-e8b8a930aa22")
-//
-//    // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-//    refStorage.getData(maxSize: 1 * 1024 * 1024) { data, error in
-//      if let error = error {
-//        // Uh-oh, an error occurred!
-//      } else {
-//        // Data for "images/island.jpg" is returned
-//        let imageExercisesPoster = UIImage(data: data!)
-//          imageViewExercises.image = UIImage(named: imageExercisesPoster)
-//      }
-//    }
-    
-    //"gs://<your-firebase-storage-bucket>/images/stars.jpg"
-    
-    
-    
-    
     
 
     //print("numero de subview\(imageViewExercises.layer.sublayers?.count)")
@@ -73,18 +56,5 @@ func setupDesign () {
         
         labelTitle.text = exercisesTitle
         labelObservation.text = observation
-    
-//
-//    //In case gradient don't have apllyed correcty.
-//    if imageViewExercises.layer.sublayers == nil {
-//        imageViewExercises.addBlackGradientLayerInForeground(frame: imageViewMovie.bounds, colors:[.clear, .black])
-//    }
-}
-    
-//    func setupImage (imageExercisesPoster : String) {
-
-
-//        imageViewExercises.image = UIImage(named: imageExercisesPoster)
-
-//}
+    }
 }

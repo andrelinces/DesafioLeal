@@ -15,6 +15,8 @@ import FirebaseAuth
 class ExercisesController: UIViewController, ModelExercisesPosterCallBack, ModelExercisesTitleCellCallBack {
     var auth = Auth.auth().currentUser?.uid
     
+    var handle: AuthStateDidChangeListenerHandle?
+    
     var db = Firestore.firestore()
     
     func actionReturn() {
@@ -24,10 +26,8 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
         self.tabBarController?.selectedIndex = 0
     }
     
-    
     func actionClickCardView(indexPath: IndexPath) {
    
-        
         let user = Auth.auth().currentUser
         
             // [Alert for to user, account created successfully]
@@ -48,7 +48,7 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
             
     }//[end actionCliqueCard]
     
-    var handle: AuthStateDidChangeListenerHandle?
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        
@@ -146,18 +146,18 @@ class ExercisesController: UIViewController, ModelExercisesPosterCallBack, Model
 
 }
 
-public struct exercisesCategories: Codable {
+public struct exercisesCategories: Codable {//[exercises default]
 
     let name: String
     let urlImage: String?
     let observation: String?
-    //let idExercises: String
+    //let idExercises: String [removeded from create exercises]
 
     enum CodingKeys: String, CodingKey {
         case name
         case urlImage
         case observation
-        //case idExercises
+        //case idExercises [removeded from create exercises]
     }
 
 }
@@ -168,14 +168,14 @@ public struct userWorkout: Codable {
     let days: String?
     let idWorkout: String
     let description : String
-    let timesTramp: String
+    //let timesTramp: String [removeded from create exercises]
 
     enum CodingKeys: String, CodingKey {
         case name
         case days
         case idWorkout
         case description
-        case timesTramp
+       // case timesTramp [removeded from create exercises]
     }
 
 }
@@ -183,14 +183,14 @@ public struct userWorkout: Codable {
 public struct userWorkoutExercises: Codable {
 
     let name: String
-    //let days: String?
+    let days: String?
     let urlImage: String
     let idExercises : String
     let description : String
 
     enum CodingKeys: String, CodingKey {
         case name
-        //case days
+        case days
         case urlImage
         case idExercises
         case description

@@ -25,7 +25,7 @@ class ManagerNewWorkoutController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.dismiss(animated: true, completion: nil)
            
     }
     
@@ -33,105 +33,77 @@ class ManagerNewWorkoutController: UIViewController {
     @IBAction func createWorkout(_ sender: Any) {
         
         
-                handle = Auth.auth().addStateDidChangeListener { auth, user in
-                    
-                    let validateReturnWorkout = self.validateFieldsWorkout()
-                    
-                    if validateReturnWorkout == " " {
-                        
-                        if let nameWorkout = self.fieldNameWorkout.text {
-                            if let descriptionWorkout = self.fieldDescriptionWrokout.text {
-                                if let daysWorkout = self.fieldDaysWorkout.text {
-                                    
-                                    let userId = auth.currentUser?.uid
-                                    if user?.isAnonymous == true {
-                                        
-                                        print("user anonymous? \(user)")
-                                    }
-                                    
-                                    //[error user dont logged!!]
-                                    let worRef =  self.db.collection("users").document(userId ?? "userdontlogged").collection("workout")
-                                    
-                                    
-                                    print("userID \(userId)")
-                                    worRef.getDocuments() { (querySnapshot, err) in
-                                        if let err = err {
-                                            print("Error getting documents: \(err)")
-                                            
-                                        } else {
-                                            for document in querySnapshot!.documents {
-                                                print("funcWCreateWork\(document.documentID) => \(document.data())")
-                                                //print("Error getting documents: \(worRef)")
-                                                
-                                                var workoutUser : userWorkout? = nil
-                                                
-                                                do {
-                                                    workoutUser = try document.data(as: userWorkout.self)
-                                                    print("workout id testW... \(workoutUser?.idWorkout)")
-                                                      
-                                                }catch {
-                                                    
-                                                    print("error listCollection \(err)")
-                                                }
-                                                print("Refexe before: \(err)")
-                                                
-                                                var refExe = self.db.collection("users").document(userId ?? "default")
-                                                    .collection("workout").document()
-                                                
-                                                let newRefWork = self.db.collection("users").document(userId ?? "default")
-                                                    .collection("workout")
-                                                //users/lYcWf4U78cOFOQ7Wo2eQjDv786F3/workout/qmkRFkUnfn6Hn9DnlyWl/myexercises
-                                               
-                                                refExe.setData([
-                                                    
-                                                    "name" : nameWorkout,
-                                                    "description" : descriptionWorkout,
-                                                    "urlImage" : daysWorkout,
-                                                    "idWorkout" : document.documentID
-                                                    
-                                                ]) { err in
-                                                    if let err = err {
-                                                        print("Error writing document: \(err)")
-                                                    } else {
-                                                        print("Document successfully written!")
-                                                        
-                                                        //[Alert for to user, account created successfully]
-                                                        let alert = UIAlertController(title: user?.displayName , message: "Workout created successfully !!", preferredStyle: .alert)
-                                                        
-                                                        let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                                                        
-                                                        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
-                                                            //testing...
-                                                            print("confirmAction")
-                                                            self.performSegue(withIdentifier: "segueNewWorkoutMyWorkout", sender: nil)
-                                                        }
-                                                        alert.addAction(cancelAlert)
-                                                        alert.addAction(confirmAction)
-                                                        
-                                                        
-                                                        self.present(alert, animated: true, completion: nil)
-                                                        
-                                                    }
-                                                    
-                                                }
-                                                
-                                                break
-                                                
-                                                print("test func newTraining...\(err)")
-                                            }
-                                        }
-                                    }
-                                }
-                                  
-                            }//[end get workout]
-                             
-                        }
-                      
-                }//end if validatefields
-                  
-            }
+        handle = Auth.auth().addStateDidChangeListener { auth, user in
             
-        }//MARK: -- //[END button createWorkout]
+            let validateReturnWorkout = self.validateFieldsWorkout()
+            
+            if validateReturnWorkout == " " {
+                
+                if let nameWorkout = self.fieldNameWorkout.text {
+                    if let descriptionWorkout = self.fieldDescriptionWrokout.text {
+                        if let daysWorkout = self.fieldDaysWorkout.text {
+                            
+                            let userId = auth.currentUser?.uid
+                            if userId == nil {
+                                
+                                print("user anonymous, our nil? \(user)")
+                            }else{
+                                
+                                //[User singIn!!]
+                                
+                                var refExe = self.db.collection("users").document(userId ?? "default")
+                                    .collection("workout").document()
+                                
+                                let newRefWork = self.db.collection("users").document(userId ?? "default")
+                                    .collection("workout").document(userId ?? "default")
+                                //users/lYcWf4U78cOFOQ7Wo2eQjDv786F3/workout/qmkRFkUnfn6Hn9DnlyWl/myexercises
+                                
+                                newRefWork.setData([
+                                    
+                                    "name" : nameWorkout,
+                                    "description" : descriptionWorkout,
+                                    "days" : daysWorkout,
+                                    "idWorkout" : userId
+                                    
+                                ]) { err in
+                                    if let err = err {
+                                        print("Error writing document: \(err)")
+                                    } else {
+                                        print("Document successfully written!")
+                                        
+                                        //[Alert for to user, account created successfully]
+                                        let alert = UIAlertController(title: user?.displayName , message: "Workout created successfully, Add exercises into your workout! !!", preferredStyle: .alert)
+                                        
+                                        let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                                        
+                                        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
+                                            //testing...
+                                            print("confirmAction")
+                                            self.performSegue(withIdentifier: "segueNewWorkoutMyWorkout", sender: nil)
+                                            self.dismiss(animated: true, completion: nil)
+                                        }
+                                        alert.addAction(cancelAlert)
+                                        alert.addAction(confirmAction)
+                                        
+                                        self.present(alert, animated: true, completion: nil)
+                                        
+                                    }
+                                    
+                                }
+                                
+                            }
+                        }
+                        
+                    }//[end get workout]
+                    
+                }
+                
+            }//end if validatefields
+            
+        }
+        
+    }//MARK: -- //[END button createWorkout]
+    
   
     func validateFieldsWorkout() -> String {
         
@@ -153,3 +125,4 @@ class ManagerNewWorkoutController: UIViewController {
     
     
 }
+

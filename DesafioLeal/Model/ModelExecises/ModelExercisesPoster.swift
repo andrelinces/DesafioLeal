@@ -32,6 +32,8 @@ class ModelExercisesPoster: tableViewCompatible {
         return "ModelExercisesPosterCellIdentifier"
     }
     
+   
+    
     //Variables of the inicilizaing.
     var imageExercisesPoster: String
     var exercisesTitle: String
@@ -47,9 +49,10 @@ class ModelExercisesPoster: tableViewCompatible {
             
             cell.setupDesign()
             
-            cell.setupValues(imageExercisesPoster: imageExercisesPoster, exercisesTitle: exercisesTitle, observation: observation)
+            //collor cardview
+            cell.setSelected(true, animated: true)
             
-            cell.contentView.backgroundColor = .orange
+            cell.setupValues(imageExercisesPoster: imageExercisesPoster, exercisesTitle: exercisesTitle, observation: observation)
             
             
             //Adding clicks in card from tableview

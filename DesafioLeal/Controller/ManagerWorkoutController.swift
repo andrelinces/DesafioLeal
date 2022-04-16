@@ -27,24 +27,11 @@ class ManagerWorkoutController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-           
+        self.dismiss(animated: true, completion: nil)
     }
-    
-    func deleteExercises () {
-        
-        db.collection("cities").document("DC").delete() { err in
-            if let err = err {
-                print("Error removing document: \(err)")
-            } else {
-                print("Document successfully removed!")
-            }
-        }
-        
-    }
-    
+
     @IBAction func createExercises(_ sender: Any) {
-        
-       
+        print("click in button createExercises..")
         handle = Auth.auth().addStateDidChangeListener { auth, user in
             
             let validateReturn = self.validateFields()
@@ -57,21 +44,35 @@ class ManagerWorkoutController: UIViewController {
                             
                             
                             if userId == nil {
+                                //[error user dont logged!!]
+                                print("user anonymous, our nil? \(String(describing: user))")
                                 
-                                print("user anonymous? \(user)")
                             }
+                            print("userID \(String(describing: userId))")
+                            let worRef = self.db.collection("users").document(userId ?? "default").collection("workout")
                             
-                            //[error user dont logged!!]
-                            let worRef =  self.db.collection("users").document(userId ?? "userdontlogged").collection("workout")
-                            
-                            
-                            print("userID \(userId)")
+                            //[checking if workout exists !]
                             worRef.getDocuments() { (querySnapshot, err) in
                                 if let err = err {
+                                    
                                     print("Error getting documents: \(err)")
+                                    
+                                    //MARK: --[Alert for to user, ERROR created EXERCISES!]
+                                    let alert = UIAlertController(title: user?.displayName , message: "Error create exercises \(err) !!", preferredStyle: .alert)
+                                    
+                                    let confirmAction = UIAlertAction(title: "OK !", style: .default) { alertAction in
+                                        //testing...
+                                        print("confirmAction")
+                                        self.performSegue(withIdentifier: "segueNewExercisesMyWorkout", sender: nil)
+                                    }
+                                    alert.addAction(confirmAction)
+                                    self.present(alert, animated: true, completion: nil)
+                                    
+                                    //MARK: -- [Alert for to user, ERROR created EXERCISES!]
                                     
                                 } else {
                                     for document in querySnapshot!.documents {
+                                        
                                         print("CreateExercicies, documents\(document.documentID) => \(document.data())")
                                         //print("Error getting documents: \(worRef)")
                                         
@@ -79,72 +80,76 @@ class ManagerWorkoutController: UIViewController {
                                         
                                         do {
                                             workoutUser = try document.data(as: userWorkout.self)
-                                            print("workout id testW... \(workoutUser?.idWorkout)")
-                                              
+                                            print("Managerworkout id testW... \(workoutUser?.idWorkout)")
+                                            
                                         }catch {
                                             
-                                            print("error listCollection \(err)")
+                                            print("error listCollection \(String(describing: user))")
                                         }
-                                        print("Refexe before: \(err)")
+                                        //[testing here...]
                                         
-                                        var workExe = self.db.collection("users").document(userId ?? "defaul")
-                                            .collection("workout")
-                                        var  refExe = worRef.document().collection("myexercises")
+                                        var refNewExe = worRef.document(userId ?? "default").collection("myexercises").document()
                                         
-                                        print("Refexe before: \(refExe)")
-                                        refExe.document().setData([
+                                        print("Refexe before: \(refNewExe)")
+                                        refNewExe.setData([
                                             
                                             "name" : nameExercises,
                                             "description" : descriptionExercises,
                                             "urlImage" : imageUrlExercises,
-                                            "idExercises" : document.documentID,
-                                            "days" : "default "
+                                            "idExercises" : refNewExe.documentID,
+                                            "days" : "default"
                                             
                                         ]) { err in
                                             if let err = err {
                                                 print("Error writing document: \(err)")
-                                            } else {
-                                                print("Document successfully written!")
                                                 
-                                                //[Alert for to user, account created successfully]
-                                                let alert = UIAlertController(title: user?.displayName , message: "Exercises created successfully !!", preferredStyle: .alert)
-                                              
+                                                //[Alert for to user, Error!]
+                                                let alert = UIAlertController(title: user?.displayName , message: "Error create exercises, checking field and try again !!", preferredStyle: .alert)
+                                                
                                                 let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
                                                     //testing...
+                                                    
                                                     print("confirmAction")
                                                     self.performSegue(withIdentifier: "segueNewExercisesMyWorkout", sender: nil)
                                                 }
                                                 
                                                 alert.addAction(confirmAction)
-                                                
-                                                
                                                 self.present(alert, animated: true, completion: nil)
                                                 
+                                            }else{
+                                                print("Document successfully written!")
+                                                
+                                                //[Alert for to user, account created successfully]
+                                                let alert = UIAlertController(title: user?.displayName , message: "Exercises created successfully !!", preferredStyle: .alert)
+                                                
+                                                let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
+                                                    //testing...
+                                                    print("confirmAction")
+                                                    self.dismiss(animated: true, completion: nil)
+                                                    self.performSegue(withIdentifier: "segueNewExercisesMyWorkout", sender: nil)
+                                                }
+                                                
+                                                alert.addAction(confirmAction)
+                                                self.present(alert, animated: true, completion: nil)
+                                                  
                                             }
-                                            
+                                              
                                         }
-                                        
-                                        break
-                                        
-                                        print("test func newTraining...\(err)")
-                                    }
+                                    }//[END FOR...]
                                 }
                             }
                         }
-                          
+                        
                     }//[end get workout]
-                     
+                    
                 }
             }
             
-            
         }//[end get exercises]
         
-        
     }//MARK: -- [END button CreateExercises]
-
-    
-
+                                        
+  
         
     func validateFields() -> String {
         
@@ -165,5 +170,4 @@ class ManagerWorkoutController: UIViewController {
     }
     
 }
-
 

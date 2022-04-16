@@ -68,61 +68,6 @@ class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWo
     }//[end didAppear]
 
     
-    func testId () {
-        
-        handle = Auth.auth().addStateDidChangeListener { auth, user in
-            
-        let userId = auth.currentUser?.uid
-            print("user anonymous? \(String(describing: user?.uid))")
-           
-//            if userId == nil {
-//
-//                //[User dont logged our dont exists!]
-//                print("Error getting documents: \(String(describing: userId))")
-//
-//            }else{
-            //"users/lYcWf4U78cOFOQ7Wo2eQjDv786F3/workout/6ro9agcfjocnKGQ7IydP"
-                let worRef =  self.db.collection("users").document(userId ?? "def").collection("workout")
-                let worTes = self.db.collection("users/lYcWf4U78cOFOQ7Wo2eQjDv786F3/workout")
-                        let idwork = worRef.document().documentID
-                        print("Id workout, WorkoutController\(String(describing: userId))")
-                    
-                    //users/lYcWf4U78cOFOQ7Wo2eQjDv786F3/workout/QrDLFWTR3QP0aUFZgjJu/myexercises
-                    
-                    print("userID \(String(describing: (userId)))")
-                    
-                    worRef.getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                        
-                    } else {
-                        
-                        for document in querySnapshot!.documents {
-                            print("functestID, Workoutcontroller\(document.documentID) => \(document.data())")
-                            //print("Error getting documents: \(worRef)")
-                            
-                           
-                                var workoutUser : userWorkout? = nil
-                                
-                            
-                            do {
-                            
-                                workoutUser = try document.data(as: userWorkout.self)
-                            }catch {
-                                
-                                
-                            }
-                            
-                            print("functestID\(document.documentID) => \(document.data())")
-                            print("funcWorkoutTESTID\(workoutUser?.name)")
-                            
-                            
-                        }
-                    }
-                    }
-            }
-        }
-    
     func diplayUserWorkout () {
        
         handle = Auth.auth().addStateDidChangeListener { auth, user in
@@ -201,8 +146,9 @@ class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWo
         
         //actionReturn()
         diplayUserWorkout()
-       //testId()
+        
         setupTableView()
+        self.dismiss(animated: true, completion: nil)
     }
     
    
@@ -217,9 +163,7 @@ class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWo
         let cardWorkout = ModelWorkout(delegate: self, navigationController: self.navigationController, imageWorkout: self.imageWorkout, myWorkout: "Default" ?? "Default" )
        
         dataSource.data.append(cardWorkoutPoster)
-        
-       // dataSource.data.append(cardWorkout)
-        
+      
         dataSource.initializeTableView(tableView: tableViewWorkout)
         
         tableViewWorkout.allowsSelection = false
@@ -228,15 +172,9 @@ class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWo
         
         self.tableViewWorkout.reloadData()
         
-       
-    
-        
-        
-                
+                 
     }
     
-  
-
 }
 
 
