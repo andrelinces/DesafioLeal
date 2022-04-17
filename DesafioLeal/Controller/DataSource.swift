@@ -96,7 +96,7 @@ func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
         }
 
-        if scrollView.contentOffset.y > 304 {//MARK: When the navigation bar to hide title of the movie, It's diplay title from movie in the navigation bar.
+        if scrollView.contentOffset.y > 250 {//MARK: When the navigation bar to hide title of the movie, It's diplay title from movie in the navigation bar.
             navigationController?.navigationBar.topItem?.title = titleExercises
         }else {
             navigationController?.navigationBar.topItem?.title = "Exercises"

@@ -20,36 +20,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="541" height="450"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="academia" translatesAutoresizingMaskIntoConstraints="NO" id="FP9-Zu-oBD">
-                                <rect key="frame" x="0.0" y="0.0" width="541" height="410"/>
+                                <rect key="frame" x="0.0" y="0.0" width="541" height="400"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="410" id="46P-cH-sVI"/>
+                                    <constraint firstAttribute="height" constant="400" id="46P-cH-sVI"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s6-Gj-1jm">
-                                <rect key="frame" x="80" y="50" width="381" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a workout or build your own!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEp-NU-pgY">
-                                <rect key="frame" x="70" y="416" width="401" height="20.5"/>
+                                <rect key="frame" x="40" y="416" width="461" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HdL-kc-geA">
+                                <rect key="frame" x="0.0" y="397" width="541" height="11"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s6-Gj-1jm">
+                                <rect key="frame" x="100" y="46" width="341" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemFillColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="FP9-Zu-oBD" secondAttribute="trailing" id="11K-sM-Qu3"/>
-                            <constraint firstItem="XEp-NU-pgY" firstAttribute="leading" secondItem="gq4-67-kVI" secondAttribute="leading" constant="70" id="5lx-dz-cQc"/>
-                            <constraint firstAttribute="trailing" secondItem="8s6-Gj-1jm" secondAttribute="trailing" constant="80" id="6ow-Ig-Em9"/>
-                            <constraint firstItem="8s6-Gj-1jm" firstAttribute="top" secondItem="gq4-67-kVI" secondAttribute="top" constant="50" id="HtX-dA-b2a"/>
-                            <constraint firstAttribute="trailing" secondItem="XEp-NU-pgY" secondAttribute="trailing" constant="70" id="Ihn-HF-3Gg"/>
+                            <constraint firstItem="HdL-kc-geA" firstAttribute="leading" secondItem="gq4-67-kVI" secondAttribute="leading" id="349-ny-wqm"/>
+                            <constraint firstItem="XEp-NU-pgY" firstAttribute="leading" secondItem="gq4-67-kVI" secondAttribute="leading" constant="40" id="5lx-dz-cQc"/>
+                            <constraint firstItem="XEp-NU-pgY" firstAttribute="top" secondItem="HdL-kc-geA" secondAttribute="bottom" constant="8" id="90h-75-GK9"/>
+                            <constraint firstAttribute="bottom" secondItem="HdL-kc-geA" secondAttribute="bottom" constant="42" id="Acv-EA-oM0"/>
+                            <constraint firstItem="HdL-kc-geA" firstAttribute="leading" secondItem="gq4-67-kVI" secondAttribute="leading" id="DrK-td-wbb"/>
+                            <constraint firstAttribute="trailing" secondItem="XEp-NU-pgY" secondAttribute="trailing" constant="40" id="Ihn-HF-3Gg"/>
+                            <constraint firstAttribute="trailing" secondItem="8s6-Gj-1jm" secondAttribute="trailing" constant="100" id="ImA-ja-Wcb"/>
+                            <constraint firstAttribute="trailing" secondItem="HdL-kc-geA" secondAttribute="trailing" id="KTz-OA-LK3"/>
+                            <constraint firstAttribute="trailing" secondItem="HdL-kc-geA" secondAttribute="trailing" id="KgD-We-1aR"/>
                             <constraint firstAttribute="height" constant="450" id="a24-nU-xxx"/>
-                            <constraint firstItem="XEp-NU-pgY" firstAttribute="top" secondItem="FP9-Zu-oBD" secondAttribute="bottom" constant="6" id="hcd-aY-R0R"/>
-                            <constraint firstItem="8s6-Gj-1jm" firstAttribute="leading" secondItem="gq4-67-kVI" secondAttribute="leading" constant="80" id="jxm-NI-1vO"/>
+                            <constraint firstItem="8s6-Gj-1jm" firstAttribute="leading" secondItem="gq4-67-kVI" secondAttribute="leading" constant="100" id="bD6-ij-L2h"/>
                             <constraint firstItem="FP9-Zu-oBD" firstAttribute="leading" secondItem="gq4-67-kVI" secondAttribute="leading" id="oLs-2S-zQI"/>
+                            <constraint firstItem="8s6-Gj-1jm" firstAttribute="top" secondItem="gq4-67-kVI" secondAttribute="top" constant="46" id="qTV-rM-p2o"/>
                             <constraint firstItem="FP9-Zu-oBD" firstAttribute="top" secondItem="gq4-67-kVI" secondAttribute="top" id="xCV-Iv-ZF4"/>
+                            <constraint firstItem="HdL-kc-geA" firstAttribute="top" secondItem="gq4-67-kVI" secondAttribute="top" constant="397" id="z6w-Qp-gGX"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -66,11 +76,14 @@
                 <outlet property="imageViewWorkout" destination="FP9-Zu-oBD" id="mbU-C4-0DW"/>
                 <outlet property="titleLabelWorkout" destination="8s6-Gj-1jm" id="YMR-uc-rox"/>
             </connections>
-            <point key="canvasLocation" x="399" y="31"/>
+            <point key="canvasLocation" x="397.82608695652175" y="30.803571428571427"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="academia" width="1000" height="667"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemFillColor">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

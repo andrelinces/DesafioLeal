@@ -10,18 +10,18 @@ import FirebaseFirestore
 import FirebaseAuth
 import FirebaseFirestoreSwift
 import SwiftUI
-import Kingfisher
+
 
 
 class AccountController: UIViewController {
     
-    func actionReturn() {
-        dataSource.navigationController = self.navigationController
-        print("Teste voltar : \(tabBarController)")
-        navigationController?.popViewController(animated: true)
-        
-        //self.tabBarController?.selectedIndex = 0
-    }
+//    func actionReturn() {
+//        dataSource.navigationController = self.navigationController
+//        print("Teste voltar : \(tabBarController)")
+//        navigationController?.popViewController(animated: false)
+//
+//        self.tabBarController?.selectedIndex = 1
+//    }
     
     var db = Firestore.firestore()
     
@@ -54,7 +54,7 @@ class AccountController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //actionReturn()
         //singOut()
         
     }

@@ -18,6 +18,7 @@ class HomeController: UIViewController {
        
         checkUserSingIn()
       actionReturn()
+        testGetWorkout()
  
     }
     
@@ -33,6 +34,28 @@ class HomeController: UIViewController {
         navigationController?.popViewController(animated: true)
         self.tabBarController?.selectedIndex = 0
     }
+    
+    func testGetWorkout () {
+        
+        handle = Auth.auth().addStateDidChangeListener { auth, user in
+            
+            var userId = auth.currentUser?.uid
+        
+        db.collection("users").whereField("userId", isEqualTo: userId)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("testGetWorkout...\(document.documentID) => \(document.data())")
+                        print("userId..testGetWorkout \(userId) ")
+                    }
+                }
+            }
+        }
+        
+    }
+    
     
     func checkUserSingIn () {
         

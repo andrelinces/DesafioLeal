@@ -48,7 +48,7 @@ class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWo
     
     //Variables inicialization
     var imagePosterWorkout : String = ""
-    var titleWorkout : String = ""
+    var titleWorkout : String = " "
     var imageWorkout : String = ""
     var myWorkout : String = ""
     var descriptionWorkout : String = " "
@@ -86,8 +86,6 @@ class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWo
                         let idwork = worRef.document().documentID
                         print("Id workout, WorkoutController\(String(describing: userId))")
                     
-                    //users/lYcWf4U78cOFOQ7Wo2eQjDv786F3/workout/QrDLFWTR3QP0aUFZgjJu/myexercises
-                    
                     print("userID \(String(describing: (worRef)))")
                     
                     worRef.getDocuments() { (querySnapshot, err) in
@@ -100,7 +98,6 @@ class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWo
                             print("funcDysplay\(document.documentID) => \(document.data())")
                             //print("Error getting documents: \(worRef)")
                             print("funcDysplay : \(document.data().description)")
-                            
                             
                                 var workoutUser : userWorkout? = nil
                                 
@@ -158,7 +155,7 @@ class WorkoutController: UIViewController, ModelExercisesPosterCallBack, ModelWo
         dataSource.navigationController = self.navigationController
         
      //[Image and title view workout]
-        let cardWorkoutPoster = ModelWorkoutPoster(delegate: self, navigationController: self.navigationController, imagePosterWorkout: imagePosterWorkout, titleWorkout: titleWorkout, descriptionWorkout: descriptionWorkout )
+        let cardWorkoutPoster = ModelWorkoutPoster(delegate: self, navigationController: self.navigationController, imagePosterWorkout: imagePosterWorkout, titleWorkout: "Workout", descriptionWorkout: descriptionWorkout )
         
         let cardWorkout = ModelWorkout(delegate: self, navigationController: self.navigationController, imageWorkout: self.imageWorkout, myWorkout: "Default" ?? "Default" )
        

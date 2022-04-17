@@ -28,15 +28,12 @@ class ModelWorkoutPosterCell: UITableViewCell {
     }
     
     func setupValues (descriptionWorkout: String) {
-        
-//        labelExercisesTitle.text = exercisesTitle
-//        labelExercisesTitle.font = .boldSystemFont(ofSize: 30)
-//        labelExercisesTitle.textColor = .blue
+
         
         descriptionLabelWorkout.text = "Choose a workout or build your own!"
         
         
-        //cardViewTitle.backgroundColor = .lightGray
+        
     }
     
     func setupImage (imagePosterWorkout: String, titleWorkout: String) {

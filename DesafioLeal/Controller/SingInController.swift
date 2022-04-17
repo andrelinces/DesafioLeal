@@ -26,9 +26,16 @@ class SingInController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       actionReturn()
+       //actionReturn()
        
     }
+    
+    @IBAction func buttonExit(_ sender: Any) {
+        
+        actionReturn()
+//        self.performSegue(withIdentifier: "segueSingInWorkout", sender: nil)
+    }
+    
     
     func actionReturn() {
         print("Back SingIn: \(tabBarController)")
@@ -63,7 +70,7 @@ class SingInController: UIViewController {
                                 //testing...
                                 print("confirmAction")
 
-                                self.performSegue(withIdentifier: "segueSingInWorkout", sender: nil)
+                                self.performSegue(withIdentifier: "segueSingInHome", sender: nil)
                             }
 
                                 alert.addAction(confirmAction)
@@ -147,7 +154,7 @@ class SingInController: UIViewController {
                                 //testing...
                                 print("confirmAction")
                                 
-                                self.performSegue(withIdentifier: "segueSingInHome", sender: nil)
+                                self.performSegue(withIdentifier: "segueSingInWorkout", sender: nil)
                             }
                             
                             

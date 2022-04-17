@@ -15,19 +15,25 @@ import FirebaseFirestoreSwift
 
 class RegisterController: UIViewController {
     
-    func actionReturn() {
-        
-        dataSource.navigationController = self.navigationController
-        print("Teste voltar : \(tabBarController)")
-        navigationController?.popViewController(animated: true)
-        
-        //self.tabBarController?.selectedIndex = 0
-    }
+//    func actionReturn() {
+//
+//        dataSource.navigationController = self.navigationController
+//        print("Teste voltar : \(tabBarController)")
+//        navigationController?.popViewController(animated: true)
+//
+//        //self.tabBarController?.selectedIndex = 3
+//    }
     
     @IBOutlet weak var nameUserField: UITextField!
     @IBOutlet weak var emailUserField: UITextField!
     @IBOutlet weak var passawordUserField: UITextField!
-    //@IBOutlet weak var buttonRegister: UIButton!
+   
+    
+    
+    @IBAction func buttonExit(_ sender: Any) {
+        self.performSegue(withIdentifier: "segueRegisterWorkout", sender: nil)
+    }
+    
     
     var db = Firestore.firestore()
     let dataSource = DataSource()
@@ -37,7 +43,7 @@ class RegisterController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        actionReturn()
+        //actionReturn()
     }
     
     func singOut() {
@@ -86,19 +92,15 @@ class RegisterController: UIViewController {
                                 
                                 // [Alert for to user, account created successfully]
                                 let alert = UIAlertController(title:  "Created user successfully !!", message: nameUser, preferredStyle: .alert)
-                                
-                                let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                                
+                               
                                 let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
                                     //testing...
                                     print("confirmAction")
                                     
-                                    
-                                    
-                                    self.performSegue(withIdentifier: "segueRegisterHome", sender: nil)
+                                    self.performSegue(withIdentifier: "segueRegisterWorkout", sender: nil)
                                     
                                 }
-                                alert.addAction(cancelAlert)
+                            
                                 alert.addAction(confirmAction)
                                 
                                 self.present(alert, animated: true, completion: nil)
@@ -132,6 +134,8 @@ class RegisterController: UIViewController {
         
         
     }// [END func buttonRegister]
+    
+    
     
     func createDocNewUser () {
         
@@ -171,22 +175,7 @@ class RegisterController: UIViewController {
                                     }
                                     
                                 }
-                                
-                                userRef = db.collection("workout")
-                                    .document().setData([
-                                        
-                                        "name": "defaul workout",
-                                        "days": "mon, fri",
-                                        "description" : "squat workout" ,
-                                        "idWorkout" : "test",
-                                        "timesTramp" : FieldValue.serverTimestamp().description
-                                        
-                                    ]) { (error) in
-                                        
-                                        print("User and data folders, successfully created!")
-                                        print("User and data folders, successfully created! \(userRef)")
-                                        
-                                    }
+            
                             }
                         }
                     }
@@ -199,10 +188,7 @@ class RegisterController: UIViewController {
             
             //configure database
             let db = Firestore.firestore()
-            
-            let nameUser = "test22"
-            let emailUser = "test22@gmail.com"
-            
+  
             
             if userId == auth.currentUser?.uid {
                 
@@ -211,12 +197,12 @@ class RegisterController: UIViewController {
                 var userRef2 = userRef
                 
                 userRef2.collection("workout")
-                    .document().setData([
+                    .document(userId ?? "default").setData([
                         
                         "name": "defaul workout",
                         "days": "mon, fri",
                         "description" : "squat workout" ,
-                        "idWorkout" : "test",
+                        "idWorkout" : userId,
                         "timesTramp" : FieldValue.serverTimestamp()
                         
                     ]) { err in
@@ -226,103 +212,12 @@ class RegisterController: UIViewController {
                             print("Document successfully written!\(userRef2)")
                         }
                         
-                        
                     }
             }
         }//[end]
         
-        
     }//[end]
-     
-    func createWorkoutNewUser () {
-        
-                    handle = Auth.auth().addStateDidChangeListener { auth, user in
-                        
-                      
-                                        let userId = auth.currentUser?.uid
-                                        if user?.isAnonymous == true {
-                                            
-                                            print("user anonymous? \(user)")
-                                        }
-                                        
-                                        //[error user dont logged!!]
-                                        let worRef =  self.db.collection("users").document(userId ?? "userdontlogged").collection("workout")
-                                        
-                                        
-                                        print("userID \(userId)")
-                                        worRef.getDocuments() { (querySnapshot, err) in
-                                            if let err = err {
-                                                print("Error getting documents: \(err)")
-                                                
-                                            } else {
-                                                for document in querySnapshot!.documents {
-                                                    print("funcWCreateWork\(document.documentID) => \(document.data())")
-                                                    //print("Error getting documents: \(worRef)")
-                                                    
-                                                    var workoutUser : userWorkout? = nil
-                                                    
-                                                    do {
-                                                        workoutUser = try document.data(as: userWorkout.self)
-                                                        print("workout id testW... \(workoutUser?.idWorkout)")
-                                                          
-                                                    }catch {
-                                                        
-                                                        print("error listCollection \(err)")
-                                                    }
-                                                    print("Refexe before: \(err)")
-                                                    let refExe = self.db.collection("users").document(userId ?? "default")
-                                                        .collection("workout")
-                                                    
-                                                    let newRefWork = self.db.collection("users").document(userId ?? "default")
-                                                        .collection("workout")
-                                                    //users/lYcWf4U78cOFOQ7Wo2eQjDv786F3/workout/qmkRFkUnfn6Hn9DnlyWl/myexercises
-                                                   
-                                                    newRefWork.document().setData([
-                                                        
-                                                        "name" : "default",
-                                                        "description" : "default",
-                                                        "urlImage" : "default",
-                                                        "idWorkout" : document.documentID
-                                                        
-                                                    ]) { err in
-                                                        if let err = err {
-                                                            print("Error writing document: \(err)")
-                                                        } else {
-                                                            print("Document successfully written!")
-                                                            
-                                                            //[Alert for to user, account created successfully]
-                                                            let alert = UIAlertController(title: user?.displayName , message: "Workout created successfully !!", preferredStyle: .alert)
-                                                            
-                                                            let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                                                            
-                                                            let confirmAction = UIAlertAction(title: "Confirm", style: .default) { alertAction in
-                                                                //testing...
-                                                                print("confirmAction")
-                                                                self.performSegue(withIdentifier: "segueNewWorkoutMyWorkout", sender: nil)
-                                                            }
-                                                            alert.addAction(cancelAlert)
-                                                            alert.addAction(confirmAction)
-                                                            
-                                                            
-                                                            self.present(alert, animated: true, completion: nil)
-                                                            
-                                                        }
-                                                        
-                                                    }
-                                                    
-                                                    break
-                                                    
-                                                    print("test func newTraining...\(err)")
-                                         
-                                }//[end get workout]
-                                 
-                            }
-                          
-                    }//end if validatefields
-                      
-                }
-          
-    }
+
    
     //Method for validate user-entered fields
     func validateFields() -> String {
