@@ -501,7 +501,6 @@
         <!--Register Controller-->
         <scene sceneID="5Yw-CZ-BKB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9ZF-s3-wq4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController modalPresentationStyle="overFullScreen" id="l5C-Lo-ARB" customClass="RegisterController" customModule="DesafioLeal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9jf-Dp-vlt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -626,6 +625,7 @@
                         <segue destination="jOx-Bn-bfF" kind="show" identifier="segueRegisterWorkout" id="zlD-HS-jtc"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ZF-s3-wq4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7204" y="380"/>
         </scene>
@@ -1115,7 +1115,7 @@
         <segue reference="YYh-MD-vF8"/>
         <segue reference="pro-TN-s7a"/>
         <segue reference="MWH-4P-3EL"/>
-        <segue reference="V59-W0-td4"/>
+        <segue reference="eM8-4H-Ocg"/>
         <segue reference="mh5-dS-rY1"/>
         <segue reference="8BR-WL-eQa"/>
     </inferredMetricsTieBreakers>

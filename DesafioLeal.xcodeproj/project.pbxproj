@@ -26,6 +26,7 @@
 		D316303527FF0E9E006ED4D4 /* ModelMyWorkoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D316303427FF0E9D006ED4D4 /* ModelMyWorkoutCell.xib */; };
 		D316303727FF0EAF006ED4D4 /* ModelMyWorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316303627FF0EAF006ED4D4 /* ModelMyWorkoutCell.swift */; };
 		D316303927FF0EBC006ED4D4 /* ModelMyWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316303827FF0EBB006ED4D4 /* ModelMyWorkout.swift */; };
+		D36118EA280EEBC2001C6324 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = D36118E9280EEBC2001C6324 /* SwiftProtobuf */; };
 		D3777EA427EBD9CA0027BC34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EA327EBD9CA0027BC34 /* AppDelegate.swift */; };
 		D3777EA627EBD9CA0027BC34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3777EA527EBD9CA0027BC34 /* SceneDelegate.swift */; };
 		D3777EAB27EBD9CA0027BC34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3777EA927EBD9CA0027BC34 /* Main.storyboard */; };
@@ -112,6 +113,7 @@
 				D316301D27FB9DBD006ED4D4 /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				D3777EBF27EBE0580027BC34 /* FirebaseStorage in Frameworks */,
 				4BE556522C7B1058C1D9E522 /* Pods_DesafioLeal.framework in Frameworks */,
+				D36118EA280EEBC2001C6324 /* SwiftProtobuf in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +290,7 @@
 				D3777EBC27EBE0580027BC34 /* FirebaseFirestore */,
 				D3777EBE27EBE0580027BC34 /* FirebaseStorage */,
 				D316301C27FB9DBD006ED4D4 /* FirebaseFirestoreSwift-Beta */,
+				D36118E9280EEBC2001C6324 /* SwiftProtobuf */,
 			);
 			productName = DesafioLeal;
 			productReference = D3777EA027EBD9CA0027BC34 /* DesafioLeal.app */;
@@ -319,6 +322,7 @@
 			mainGroup = D3777E9727EBD9CA0027BC34;
 			packageReferences = (
 				D3777EB927EBE0580027BC34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D36118E8280EEBC2001C6324 /* XCRemoteSwiftPackageReference "swift-protobuf" */,
 			);
 			productRefGroup = D3777EA127EBD9CA0027BC34 /* Products */;
 			projectDirPath = "";
@@ -649,6 +653,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D36118E8280EEBC2001C6324 /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-protobuf.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		D3777EB927EBE0580027BC34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -664,6 +676,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D3777EB927EBE0580027BC34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseFirestoreSwift-Beta";
+		};
+		D36118E9280EEBC2001C6324 /* SwiftProtobuf */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D36118E8280EEBC2001C6324 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = SwiftProtobuf;
 		};
 		D3777EBA27EBE0580027BC34 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
